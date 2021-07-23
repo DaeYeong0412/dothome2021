@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-Test</title>
+</head>
+<body>
+
+    <script>
+        //변수 : 데이터 저장소
+        //100, 200, 300 변수에로 출력을 하세요.
+        {
+        document.write("-100, 200, 300를 변수로 출력하세요.<br>")
+
+        var z = 100;
+        var x = 200;
+        var y = 300;
+
+        document.write(z,"<br>")
+        document.write(x,"<br>")
+        document.write(y,"<br><br>")
+        }
+        //배열
+        //100, 200, 300 배열로 출력을 하세요.
+        {
+        document.write("-100, 200, 300를 배열로 출력하세요.<br>")
+
+        const arr = new Array ();
+        arr[0] = 100
+        arr[1] = 200
+        arr[2] = 300
+
+        document.write(arr[0],"<br>")
+        document.write(arr[1],"<br>")
+        document.write(arr[2],"<br><br>")
+        }
+        //객체
+        ////100, 200, 300 객체로 출력을 하세요.
+        {
+        document.write("-100, 200, 300를 객체로 출력하세요.<br>")
+
+        const obj = new Object();
+        obj[0] = 100;
+        obj[1] = 200;
+        obj[2] = 300;
+
+        document.write(obj[0],"<br>")
+        document.write(obj[1],"<br>")
+        document.write(obj[2],"<br><br>")
+        }
+        //반복문
+        //for문을 이용해 1~50까지 출력하세요.
+        {
+            document.write("-for문을 이용해 1~50까지 출력하세요.<br>")
+            for (i=1; i<=50; i++){
+                document.write(i, " &nbsp;")
+            }
+            document.write("<br><br>")
+        }
+        //반복문
+        //for문을 이용해 50~1까지 출력하세요.
+        {
+            document.write("-for문을 이용해 50~1까지 출력하세요.<br>")
+            for (i=50; i>=1; i--){
+                document.write(i, " &nbsp;")
+            }
+            document.write("<br><br>")
+        }
+        //반복문
+        //for문을 이용해 1~50까지(홀수만) 출력하세요.
+        {
+            document.write("-for문을 이용해 1~50까지(홀수만) 출력하세요.<br>")
+            for (i=1; i<=50; i++){
+                if(i%2 !=0) {
+                    document.write(i, " &nbsp;")
+                }
+            }
+            document.write("<br><br>")
+        }
+        //반복문
+        //for문을 이용해 1~50까지(짝수만) 출력하세요.
+        {
+            document.write("-for문을 이용해 1~50까지(짝수만) 출력하세요.<br>")
+            for (i=1; i<=50; i++){
+                if(i%2 ==0) {
+                    document.write(i, " &nbsp;")
+                }
+            }
+            document.write("<br><br>")
+        }
+        //구구단
+        //for문을 이용해서 구구단 8단만 출력을 하세요.
+        {
+            document.write("-for문을 이용해서 구구단 8단만 출력을 하세요.<br>")
+            for (var i=2; i<=8; i++){
+                for (var j=1; j<=9; j++){
+                    var sum = i * j;
+                    document.write(i + "X" + j + "=" + sum,"<br>" )
+                }
+            }
+            document.write("<br>")
+        }
+        //구구단
+        //for문을 이용해서 구구단 5~8단만 출력을 하세요.
+        {
+            document.write("-for문을 이용해서 구구단 5~8단만 출력을 하세요.<br>")
+            for (var i=5; i<=8; i++){
+                for (var j=1; j<=9; j++){
+                    var sum = i * j;
+                    document.write(i + "X" + j + "=" + sum,"<br>")
+                }
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

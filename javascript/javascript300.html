@@ -206,26 +206,41 @@
         .mt20 {
             margin-top: 20px;
         }
+        .ol1::before {
+            content: "데이터 저장하기 : ";
+        }
+        .ol2::before {
+            content: "데이터 제어하기 : ";
+        }
+        .ol3::before {
+            content: "데이터 실행하기 : ";
+        }
+        .ol4::before {
+            content: "데이터 불러오기 : ";
+        }
     </style>
 </head>
 
 <body>
     <h1 class="mt20">Javascript 문법 정리</h1>
-    <ol>
+    <ol class="ol1">
         <li><a href="javascript100.html">변수</a></li>
         <li><a href="javascript100.html">상수</a></li>
         <li><a href="javascript100.html">배열(Array)</a></li>
         <li><a href="javascript100.html">객체(Object)</a></li>
     </ol>
-    <ol>
+    <ol class="ol2">
         <li><a href="javascript200.html">조건문</a></li>
         <li><a href="javascript200.html">반복문</a></li>
     </ol>
-    <ol>
+    <ol class="ol3">
         <li><a href="javascript300.html">함수(Function)</a></li>
     </ol>
+    <ol class="ol4">
+        <li><a href="javascript400.html">데이터</a></li>
+    </ol>
     <ol>
-        <li><a href="javascript400.html">알고리즘(Algorithm)</a></li>
+        <li><a href="javascript500.html">알고리즘(Algorithm)</a></li>
     </ol>
 
     <h2 class="mt20">데이터 실행 : 함수</h2>
@@ -252,7 +267,6 @@
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     function func() {
-        document.write("*** 01. 선언적 함수***");
         document.write("01. 함수가 실행되었습니다.")
     }
     func();
@@ -268,7 +282,6 @@
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     const func = function() {
-        document.write("*** 02. 익명 함수***");
         document.write("02. 함수가 실행되었습니다.")
     }
     func();
@@ -284,7 +297,6 @@
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     function func(str) {
-        document.write("*** 03. 매개변수 함수***");
         document.write(str);
     }
     func("함수가 실행되었습니다.");
@@ -300,11 +312,10 @@
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     function func() {
-        const str = "함수가 실행되었습니다.<br><br>";
+        const str = "함수가 실행되었습니다.";
         return str;
     }
 
-    document.write("*** 04. 리턴값 함수***<br>");
     document.write(func());
 }
 </code></pre>
