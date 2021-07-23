@@ -455,19 +455,19 @@
     let num = 0;
     let table = "&lt;table&gt;";
 
-        for( let i=1; i&lt;=10; i++ ) {
-        table += "&lt;tr&gt;";
-            for( let j=1; j&lt;=20; j++ ){
-                if (j%2 == 0)
-            table += "&lt;td&gt;" + (num +1) + "&lt;/td&gt;";
-            num++;
-            }
-        table += "&lt;/tr&gt;";
+    for( let i=1; i&lt;=10; i++ ) {
+    table += "&lt;tr&gt;";
+        for( let j=1; j&lt;=20; j++ ){
+             if (j%2 == 0)
+        table += "&lt;td&gt;" + (num +1) + "&lt;/td&gt;";
+        num++;
         }
-        
-        table += "&lt;/table&gt;";
+    table += "&lt;/tr&gt;";
+    }
+    
+    table += "&lt;/table&gt;";
 
-        document.write(table);
+    document.write(table);
 }
 </code></pre>
         </div>
