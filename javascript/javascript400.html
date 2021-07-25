@@ -250,6 +250,7 @@
         <li><a href="#sample3">03. 배열 : 데이터 불러오기 : 2차 배열</a></li>
         <li><a href="#sample4">04. 배열 : 데이터 불러오기 : 갯수 구하기</a></li>
         <li><a href="#sample5">05. 배열 : 데이터 불러오기 : for문</a></li>
+        <li><a href="#sample6">06. 배열 : 데이터의 합을 출력하기</a></li>
     </ul>
 
     <hr>
@@ -340,10 +341,15 @@
     <hr>
 <!-- sample6 -->
         <div id="sample6" class="sample">
-            <h2>06.  <span class="dot"></span></h2>
+            <h2>06. 배열 : 데이터의 합을 출력하기  <span class="dot"></span></h2>
             <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    
+    const arr = [100, 200, 300, 400, 500];
+            
+    let sum = 0;
+    arr.forEach(function(el){sum+=el;});
+
+    document.write(sum);
 }
 </code></pre>
         </div>
@@ -420,18 +426,17 @@
                 document.write("<br>")
             }
             //sample6
-            // 7월 26일 숙제
-
-            // 배열 데이터의 합을 출력하세요.
+            //06. 배열 : 데이터의 합을 출력하기
             {
-            const arr = [100, 200, 300, 400, 500];
-            document.write("*** 06. 배열 : 숙제 ***<br>")
-                let sum = 0;
-                arr = [i]
-                for (let i=0; i<arr.length; i++){
-                sum += i;
-                }
-            document.write(sum);
+                const arr = [100, 200, 300, 400, 500];
+
+                document.write("*** 06. 배열 : 데이터의 합을 출력하기 ***<br>")
+            
+                let sum = 0;
+                arr.forEach(function(el){sum+=el;});
+
+                document.write(sum);
+                document.write("<br><br>")
             }
         </script>
 </body>
