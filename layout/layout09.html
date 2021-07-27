@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 연습9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+            margin: 0 auto;
+        }
+        header {
+            width: 100%;
+            height: 100px;
+            background-color: #e8f5e9;
+        }
+        main {
+            width: 100%;
+        }
+        aside {
+            width: 20%;
+            height: 700px;
+            background-color: #c8e6c9;
+            float: left;
+        }
+        section {
+            width: 60%;
+            height: 700px;
+            background-color: #a5d6a7;
+            float: left;
+        }
+        article {
+            width: 20%;
+            height: 700px;
+            background-color: #81c784;
+            float: left;
+        }
+        footer {
+            width: 100%;
+            height: 100px;
+            background-color: #66bb6a;
+            clear: both;
+        }
+        @media (max-width: 1210px) {
+            #wrap {
+                width: 100%;
+            }
+            aside {
+                width: 30%;
+            }
+            section {
+                width: 70%;
+            }
+            article {
+                width: 100%;
+                height: 400px;
+                float: none;
+                clear: both;
+            }
+        }
+        @media (max-width: 800px) {
+            #wrap {
+                width: 100%;
+            }
+            aside {
+                width: 100%;
+                height: 300px;
+                float: none;
+            }
+            section {
+                width: 100%;
+                height: 300px;
+                float: none;
+            }
+            article {
+                width: 100%;
+                height: 300px;
+                float: none;
+            }
+        }
+        @media (max-width: 600px) {
+            #wrap {
+                width: 100%;
+            }
+            aside {
+                width: 100%;
+                height: 200px;
+                float: none;
+            }
+            section {
+                width: 100%;
+                height: 200px;
+                float: none;
+            }
+            article {
+                width: 100%;
+                height: 200px;
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id = "wrap">
+        <header></header>
+        <main>
+            <aside></aside>
+            <section></section>
+            <article></article>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
