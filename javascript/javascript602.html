@@ -622,7 +622,62 @@
                 </tbody>
             </table>
 <pre class="line-numbers"><code class="language-js">{
+    const str = "자바스크립트(javascript) 공부";
 
+    const text1 = str.indexOf("javascript");
+
+    document.querySelector(".sample05_Q1").innerHTML = str;
+    document.querySelector(".sample05_R1").innerHTML = text1;
+
+    const text2 = str.indexOf("자바스크립트");
+
+    document.querySelector(".sample05_Q2").innerHTML = str;
+    document.querySelector(".sample05_R2").innerHTML = text2;
+
+    const text3 = str.indexOf("제이쿼리");
+
+    document.querySelector(".sample05_Q3").innerHTML = str;
+    document.querySelector(".sample05_R3").innerHTML = text3;
+
+    const text4 = str.indexOf("a");
+
+    document.querySelector(".sample05_Q4").innerHTML = str;
+    document.querySelector(".sample05_R4").innerHTML = text4;
+
+    const text5 = str.lastIndexOf("a");
+
+    document.querySelector(".sample05_Q5").innerHTML = str;
+    document.querySelector(".sample05_R5").innerHTML = text5;
+
+    const text6 = str.search(/javascript/);
+
+    document.querySelector(".sample05_Q6").innerHTML = str;
+    document.querySelector(".sample05_R6").innerHTML = text6;
+
+    const text7 = str.search(/jquery/);
+
+    document.querySelector(".sample05_Q7").innerHTML = str;
+    document.querySelector(".sample05_R7").innerHTML = text7;
+
+    const text8 = str.includes("javascript");
+
+    document.querySelector(".sample05_Q8").innerHTML = str;
+    document.querySelector(".sample05_R8").innerHTML = text8;
+
+    const text9 = str.includes("jquery");
+
+    document.querySelector(".sample05_Q9").innerHTML = str;
+    document.querySelector(".sample05_R9").innerHTML = text9;
+
+    const text10 = str.startsWith("자바스크립트");
+
+    document.querySelector(".sample05_Q10").innerHTML = str;
+    document.querySelector(".sample05_R10").innerHTML = text10;
+
+    const text11 = str.startsWith("javascript");
+
+    document.querySelector(".sample05_Q11").innerHTML = str;
+    document.querySelector(".sample05_R11").innerHTML = text11;
 }
 </code></pre>
         </div>
@@ -664,7 +719,17 @@
                 </tbody>
             </table>
 <pre class="line-numbers"><code class="language-js">{
+    const str = "자바스크립트(javascript) 공부";
+    const text = str.charAt(4);
 
+    document.querySelector(".sample06_Q1").innerHTML = str;
+    document.querySelector(".sample06_R1").innerHTML = text;
+
+    const str2 = "자바스크립트(javascript) 공부";
+    const text2 = str2.charAt();
+
+    document.querySelector(".sample06_Q2").innerHTML = str2;
+    document.querySelector(".sample06_R2").innerHTML = text2;
 }
 </code></pre>
         </div>
