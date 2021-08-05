@@ -268,6 +268,8 @@
         <li><a href="#sample4">04. 리턴값 함수</a></li>
         <li><a href="#sample5">05. 재귀 함수</a></li>
         <li><a href="#sample6">06. 콜백 함수</a></li>
+        <li><a href="#sample6-2">06-2. 콜백 함수 : 반복문</a></li>
+        <li><a href="#sample6-3">06-3. 콜백 함수 : 동기/비동기</a></li>
         <li><a href="#sample7">07. 내부 함수</a></li>
         <li><a href="#sample8">08. 객체 생성자 함수</a></li>
         <li><a href="#sample9">09. 프로토타입 함수</a></li>
@@ -351,7 +353,15 @@
         <h2>05. 재귀 함수 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-
+    function func(num) {
+        if(num&lt;=1) {
+            document.write("함수가 실행되었습니다.");
+        } else {
+            document.write("함수가 실행되었습니다.");
+            func(num-1);
+        }
+    }
+    func(5)
 }
 </code></pre>
         </div>
@@ -363,19 +373,106 @@
         <h2>06. 콜백 함수 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-
+    function funA(){
+        document.write("함수A가 실행되었습니다.");
+    }
+    function funB(str){
+        document.write("함수B가 실행되었습니다.");
+        str();  //funA();
+    }
+    funB(funA);
 }
 </code></pre>
         </div>
     </div>
 <!-- /sample6 -->
     <hr>
-<!-- sample7 -->
-    <div id="sample7" class="sample">
-        <h2>07. 내부 함수 <span class="dot"></span></h2>
+<!-- sample6-2 -->
+    <div id="sample6-2" class="sample">
+        <h2>06-2. 콜백 함수 : 반복문 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    function func() {
+        document.write("함수가 실행되었습니다.");
+    }
+    function callback(str){
+        for(let i=1; i&lt;=5; i++) {
+            str();
+        }
+    }
+    callback(func);
+}
+</code></pre>
+        </div>
+    </div>
+<!-- /sample6-2 -->
+    <hr>
+<!-- sample6-3 -->
+    <div id="sample6-3" class="sample">
+        <h2>06-3. 콜백 함수 : 동기/비동기<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //01
+    function funA() {
+        console.log("funA가 실행되었습니다.");
+    }
+    function funB() {
+        console.log("funB가 실행되었습니다.");
+    }
+    funB();
+    funA();
 
+    //02
+    function funC() {
+    //     setTimeout(function(){
+    //         console.log("funC가 실행되었습니다.");
+    //     },1000);
+    // }
+
+        setTimeout(() => {
+            console.log("funC가 실행되었습니다.");
+        },1000);
+    }
+    function funD() {
+        console.log("funD가 실행되었습니다.");
+    }
+    funC();
+    funD();
+
+    //03
+    function funE(callback) {
+        setTimeout(() => {
+            console.log("funE가 실행되었습니다.");
+            callback();
+        }, 1000);
+    }
+    function funF() {
+        console.log("funF가 실행되었습니다.");
+    }
+    funE(funF);
+}
+</code></pre>
+        </div>
+    </div>
+<!-- /sample6-3 -->
+    <hr>
+<!-- sample7 -->
+    <div id="sample7" class="sample">
+        <h2>07. 내부 함수 : 함수의 충돌을 방지하기 위해 사용<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func() {
+        function funA(){
+            document.write("함수 A가 실행 되었습니다.");
+        }
+        funA();
+
+        function funB(){
+            document.write("함수 B가 실행 되었습니다.");
+        }
+        funB();
+    }
+    func();
 }
 </code></pre>
         </div>
@@ -515,7 +612,14 @@
         <h2>17. 아규먼트 함수 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{  
-
+    function func(strA, strB){
+        document.write(strA);
+        document.write(strB);
+        //배열 방법
+        document.write(arguments[0]);
+        document.write(arguments[1]);
+    }
+    func("함수A가 실행되었습니다.", "함수B가 실행되었습니다.")
 }
 </code></pre>
         </div>
@@ -524,10 +628,12 @@
     <hr>
 <!-- sample18 -->
     <div id="sample18" class="sample">
-        <h2>18. 즉시실행 함수 <span class="dot"></span></h2>
+        <h2>18. 즉시실행 함수 : 함수의 충돌을 방지하기 위해 사용 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{  
-
+    (function() {
+        document.write("함수가 실행되었습니다.");
+    })();
 }
 </code></pre>
         </div>
@@ -539,7 +645,19 @@
         <h2>19. 파라미터 함수 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{  
+     function func(str) {
+         if( str == null ) {
+             str = "함수가 실행되었습니다.";
+             document.write(str);
+         }
+     }
+     func();
 
+    //간략화
+    function func(str = "함수가 실행되었습니다.") {
+        document.write(str);
+    }
+    func();
 }
 </code></pre>
         </div>
@@ -592,18 +710,123 @@
             }
             //sample5
             //05. 재귀 함수
+            //함수 정의문 내에서 자기 자신을 또 다시 호출하는 함수
             {
+                document.write("*** 05. 재귀 함수***<br>");
 
+                // function func() {
+                //     document.write("함수가 실행되었습니다.<br>");
+                //     func();
+                // }
+                // func();
+
+                function func(num) {
+                    if(num<=1) {
+                        document.write("함수가 실행되었습니다.<br>");
+                    } else {
+                        document.write("함수가 실행되었습니다.<br>");
+                        func(num-1);
+                    }
+                }
+                func(5)
+                document.write("<br>");
             }
             //sample6
             //06. 콜백 함수
+            //첫번째 함수가 실행되고 난 뒤 두번째 함수를 다시 호출하는 함수
+            //다른 함수에 매개변수로 넘겨주는 함수
             {
+                document.write("*** 06. 콜백 함수 ***<br>");
 
+                function funA(){
+                    document.write("함수A가 실행되었습니다.<br>");
+                }
+                function funB(str){
+                    document.write("함수B가 실행되었습니다.<br>");
+                    str();  //funA();
+                }
+                funB(funA);
+                document.write("<br>");
+            }
+            //sample6-2
+            //06-2. 콜백 함수 : 반복문
+            {
+                document.write("*** 06-2. 콜백 함수 : 반복문 ***<br>");
+
+                function func() {
+                    document.write("함수가 실행되었습니다.<br>");
+                }
+                function callback(str){
+                    for(let i=1; i<=5; i++) {
+                        str();
+                    }
+                }
+                callback(func);
+                document.write("<br>");
+            }
+            //sample6-3
+            //06-3. 콜백 함수 : 동기/비동기
+            //동기(순차적) : 동시에 일어나는 것     비동기(비순차적) : 동시에 일어나지 않는 것
+            {
+                //01
+                document.write("*** 06-3. 콜백 함수 : 동기/비동기 ***<br>")
+
+                function funA() {
+                    console.log("funA가 실행되었습니다.");
+                }
+                function funB() {
+                    console.log("funB가 실행되었습니다.");
+                }
+                funB();
+                funA();
+
+                //02
+                function funC() {
+                //     setTimeout(function(){
+                //         console.log("funC가 실행되었습니다.");
+                //     },1000);
+                // }
+
+                    setTimeout(() => {
+                        console.log("funC가 실행되었습니다.");
+                    },1000);
+                }
+                function funD() {
+                    console.log("funD가 실행되었습니다.");
+                }
+                funC();
+                funD();
+
+                //03
+                function funE(callback) {
+                    setTimeout(() => {
+                        console.log("funE가 실행되었습니다.");
+                        callback();
+                    }, 1000);
+                }
+                function funF() {
+                    console.log("funF가 실행되었습니다.");
+                }
+                funE(funF);
             }
             //sample7
-            //07. 내부 함수
+            //07. 내부 함수 : 함수의 충돌을 방지하기 위해 사용
             {
+                document.write("*** 07. 내부 함수 ***<br>");
 
+                function func() {
+                    function funA(){
+                        document.write("함수 A가 실행 되었습니다.<br>");
+                    }
+                    funA();
+
+                    function funB(){
+                        document.write("함수 B가 실행 되었습니다.<br>");
+                    }
+                    funB();
+                }
+                func();
+                document.write("<br>");
             }
             //sample8
             //08. 객체 생성자 함수
@@ -704,14 +927,48 @@
             }
             //sample17
             //17. 아규먼트 함수
-            {}
+            {
+                document.write("*** 17. 아규먼트 함수 ***<br>");
+
+                function func(strA, strB){
+                    // document.write(strA, "<br>");
+                    // document.write(strB, "<br>");
+                    document.write(arguments[0], "<br>");
+                    document.write(arguments[1], "<br>");
+                }
+                func("함수A가 실행되었습니다.", "함수B가 실행되었습니다.<br>")
+            }
             //sample18
-            //18. 즉시실행 함수
-            {}
+            //18. 즉시실행 함수 : 함수의 충돌을 방지하기 위해 사용
+            {
+                document.write("*** 18. 즉시실행 함수 ***<br>");
+                // function func() {
+                //     document.write("함수가 실행되었습니다.<br>");
+                // }
+                // func();
+
+                (function() {
+                    document.write("함수가 실행되었습니다.<br><br>");
+                })();
+            }
             //sample19
             //19. 파라미터 함수
-            {}
+            {
+                document.write("*** 19. 파라미터 함수 ***<br>");
+
+                // function func(str) {
+                //     if( str == null ) {
+                //         str = "함수가 실행되었습니다.<br><br>";
+                //         document.write(str);
+                //     }
+                // }
+                // func();
+
+                function func(str = "함수가 실행되었습니다.<br><br>") {
+                    document.write(str);
+                }
+                func();
+            }
         </script>
 </body>
-
 </html>

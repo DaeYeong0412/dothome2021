@@ -167,6 +167,69 @@
             }
             document.write("<br><br>");
         }
+        //for 문을 이용해 각 데이터를 출력
+        {
+            document.write("***for 문을 이용해 각 데이터를 출력<br>")
+            const arr = [100, 200, 300, 400, 500];
+            for(let i = 0; i<arr.length; i++) {
+                document.write(arr[i], "&nbsp;");
+            }
+            document.write("<br><br>")
+        }
+        //forEach문을 이용해 각 데이터를 출력
+        {
+            const arr = [100, 200, 300, 400, 500];
+            arr.forEach(function(el) {
+                document.write(el, "&nbsp;");
+            });
+            // arr.forEach((el)=>{
+            //     document.write(el, "&nbsp;");
+            // });
+            document.write("<br><br>");
+        }
+        {
+            const arr = [100, 200, 300, 400, 500];
+            for(let element of arr) document.write(element);
+            document.write("<br><br>");
+            for(let element in arr) document.write(element);
+            document.write("<br><br>");
+            for(let element in arr) document.write(arr[element]);
+            document.write("<br><br>");
+
+            //배열에서 300 찾은 다음 출력하세요.
+            const find = arr.find(el => el === 300);
+            document.write(find);
+            document.write("<br><br>");
+        }
+        //"함수가 실행되었습니다." 를 function을 이용해 출력(선언적함수)
+        {
+            function func() {
+                document.write("선언적 함수가 실행되었습니다.<br><br>")
+            }
+            func();
+        }
+        //"함수가 실행되었습니다." 를 function을 이용해 출력(익명 함수)
+        {
+            const func = function() {
+                document.write("익명 함수가 실행되었습니다.<br><br>")
+            }
+            func();
+        }
+        //"함수가 실행되었습니다." 를 function을 이용해 출력(매개변수 함수)
+        {
+            function func(arr) {
+                document.write(arr);
+            }
+            func("매개변수 함수가 실행되었습니다.<br><br>")
+        }
+        //"함수가 실행되었습니다." 를 function을 이용해 출력(리턴값 함수)
+        {
+            function func() {
+                const arr = "리턴값 함수가 실행되었습니다.<br><br>"
+                return arr;
+            }
+            document.write(func());
+        }
     </script>
 </body>
 </html>
