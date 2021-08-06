@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lay out 11 test</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            height: 100px;
+            background-color: #EFEBE8;
+        }
+        #baner {
+            height: 100px;
+            background-color: #BDAAA4;
+        }
+        #contents {
+            height: 700px;
+            background-color: #8C6E63;
+        }
+        #footer {
+            height: 100px;
+            background-color: #4F332F;
+        }
+        #contents1 {
+            height: 500px;
+            width: 300px;
+            margin: 0 auto;
+            float: left;
+            background-color: #795547;
+        }
+        #contents2 {
+            height: 500px;
+            width: 900px;
+            margin: 0 auto;
+            float: left;
+            background-color: #6D4D42;
+        }
+        .container {
+            height: inherit;
+            width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(12, 11, 11, 0.13);
+        }
+        .content3 {
+            height: inherit;
+            width: 1200px;
+            margin: 0 auto;
+            background-color: #5D4038;
+        }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div id="header">
+            <div class="container"></div>
+        </div>
+        <!-- //header -->
+        <div id="baner">
+            <div class="container"></div>
+        </div>
+        <div id="contents">
+            <div class="content3">
+            <div id="contents1"></div>
+            <div id="contents2"></div>
+            </div>
+        </div>
+        <!-- //contents -->
+        <div id="footer">
+            <div class="container"></div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //warp -->
+</body>
+</html>

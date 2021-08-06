@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lay out 10 test</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            width: 100%;
+            height: 100px;
+            background-color: #FBE4EC;
+        }
+        #contents {
+            width: 100%;
+            height: 800px;
+        }
+        #contents1 {
+            width: 100%;
+            height: 300px;
+            background-color: #F48FB1;
+        }
+        #contents2 {
+            width: 100%;
+            height: 300px;
+            background-color: #EC407A;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #D81A60;
+        }
+        .container {
+            height: inherit;
+            width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(197, 20, 20, 0.247);
+        }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div id="header">
+            <div class="container"></div>
+        </div>
+        <!-- //header -->
+        <div id="contents">
+            <div id="contents1">
+                <div class="container"></contents1>
+            </div>
+            <div id="contents2">
+                <div class="container"></contents2>
+            </div>
+        </contents>
+        <!-- //contents -->
+        <div id="footer">
+            <div class="container"></div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //warp -->
+</body>
+</html>
