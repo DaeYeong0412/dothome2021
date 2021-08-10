@@ -259,6 +259,9 @@
         <li><a href="javascript604.html">날짜 메서드</a></li>
         <li><a href="javascript605.html">이벤트 메서드</a></li>
     </ol>
+    <ol class="ol7">
+        <li><a href="javascript606.html">샘플</a></li>
+    </ol>
 
     <h2 class="mt20">데이터 실행 : 함수</h2>
     <ul>
@@ -321,10 +324,10 @@
         <h2>03. 매개변수 함수 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    function func(str) {
-        document.write(str);
+    function func(str1, str2) {
+        document.write(str1, str2);
     }
-    func("함수가 실행되었습니다.");
+    func("함수가", "실행되었습니다.");
 }
 </code></pre>
         </div>
@@ -691,11 +694,11 @@
             //sample3
             //03. 매개변수 함수
             {
-                function func(str) {
+                function func(str1, str2) {
                     document.write("*** 03. 매개변수 함수***<br>");
-                    document.write(str);
+                    document.write(str1, str2, "<br><br>");
                 }
-                func("함수가 실행되었습니다.<br><br>");
+                func("함수가 ", "실행되었습니다.");
             }
             //sample4
             //04. 리턴값 (결과값) 함수
@@ -769,8 +772,6 @@
             //동기(순차적) : 동시에 일어나는 것     비동기(비순차적) : 동시에 일어나지 않는 것
             {
                 //01
-                document.write("*** 06-3. 콜백 함수 : 동기/비동기 ***<br>")
-
                 function funA() {
                     console.log("funA가 실행되었습니다.");
                 }
