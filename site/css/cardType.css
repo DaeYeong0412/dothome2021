@@ -45,11 +45,18 @@
 .card .card-title {
     display: block;
     font-size: 32px;
+    white-space: nowrap;        /* 한줄효과 */
+    overflow: hidden;           /* 한줄효과 */
+    text-overflow: ellipsis;    /* 한줄효과 */
 }
 .card .card-desc {
     display: block;
     font-size: 20px;
     font-weight: 300;
+    overflow: hidden;               /* 벤더 프리픽스   두줄효과*/
+    display: -webkit-box;           /* 벤더 프리픽스   두줄효과*/
+    -webkit-line-clamp: 2;          /* 벤더 프리픽스   두줄효과*/
+    -webkit-box-orient: vertical;   /* 벤더 프리픽스   두줄효과*/
 }
 .card .card-keyword {
     font-size: 16px;
