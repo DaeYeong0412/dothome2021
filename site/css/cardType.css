@@ -226,11 +226,11 @@ body {
     font-size: 26px;
     font-weight: 500;
     float: left;
-    margin : 0 0 10px 15px;
+    margin : 0 0 20px 15px;
 }
 .cardType03 .card-wrap .card .card-desc {
     width: 900px;
-    margin : 0 0 10px 15px;
+    margin : 0 0 3px 15px;
     font-size: 16px;
     font-weight: 300;
     color: #555;
