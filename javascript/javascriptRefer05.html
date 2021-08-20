@@ -149,6 +149,10 @@
         .sample code {
             font-family: 'NEXON Lv1 Gothic OTF';
         }
+        .view {
+            overflow: auto;
+            white-space: nowrap;
+        }
         .view table {
             border: 1px solid #e6e6e6;
             width: 100%;
@@ -163,7 +167,6 @@
             padding: 13px 5px 11px 5px;
             border-bottom: 1px solid #e6e6e6;
             font-weight: normal;
-            white-space: nowrap;
         }
         .view table td.result {
             transition: all 0.3s;
@@ -223,7 +226,6 @@
             .view {
                 border-right: 1px solid #e6e6e6;
                 border-left: 1px solid #e6e6e6;
-                overflow: auto;
             }
             .view table {
                 border-left: 0px;
@@ -231,7 +233,6 @@
             }
             .view table th,
             .view table td {
-                white-space: nowrap;
                 font-size: 13px;
             }
             .view table td.result {
@@ -1537,7 +1538,7 @@
             document.querySelector(".sample10_N4").innerHTML = "4";
             document.querySelector(".sample10_Q4").innerHTML = num4;
             document.querySelector(".sample10_M4").innerHTML = ".padStart(6)";
-            document.querySelector(".sample10_R4").innerHTML = "<pre>'"+ text4 +"'</pre>";
+            document.querySelector(".sample10_R4").innerHTML = "' "+ text4 +"'";
 
             const num5 = "7";
             const text5 = num5.padEnd(2, '0');
@@ -1569,7 +1570,7 @@
             document.querySelector(".sample10_N8").innerHTML = "8";
             document.querySelector(".sample10_Q8").innerHTML = num8;
             document.querySelector(".sample10_M8").innerHTML = ".padEnd(6)";
-            document.querySelector(".sample10_R8").innerHTML = "<pre>'"+ text8 +"'</pre>";
+            document.querySelector(".sample10_R8").innerHTML = "'"+ text8 +" '";
         }
 
         //sample11
