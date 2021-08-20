@@ -134,3 +134,114 @@ body {
     padding: 4px 16px 3px;
     border-radius: 20px;
 }
+
+/* cardType03 */
+.cardType03 {
+    font-family: 'S-CoreDream';
+    padding: 100px 0;
+    line-height: 1.28;
+}
+.cardType03 h2 {
+    font-size: 50px;
+    font-weight: 800;
+    margin: 0 28px 30px 0;
+}
+.cardType03 .card-p p {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+    padding-right: 490px;
+    margin-bottom: 60px;
+}
+.cardType03 .card-p span {
+    font-size: 16px;
+    font-weight: 400;
+}
+.cardType03 .card-wrap {
+    overflow: hidden;
+}
+.cardType03 .card-wrap .card {
+    width: 100%;
+}
+.cardType03 .card-wrap .card img {
+    display: block;
+    width: 285px;
+    height: 185px;
+    object-fit: contain;
+    border-radius: 10px;
+    float: left;
+}
+.cardType03 .card-wrap .card .card-keyword1 {
+    display: block;
+    width: 50px;
+    height: 18px;
+    margin : 0 0 10px 15px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 20px;
+    background-color: #ff5151;
+    color: #fff;
+    text-align: center;
+    float: left;
+}
+.cardType03 .card-wrap .card .card-keyword2 {
+    display: block;
+    width: 41px;
+    height: 18px;
+    margin : 0 0 10px 15px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 20px;
+    background-color: #5465ff;
+    color: #fff;
+    text-align: center;
+    float: left;
+}
+.cardType03 .card-wrap .card .card-keyword3 {
+    display: block;
+    width: 106px;
+    height: 18px;
+    margin : 0 0 10px 15px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 20px;
+    background-color: #ff4646;
+    color: #fff;
+    text-align: center;
+    float: left;
+}
+.cardType03 .card-wrap .card .card-keyword4 {
+    display: block;
+    width: 64px;
+    height: 18px;
+    margin : 0 0 10px 15px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 20px;
+    background-color: #11c865;
+    color: #fff;
+    text-align: center;
+    float: left;
+}
+.cardType03 .card-wrap .card .card-title {
+    display: block;
+    width: 900px;
+    font-size: 26px;
+    font-weight: 500;
+    float: left;
+    margin : 0 0 10px 15px;
+}
+.cardType03 .card-wrap .card .card-desc {
+    width: 900px;
+    margin : 0 0 10px 15px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #555;
+    float: left;
+}
+.cardType03 .card-wrap .card .card-desc2 {
+    width: 50px;
+    margin: 20px 682px 27px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    float: left;
+    text-decoration: underline;
+}
