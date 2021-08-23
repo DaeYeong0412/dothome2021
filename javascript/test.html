@@ -9,54 +9,52 @@
 <body>
     <script>
         {
-        function func(){
-        document.write(" 선언적 함수가 실행되었습니다.<br>");
-        }
-        func();
+            const obj = {
+                a:1000,
+                b:2000,
+                c:3000
+            }
+            for(let i in obj){
+                document.write(obj[i],"<br>");
+            }
+            //1000
+            document.write(obj.a,"<br>");
+            //2000
+            document.write(obj.b, "<br>");
+            //3000
+            document.write(obj.c, "<br>");
+            //6000
+            document.write(obj.a + obj.b + obj.c, "<br>");
+            //5000
+            document.write(obj.b + obj.c, "<br>");
+            //4000
+            document.write(obj.a + obj.c, "<br>");
+            //1
+            document.write(obj.a/obj.a, "<br>");
+            //2
+            document.write(obj.b/obj.a, "<br>");
+            //3
+            document.write(obj.c/obj.a, "<br>");
+            //a b c
+            document.write(Object.keys(obj), "<br>");
         }
 
         {
-        const func = function() {
-        document.write(" 익명 함수가 실행되었습니다.<br>");
-        }
-        func();
+            const obj2 = [
+                {a: 1000},
+                {a: 2000},
+                {a: 3000}
+            ]
+
+            obj2.map((el) => {
+            document.write(el.a);
+            });
         }
 
         {
-        function func(str){
-        document.write(str); 
+            const obj3 = [1000, 2000, 3000, "a", "b", "c"]
+            
         }
-        func("매개변수 함수가 실행되었습니다.<br>");
-        }
-
-        {
-        function func(){
-        const str = "리턴값 함수가 실행되었습니다.<br>";
-        return str;
-        }
-        document.write(func());
-        }
-
-        const num = [1,2,3,4,5]
-
-        for (let i = 1; i<=num.length; i++){
-            document.write(i);
-        }
-            document.write("<br>");
-
-        num.forEach(el => {
-            document.write(el)
-        });
-            document.write("<br>");
-
-        for( let i in num ){
-            document.write(num[i]);
-        }
-            document.write("<br>");
-        for( let i of num ){
-            document.write(i);
-        }
-            document.write("<br>");
     </script>
 </body>
 </html>
