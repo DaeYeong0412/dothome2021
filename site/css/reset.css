@@ -27,6 +27,8 @@ th,
 td,
 input,
 select,
+figure,
+figcaption,
 button {
     margin: 0;
     padding: 0
