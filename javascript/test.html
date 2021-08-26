@@ -5,56 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
+    <style>
+.button a{
+    color: #272822;
+    border: 1px solid #272822;
+    padding: 10px 15px 10px 15px;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 10px 0 0 0;
+    box-shadow: inset 0 0 0 #E5E5E5;
+    transition: all 0.4s;
+    font-weight: bold;
+}
+.button a:hover {
+    box-shadow: inset 0 -100px 0 #E5E5E5;
+    color: #272822;
+    border-style: solid;
+}
+.button.active a {
+    background-color: #E5E5E5;
+    color: #272822;
+}
+.button-result{
+    display: none;
+    width:100%;
+    background-color: #272822;
+    color:#f8f8f2;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    padding:15px;
+    text-align: left;
+    border-radius: 0  5px 5px 5px;
+}
+    </style>
 </head>
 <body>
+    <div class="button" onclick="opneClose()"><a href="#c">결과보기</a></div>
+    <div class="button-result">100 200 300</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
-        {
-            const obj = {
-                a:1000,
-                b:2000,
-                c:3000
-            }
-            for(let i in obj){
-                document.write(obj[i],"<br>");
-            }
-            //1000
-            document.write(obj.a,"<br>");
-            //2000
-            document.write(obj.b, "<br>");
-            //3000
-            document.write(obj.c, "<br>");
-            //6000
-            document.write(obj.a + obj.b + obj.c, "<br>");
-            //5000
-            document.write(obj.b + obj.c, "<br>");
-            //4000
-            document.write(obj.a + obj.c, "<br>");
-            //1
-            document.write(obj.a/obj.a, "<br>");
-            //2
-            document.write(obj.b/obj.a, "<br>");
-            //3
-            document.write(obj.c/obj.a, "<br>");
-            //a b c
-            document.write(Object.keys(obj), "<br>");
+    document.querySelector(".button").addEventListener("click", function(){
+        this.classList.toggle("active")
+    });
+    function opneClose() {
+        if(document.querySelector(".button-result").style.display === "block") {
+            document.querySelector(".button-result").style.display = "none";
+        } else {
+            document.querySelector(".button-result").style.display = "block";
         }
-
-        {
-            const obj2 = [
-                {a: 1000},
-                {a: 2000},
-                {a: 3000}
-            ]
-
-            obj2.map((el) => {
-            document.write(el.a);
-            });
-        }
-
-        {
-            const obj3 = [1000, 2000, 3000, "a", "b", "c"]
-            
-        }
+    }
     </script>
 </body>
 </html>

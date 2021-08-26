@@ -224,6 +224,39 @@ hr {
     background: #000;
     color: #fff;
 }
+.button a{
+    color: #272822;
+    border: 1px solid #272822;
+    padding: 10px 15px 10px 15px;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 10px 0 0 0;
+    box-shadow: inset 0 0 0 #E5E5E5;
+    transition: all 0.4s;
+    font-weight: bold;
+}
+.button a:hover {
+    box-shadow: inset 0 -100px 0 #E5E5E5;
+    color: #272822;
+    border-style: solid;
+}
+.button.active a {
+    background-color: #E5E5E5;
+    color: #272822;
+}
+.button-result{
+    display: none;
+    width:100%;
+    background-color: #272822;
+    color:#f8f8f2;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    padding:15px;
+    text-align: left;
+    border-radius: 0  5px 5px 5px;
+}
 
 @media (max-width: 800px){
     body {
