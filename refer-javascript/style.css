@@ -242,11 +242,15 @@ hr {
     border-style: solid;
 }
 .button.active a {
+    border-radius: 5px 5px 0 0;
     background-color: #E5E5E5;
     color: #272822;
 }
 .button-result{
     display: none;
+}
+.button-result.before{
+    display: block;
     width:100%;
     background-color: #272822;
     color:#f8f8f2;

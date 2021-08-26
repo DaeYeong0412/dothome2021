@@ -24,11 +24,14 @@
     border-style: solid;
 }
 .button.active a {
+    border-radius: 5px 5px 0;
     background-color: #E5E5E5;
     color: #272822;
 }
 .button-result{
     display: none;
+}
+.button-result .active{
     width:100%;
     background-color: #272822;
     color:#f8f8f2;
@@ -42,21 +45,31 @@
     </style>
 </head>
 <body>
-    <div class="button" onclick="opneClose()"><a href="#c">결과보기</a></div>
-    <div class="button-result">100 200 300</div>
+    <div class="button"><a href="#c">결과보기</a></div>
+    <div class="button ac">100 200 300</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
-    document.querySelector(".button").addEventListener("click", function(){
-        this.classList.toggle("active")
+    //     function opneClose() {
+    //     if(document.querySelector(".button-result").style.display === "block") {
+    //         document.querySelector(".button-result").style.display = "none";
+    //     } else {
+    //         document.querySelector(".button-result").style.display = "block";
+    //     }
+    // }
+
+    const button = document.querySelector("")
+
+    document.querySelectorAll(".button").forEach((el) =>{
+        el.addEventListener("click", function(){
+            this.classList.toggle("active")
+        });
     });
-    function opneClose() {
-        if(document.querySelector(".button-result").style.display === "block") {
-            document.querySelector(".button-result").style.display = "none";
-        } else {
-            document.querySelector(".button-result").style.display = "block";
-        }
-    }
+    document.querySelectorAll(".button-result").forEach((el) =>{
+        el.addEventListener("click", function(){
+            this.classList.toggle("active")
+        });
+    });
     </script>
 </body>
 </html>
