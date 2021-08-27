@@ -86,6 +86,8 @@
 }
 </code></pre>
     </div>
+    <div class="button"><a href="#c">결과보기</a></div>
+    <div class="button-result"></div>
 </div>
 <!-- //sample1-->
 <!--sample2-->
@@ -558,11 +560,11 @@
         {   //let 한줄로 축약
             let x = 100, y = 200, z = "javascript";
 
-            document.write("***01. 변수 : 데이터 불러오기***<br>")
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
-            document.write("<br>");
+            document.querySelector("#sample01 .button-result").innerHTML = `${x} ${y} ${z}`;
+            document.querySelector("#sample01 .button").addEventListener("click", function(){
+            document.querySelector("#sample01 .button").classList.toggle("active");
+            document.querySelector("#sample01 .button-result").classList.toggle("before");
+            });
 
         }
         //sample2

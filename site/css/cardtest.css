@@ -1,0 +1,45 @@
+/* cardType */
+body {
+    background-color: #f3f3f3;
+}
+/* cardtest */
+.cardType {
+    font-family: 'NanumSquare';
+    font-weight: 800;
+    margin: 100px 0;
+    background-color: #fff;
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
+.cardtest {
+    padding: 100px 0;
+}
+.cardtest h2 {
+    font-size: 53px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-weight: 800;
+}
+.cardtest .card-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.cardtest .card {
+    width: 358px;
+    height: 600px;
+    padding: 10px 0 0 25px;
+    border-radius: 15px;
+    border: solid 1px #E2E2E2;
+    background-color: #f2f2f2;
+}
+.cardtest .card .card-title {
+    display: block;
+    font-size: 15px;
+    color: #A9A9A9;
+    margin: 40px 0 15px 15px;
+}
+.cardtest .card .card-desc {
+    display: block;
+    font-size: 26px;
+    margin: 0 0 60px 15px;
+    line-height: 1.4;
+}
