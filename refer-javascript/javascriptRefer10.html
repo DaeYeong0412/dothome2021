@@ -101,6 +101,35 @@
             box-sizing: content-box;
             background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
         }
+
+        @media (max-width: 800px) {
+            .ex1 {
+                flex-wrap: wrap;
+                justify-content: start;
+            }
+
+            .ex1>div {
+                width: 33%;
+            }
+
+            .ex2 {
+                flex-wrap: wrap;
+                justify-content: start;
+            }
+
+            .ex2>div {
+                width: 33%;
+            }
+
+            .ex3 {
+                flex-wrap: wrap;
+                justify-content: start;
+            }
+
+            .ex3>div {
+                width: 33%;
+            }
+        }
     </style>
 </head>
 
@@ -110,6 +139,13 @@
             <div class="title">
                 <h1><a href="index.html">요소 객체</a></h1>
             </div>
+                        
+        <ul class="page">
+            <li><a href="../refer-html/index.html">HTML</a></li>
+            <li><a href="../refer-css/index.html">CSS</a></li>
+            <li><a href="../index.html">MAIN</a></li>
+        </ul>
+
         <nav class="menu">
             <ul>
                 <li><a href="javascriptRefer01.html">데이터 저장하기</a></li>

@@ -12,6 +12,14 @@
         integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        table {border-collapse: collapse;}
+        table tr td {
+            text-align: center;
+            border: 1px solid #9c9c9c;
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,6 +28,13 @@
             <div class="title">
                 <h1><a href="index.html">알고리즘</a></h1>
             </div>
+                        
+        <ul class="page">
+            <li><a href="../refer-html/index.html">HTML</a></li>
+            <li><a href="../refer-css/index.html">CSS</a></li>
+            <li><a href="../index.html">MAIN</a></li>
+        </ul>
+
         <nav class="menu">
             <ul>
                 <li><a href="javascriptRefer01.html">데이터 저장하기</a></li>
@@ -44,42 +59,42 @@
         </nav>
     <hr>
 
-    <ol>
-        <li><a href="#sample1">for문을 이용해서 1부터 100까지 출력</a></li>
-        <li><a href="#sample2">for문을 이용해서 1부터 100까지 출력 (짝수만 출력)</a></li>
-        <li><a href="#sample3">for문을 이용해서 1부터 100까지 출력 (5의 배수만 출력)</a></li>
-        <li><a href="#sample4">for문을 이용해서 1부터 100까지 출력 (짝수는 빨간색, 홀수는 파란색)</a></li>
-        <li><a href="#sample5">for문을 이용해서 1부터 100까지 합 출력하기</a></li>
-        <li><a href="#sample6">구구단 만들기</a></li>
-        <li><a href="#sample7">테이블 만들기</a></li>
-        <li><a href="#sample8">테이블 만들기(거꾸로)</a></li>
-        <li><a href="#sample9">테이블 만들기(짝수만)</a></li>
-    </ol>
+    <div class="list">
+        <ol>
+            <li><a href="#sample01">for문을 이용해서 1부터 100까지 출력</a></li>
+            <li><a href="#sample02">for문을 이용해서 1부터 100까지 출력 (짝수만 출력)</a></li>
+            <li><a href="#sample03">for문을 이용해서 1부터 100까지 출력 (5의 배수만 출력)</a></li>
+            <li><a href="#sample04">for문을 이용해서 1부터 100까지 출력 (짝수는 빨간색, 홀수는 파란색)</a></li>
+            <li><a href="#sample05">for문을 이용해서 1부터 100까지 합 출력하기</a></li>
+            <li><a href="#sample06">구구단 만들기</a></li>
+            <li><a href="#sample07">테이블 만들기</a></li>
+            <li><a href="#sample08">테이블 만들기(거꾸로)</a></li>
+            <li><a href="#sample09">테이블 만들기(짝수만)</a></li>
+        </ol>
+    </div>
 
     <hr>
 <!-- sample1 -->
-    <div id="sample1" class="sample">
+    <div id="sample01" class="sample">
         <h2>01. for문을 이용해서 1부터 100까지 출력 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 01. for문을 이용해서 1부터 100까지 출력 ***");
-
     for (let i=1; i&lt;=100; i++) {
         document.write(i);
     }
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 <!-- /sample1 -->
     <hr>
 <!-- sample2 -->
-    <div id="sample2" class="sample">
+    <div id="sample02" class="sample">
         <h2>02. for문을 이용해서 1부터 100까지 출력 (짝수만 출력) <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 02. for문을 이용해서 1부터 100까지 출력 (짝수만 출력) ***");
-
     // for (let i=2; i&lt;=100; i +=2) {
     //     document.write(i);
     // }
@@ -92,16 +107,16 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 <!-- /sample2 -->
     <hr>
 <!-- sample3 -->
-    <div id="sample3" class="sample">
+    <div id="sample03" class="sample">
         <h2>03. for문을 이용해서 1부터 100까지 출력 (5의 배수만 출력) <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 03. for문을 이용해서 1부터 100까지 출력 (5의 배수만 출력) ***");
-
     for (let i=1; i&lt;=100; i++) {
         if (i%5 == 0) {
         document.write(i);
@@ -110,16 +125,16 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 <!-- /sample3 -->
     <hr>
 <!-- sample4 -->
-    <div id="sample4" class="sample">
+    <div id="sample04" class="sample">
         <h2>04. for문을 이용해서 1부터 100까지 출력 (짝수는 빨간색, 홀수는 파란색) <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 04. for문을 이용해서 1부터 100까지 출력 (짝수는 빨간색, 홀수는 파란색) ***");
-
     for (let i=1; i&lt;=100; i++) {
         if (i%2 == 0) {
         document.write("&lt;span style='color:red'&gt; " + i + "&lt;/span&gt;");
@@ -130,16 +145,16 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 <!-- /sample4 -->
     <hr>
 <!-- sample5 -->
-    <div id="sample5" class="sample">
+    <div id="sample05" class="sample">
         <h2>05. for문을 이용해서 1부터 100까지 합 출력하기 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 05. for문을 이용해서 1부터 100까지 합 출력하기 ***");
-
     let sum = 0;
     for(let i = 1; i&gt;=100; i++) {
         // sum = sum + i;
@@ -149,16 +164,16 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 <!-- /sample5 -->
     <hr>
     <!-- sample6 -->
-    <div id="sample6" class="sample">
+    <div id="sample06" class="sample">
         <h2>6. 구구단 만들기 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 06. 구구단 만들기 ***");
-
     //2~9 for (var i=2; i&lt;=9; i++)
     //1~9 for (var i=1; i&lt;=9; i++)
     //num1 * num2 = sum
@@ -181,17 +196,17 @@
     }
 }
 </code></pre>
+        </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
-</div>
 <!-- /sample6 -->
 <hr>
 <!-- sample7 -->
-    <div id="sample7" class="sample">
+    <div id="sample07" class="sample">
         <h2>7. 테이블 만들기 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 07. 테이블 만들기 ***");
-
     let num = 1;
     let table = "&lt;table&gt;";
 
@@ -209,17 +224,17 @@
     document.write(table);
 }
 </code></pre>
+        </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
-</div>
 <!-- /sample7 -->
 <hr>
 <!-- sample8 -->
-    <div id="sample8" class="sample">
+    <div id="sample08" class="sample">
         <h2>08. 테이블 만들기(거꾸로) <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 08. 테이블 만들기(거꾸로) ***");
-
     let num = 100;
     let table = "&lt;table&gt;";
 
@@ -238,16 +253,16 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 <!-- /sample8 -->
 <hr>
 <!-- sample9 -->
-    <div id="sample9" class="sample">
+    <div id="sample09" class="sample">
         <h2>09. 테이블 만들기(짝수만) <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 09. 테이블 만들기(짝수만) ***");
-
     let num = 0;
     let table = "&lt;table&gt;";
 
@@ -267,181 +282,165 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
     <hr>
 <!-- /sample9 -->
     </main>
 </div>  
-        <style>
-            table {border-collapse: collapse;}
-            table tr td {
-                border: 1px solid #989898;
-                padding: 5px;
-            }
-        </style>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
         <script>
-            //sample1
-            //for문을 이용해서 1부터 100까지 출력
+            //sample01
+            //01. for문을 이용해서 화면에 1~100까치 출력
             {
-                document.write("*** 01. for문을 이용해서 1부터 100까지 출력 ***<br>");
-
-                for (let i=1; i<=100; i++) {
-                    document.write(i, " &nbsp;");
-                }
-                document.write("<br><br>");
+              for (let i = 1; i <= 100; i++) {
+                document.querySelector("#sample01 .button-result").innerHTML += `${i} `;
+              }
+              document.querySelector("#sample01 .button").addEventListener("click", function () {
+                document.querySelector("#sample01 .button").classList.toggle("active");
+                document.querySelector("#sample01 .button-result").classList.toggle("before");
+              });
             }
-            //sample2
-            //for문을 이용해서 1부터 100까지 출력 (짝수만 출력)
+            //sample02
+            //02. for문을 이용해서 1~100까지 짝수만 출력
             {
-                document.write("*** 02. for문을 이용해서 1부터 100까지 출력 (짝수만 출력) ***<br>");
-
-                // for (let i=2; i<=100; i +=2) {
-                //     document.write(i, " &nbsp;");
-                // }
-
-                for (let i=1; i<=100; i++) {
-                    if (i%2 == 0) {
-                    document.write(i, " &nbsp;");
-                    }
-                }
-                document.write("<br><br>");
+              for (let i = 2; i <= 100; i += 2) {
+                document.querySelector("#sample02 .button-result").innerHTML += `${i} `;
+              }
+              document.querySelector("#sample02 .button").addEventListener("click", function () {
+                document.querySelector("#sample02 .button").classList.toggle("active");
+                document.querySelector("#sample02 .button-result").classList.toggle("before");
+              });
             }
-            //sample3
-            //for문을 이용해서 1부터 100까지 출력 (5의 배수만 출력)
+        
+            //sample03
+            //03. for문을 이용해서 화면에 1~100까지 5의 배수만 출력
             {
-                document.write("*** 03. for문을 이용해서 1부터 100까지 출력 (5의 배수만 출력) ***<br>");
-
-                for (let i=1; i<=100; i++) {
-                    if (i%5 == 0) {
-                    document.write(i, " &nbsp;");
-                    }
+              for (let i = 1; i <= 100; i++) {
+                if (i % 5 == 0) {
+                  document.querySelector("#sample03 .button-result").innerHTML += `${i} `;
                 }
-                document.write("<br><br>");
+              }
+              document.querySelector("#sample03 .button").addEventListener("click", function () {
+                document.querySelector("#sample03 .button").classList.toggle("active");
+                document.querySelector("#sample03 .button-result").classList.toggle("before");
+              });
             }
-            //sample4
-            //for문을 이용해서 1부터 100까지 출력 (짝수는 빨간색, 홀수는 파란색)
+        
+            //sample04
+            //04. for문을 이용해서 화면에 1~100까지 출력(짝수는 빨간색, 홀수는 파란색)
             {
-                document.write("*** 04. for문을 이용해서 1부터 100까지 출력 (짝수는 빨간색, 홀수는 파란색) ***<br>");
-
-                for (let i=1; i<=100; i++) {
-                    if (i%2 == 0) {
-                    document.write("<span style='color:red'> " + i + "</span>");
-                    } else {
-                        document.write("<span style='color:blue'> " + i + "</span>");
-                        }
+              for (let i = 1; i <= 100; i++) {
+                if (i % 2 == 0) {
+                  document.querySelector("#sample04 .button-result").innerHTML += "<span style='color:red'>" + i + " </span>";
+                } else {
+                  document.querySelector("#sample04 .button-result").innerHTML += "<span style='color:blue'>" + i + " </span>";
                 }
-                document.write("<br><br>");
+              }
+              document.querySelector("#sample04 .button").addEventListener("click", function () {
+                document.querySelector("#sample04 .button").classList.toggle("active");
+                document.querySelector("#sample04 .button-result").classList.toggle("before");
+              });
             }
-            //sample5
-            //for문을 이용해서 1부터 100까지 합 출력하기
+        
+            //sample05
+            //05. 1부터 100까지의 합 출력하기
             {
-                document.write("*** 05. for문을 이용해서 1부터 100까지 합 출력하기 ***<br>");
-
-                let sum = 0;
-                for(let i = 1; i<=100; i++) {
-                    // sum = sum + i;
-                    sum += i;
-                }
-                document.write(sum);
-                document.write("<br><br>");
+              let sum = 0;
+              for (let i = 1; i <= 100; i++) {
+                sum += i;
+              }
+              document.querySelector("#sample05 .button-result").innerHTML += `${sum} `;
+        
+              document.querySelector("#sample05 .button").addEventListener("click", function () {
+                document.querySelector("#sample05 .button").classList.toggle("active");
+                document.querySelector("#sample05 .button-result").classList.toggle("before");
+              });
             }
-            //sample6
+        
+            //sample06
             //구구단 만들기
             {
-                //2~9 for (var i=2; i<=9; i++)
-                //1~9 for (var i=1; i<=9; i++)
-                //num1 * num2 = sum
-
-                //2 * 1 = 2;      .........
-                //2 * 2 = 4;      9 * 9 = 81
-                //2 * 3 = 6;
-                //2 * 4 = 8;
-                //2 * 5 = 10;
-                //2 * 6 = 12;
-                //2 * 7 = 14;
-                //2 * 8 = 16;
-                //2 * 9 = 18;
-
-                document.write("*** 06. 구구단 만들기 ***<br>");
-
-                for(var i=2; i<=9; i++) {
-                    for(var j=1; j<=9; j++){
-                    var sum = i * j;
-                    document.write(i + " * " + j + " = " + sum,"<br>");
-                    }
+              for (var i = 2; i <= 9; i++) {
+                for (var j = 1; j <= 9; j++) {
+                  var sum = i * j;
+                  document.querySelector("#sample06 .button-result").innerHTML += `${i} * ${j} = ${sum}<br>`;
                 }
-                document.write("<br>");
+              }
+              document.querySelector("#sample06 .button").addEventListener("click", function () {
+                document.querySelector("#sample06 .button").classList.toggle("active");
+                document.querySelector("#sample06 .button-result").classList.toggle("before");
+              });
             }
-            //sample7
-            //테이블 만들기
+        
+            //sample07
+            //테이블 만들기1
             {
-                document.write("*** 07. 테이블 만들기 ***<br>");
-
-                let num = 1;
-                let table = "<table>";
-
-                    for( let i=1; i<=10; i++ ) {
-                    table += "<tr>";
-                        for( let j=1; j<=10; j++ ){
-                        table += "<td>" + num + "</td>";
-                        num++;
-                        }
-                    table += "</tr>";
-                    }
-                    
-                    table += "</table>";
-
-                    document.write(table);
-                    document.write("<br>");
+              let num = 1;
+              let table = "<table>";
+              for (let i = 1; i <= 10; i++) {
+                table += "<tr>";
+                for (let j = 1; j <= 10; j++) {
+                  table += "<td>" + num + "</td>";
+                  num++;
+                }
+                table += "</tr>";
+              }
+              table += "</table>";
+        
+              document.querySelector("#sample07 .button-result").innerHTML += table;
+              document.querySelector("#sample07 .button").addEventListener("click", function () {
+                document.querySelector("#sample07 .button").classList.toggle("active");
+                document.querySelector("#sample07 .button-result").classList.toggle("before");
+              });
             }
-            //sample8
-            //테이블 만들기(거꾸로)
+        
+            //sample08
+            //테이블 만들기2
             {
-                document.write("*** 08. 테이블 만들기(거꾸로) ***<br>");
-
-                let num = 100;
-                let table = "<table>";
-
-                    for( let i=1; i<=10; i++ ) {
-                    table += "<tr>";
-                        for( let j=1; j<=10; j++ ){
-                        table += "<td>" + num + "</td>";
-                        num--;
-                        }
-                    table += "</tr>";
-                    }
-                    
-                    table += "</table>";
-
-                    document.write(table);
-                    document.write("<br>");
+              let num = 100;
+              let table = "<table>";
+              for (let i = 1; i <= 10; i++) {
+                table += "<tr>";
+                for (let j = 1; j <= 10; j++) {
+                  table += "<td>" + num + "</td>";
+                  num--;
+                }
+                table += "</tr>";
+              }
+              table += "</table>";
+        
+              document.querySelector("#sample08 .button-result").innerHTML += table;
+              document.querySelector("#sample08 .button").addEventListener("click", function () {
+                document.querySelector("#sample08 .button").classList.toggle("active");
+                document.querySelector("#sample08 .button-result").classList.toggle("before");
+              });
             }
-            //sample9
-            //테이블 만들기(짝수만)
+        
+            //sample09
+            //테이블 만들기3 : 짝수만
             {
-                document.write("*** 09. 테이블 만들기(짝수만) ***<br>");
-
-                let num = 0;
-                let table = "<table>";
-
-                    for( let i=1; i<=10; i++ ) {
-                    table += "<tr>";
-                        for( let j=1; j<=20; j++ ){
-                            if (j%2 == 0)
-                        table += "<td>" + (num +1) + "</td>";
-                        num++;
-                        }
-                    table += "</tr>";
-                    }
-                    
-                    table += "</table>";
-
-                    document.write(table);
-                    document.write("<br>");
+              let num = 2;
+              let table = "<table>";
+              for (let i = 1; i <= 10; i++) {
+                table += "<tr>";
+                for (let j = 1; j <= 10; j++) {
+                  table += "<td>" + num + "</td>";
+                  num += 2;
+                }
+        
+              }
+              table += "</table>";
+        
+              document.querySelector("#sample09 .button-result").innerHTML += table;
+              document.querySelector("#sample09 .button").addEventListener("click", function () {
+                document.querySelector("#sample09 .button").classList.toggle("active");
+                document.querySelector("#sample09 .button-result").classList.toggle("before");
+              });
             }
-        </script>
+          </script>
 </body>
 </html>

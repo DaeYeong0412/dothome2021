@@ -43,40 +43,56 @@ hr {
     border-bottom-width: 1px;
 }
 .title {
-    border-top: 3px solid #0e43f1;
-    border-bottom: 1px solid #0e43f1;
-    margin-bottom: 20px;
+    border-top: 3px solid #5b0077;
+    border-bottom: 1px solid #5b0077;
+    margin: 15px 0 20px 0;
 }
 .title h1 a {
     font-family: 'TmonMonsori';
-    color: #0e43f1;
+    color: #5b0077;
     font-size: 50px;
     display: inline-block;
     padding: 15px 0 12px;
     text-transform: uppercase;
+}
+.page {
+    position: absolute;
+    right: 40px;
+    top: 15px;
+}
+.page li {
+    display: inline;
+    list-style: none;
+}
+.page li a {
+    text-decoration: none;
+    color: #000;
+}
+.page li a:hover {
+    color: #5b0077;
 }
 .menu li {
     display: inline;
 }
 .menu li a {
     font-family: 'NEXON Lv1 Gothic OTF';
-    color: #0e43f1;
-    border: 1px dashed #0e43f1;
+    color: #5b0077;
+    border: 1px dashed #5b0077;
     padding: 10px 30px;
     display: inline-block;
     border-radius: 50px;
     font-size: 16px;
     margin: 4px 1px;
-    box-shadow: inset 0 0 0 #0e43f1;
+    box-shadow: inset 0 0 0 #5b0077;
     transition: all 0.4s;
 }
 .menu li a:hover {
-    box-shadow: inset 0 -100px 0 #0e43f1;
+    box-shadow: inset 0 -100px 0 #5b0077;
     color: #fff;
     border-style: solid;
 }
 .menu li.active a {
-    background: #0e43f1;
+    background: #5b0077;
     color: #fff;
 }
 .list li a { 
@@ -84,6 +100,9 @@ hr {
     font-size: 14px;
     line-height: 1.6;
     color: #000;
+}
+.list li a:hover {
+    color: #5b0077;
 }
 .sample {
     border-radius: 5px;
@@ -283,6 +302,9 @@ hr {
     }
     .title h1 a {
         font-size: 40px;
+    }
+    .page {
+        right: 30px;
     }
     .menu {
         text-align: center;

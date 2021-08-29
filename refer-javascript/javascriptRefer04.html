@@ -20,6 +20,13 @@
             <div class="title">
                 <h1><a href="index.html">데이터 제어하기</a></h1>
             </div>
+                        
+        <ul class="page">
+            <li><a href="../refer-html/index.html">HTML</a></li>
+            <li><a href="../refer-css/index.html">CSS</a></li>
+            <li><a href="../index.html">MAIN</a></li>
+        </ul>
+
         <nav class="menu">
             <ul>
                 <li><a href="javascriptRefer01.html">데이터 저장하기</a></li>
@@ -47,15 +54,15 @@
     
     <div class="list">
         <ol>
-            <li><a href="#sample1"> if문</a></li>
-            <li><a href="#sample2"> 다중 if문</a></li>
-            <li><a href="#sample3"> 중첩 if문</a></li>
-            <li><a href="#sample4"> switch문</a></li>
-            <li><a href="#sample5"> 조건부 연산자</a></li>
-            <li><a href="#sample6"> if문 생략</a></li>
-            <li><a href="#sample7"> while문</a></li>
-            <li><a href="#sample8"> do while문</a></li>
-            <li><a href="#sample9"> for문</a></li>
+            <li><a href="#sample01"> if문</a></li>
+            <li><a href="#sample02"> 다중 if문</a></li>
+            <li><a href="#sample03"> 중첩 if문</a></li>
+            <li><a href="#sample04"> switch문</a></li>
+            <li><a href="#sample05"> 조건부 연산자</a></li>
+            <li><a href="#sample06"> if문 생략</a></li>
+            <li><a href="#sample07"> while문</a></li>
+            <li><a href="#sample08"> do while문</a></li>
+            <li><a href="#sample09"> for문</a></li>
             <li><a href="#sample10"> 중첩 for문</a></li>
             <li><a href="#sample11"> forEach()</a></li>
             <li><a href="#sample12"> for of문</a></li>
@@ -67,7 +74,7 @@
     <hr>
 
 
-    <div id="sample1" class="sample">
+    <div id="sample01" class="sample">
         <h2>01. if문 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
@@ -81,10 +88,12 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 
     <hr>
-    <div id="sample2" class="sample">
+    <div id="sample02" class="sample">
         <h2>02. 다중 if문 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
@@ -104,21 +113,23 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 
     <hr>
-    <div id="sample3" class="sample">
+    <div id="sample03" class="sample">
         <h2>03. 중첩 if문 <span class="dot"></span></h2>
         <div class="code">
-            <pre class="line-numbers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     let num = 100;
 
-    if ( num == 100 ){
-        document.write("조건문이 실행되었습니다.(1)");  
-        if (num = 100) {
+    if( num == 100 ){
+        document.write("조건문이 실행되었습니다.(1)");
+        if ( num == 100 ){
             document.write("조건문이 실행되었습니다.(2)");
-            if ( num = 100){
-                document.write("조건문이 실행되었습니다.(3)");
+            if ( num == 100 ){
+            document.write("조건문이 실행되었습니다.(3)");
             }
         }
     } else {
@@ -127,13 +138,15 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 <!--sample4-->
     <hr>
-    <div id="sample4" class="sample">
+    <div id="sample04" class="sample">
         <h2>04. switch문 <span class="dot"></span></h2>
         <div class="code">
-            <pre class="line-numbers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     let num = 100;
 
     switch( num ) {
@@ -153,11 +166,13 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 <!--sample4-->
 <!--sample5-->
     <hr>
-    <div id="sample5" class="sample">
+    <div id="sample05" class="sample">
         <h2>05. 조건부 연산자 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
@@ -173,11 +188,13 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
 <!--sample5-->
 <!-- sample6 -->
     <hr>
-    <div id="sample6" class="sample">
+    <div id="sample06" class="sample">
         <h2>06. if문 생략 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
@@ -188,11 +205,13 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
     <!-- //sample6-->
     <!-- smaple7-->
     <hr>
-    <div id="sample7" class="sample">
+    <div id="sample07" class="sample">
         <h2>07. while문 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
@@ -204,11 +223,13 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
     <!-- //sample7-->
     <!-- smaple8-->
     <hr>
-    <div id="sample8" class="sample">
+    <div id="sample08" class="sample">
         <h2>08. do while문 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
@@ -220,11 +241,13 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
     <!-- //sample8-->
     <!-- smaple9-->
     <hr>
-    <div id="sample9" class="sample">
+    <div id="sample09" class="sample">
         <h2>09. for문 <span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
@@ -238,6 +261,8 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
     <!-- //sample9-->
     <!-- smaple10-->
@@ -255,6 +280,8 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
     <!-- //smaple10-->
     <!-- smaple11-->
@@ -291,6 +318,8 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
     <!-- //smaple11-->
     <!-- smaple12-->
@@ -308,6 +337,8 @@
 }
 </code></pre>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
     </div>
     <!-- //smaple12-->
     <!-- smaple13-->
@@ -338,8 +369,10 @@
     }
 }
 </code></pre>
-            </div>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
+    </div>
     <!-- //smaple13-->
     <!-- smaple14-->
     <hr>
@@ -364,8 +397,10 @@
     }
 }
 </code></pre>
-            </div>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
+    </div>
     <!-- //smaple14-->
     <!-- smaple15-->
     <hr>
@@ -386,8 +421,10 @@
     }
 }
 </code></pre>
-            </div>
         </div>
+        <div class="button"><a href="#c">결과보기</a></div>
+        <div class="button-result"></div>
+    </div>
     <!-- //smaple15-->
     </main>
     </div>
@@ -396,272 +433,283 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
         <script>
-        //sample1
-        //01. if문
+            //sample1
+            //01. if문
             {
-            // true, 1(true) , "1"(true) , [](배열은 true), {}(true)
-            // false, 0(false), null(false) , undefined(false), ""(false)
-            if(true){
-                document.write("*** 01. if문***<br>");
-                document.write("조건문이 실행되었습니다.(true)<br><br>");
+            if (true) {
+                document.querySelector("#sample01 .button-result").innerHTML = "조건문이 실행되었습니다.(true)";
             } else {
-                document.write("*** 01. if문***<br>");
-                document.write("조건문이 실행되었습니다.(false)<br><br>");
+                document.querySelector("#sample01 .button-result").innerHTML = "조건문이 실행되었습니다.(false)";
             }
-        }
-        //sampel2
-        //02. 다중 if문
-        {
-            let num = 100; 
 
-            if( num == 90 ) {
-                document.write("*** 02. 다중 if문***<br>");
-                document.write("조건문이 실행되었습니다.(num == 90)<br><br>");
-            } else if ( num == 100) {
-                document.write("*** 02. 다중 if문***<br>");
-                document.write("조건문이 실행되었습니다.(num == 100)<br><br>");
-            } else if ( num == 200) {
-                document.write("*** 02. 다중 if문***<br>");
-                document.write("조건문이 실행되었습니다.(num == 200)<br><br>");
-            } else if ( num == 300) {
-                document.write("*** 02. 다중 if문***<br>");
-                document.write("조건문이 실행되었습니다.(num == 300)<br><br>");
-            } else {
-                document.write("*** 02. 다중 if문***<br><br>");
-                document.write("조건문이 실행되었습니다.(num == xx)<br><br>");
+            document.querySelector("#sample01 .button").addEventListener("click", function () {
+                document.querySelector("#sample01 .button").classList.toggle("active");
+                document.querySelector("#sample01 .button-result").classList.toggle("before");
+            });
             }
-        }
-        //sample3
-        //03. 중첩 if문
-        {
+
+            //sample2
+            //02. 다중 if문
+            {
             let num = 100;
 
-            if ( num == 100 ){
-                document.write("*** 03. 중첩 if문***<br>");
-                document.write("조건문이 실행되었습니다.(1)<br>");  
-                if (num = 100) {
-                    document.write("조건문이 실행되었습니다.(2)<br>");
-                    if ( num = 100){
-                        document.write("조건문이 실행되었습니다.(3)<br><br>");
+            if (num == 90) {
+                document.querySelector("#sample02 .button-result").innerHTML = "조건문이 실행되었습니다.(num == 90)";
+            } else if (num == 100) {
+                document.querySelector("#sample02 .button-result").innerHTML = "조건문이 실행되었습니다.(num == 100)";
+            } else if (num == 200) {
+                document.querySelector("#sample02 .button-result").innerHTML = "조건문이 실행되었습니다.(num == 200)";
+            } else if (num == 300) {
+                document.querySelector("#sample02 .button-result").innerHTML = "조건문이 실행되었습니다.(num == 300)";
+            } else {
+                document.querySelector("#sample02 .button-result").innerHTML = "조건문이 실행되었습니다.(num == XX)";
+            }
+            document.querySelector("#sample02 .button").addEventListener("click", function () {
+                document.querySelector("#sample02 .button").classList.toggle("active");
+                document.querySelector("#sample02 .button-result").classList.toggle("before");
+            });
+            }
+
+            //sample3
+            //03. 중첩 if문
+            {
+            let num = 100;
+
+            if (num == 100) {
+                document.querySelector("#sample03 .button-result").innerHTML += "조건문이 실행되었습니다.(1)<br>";
+                if (num == 100) {
+                document.querySelector("#sample03 .button-result").innerHTML += "조건문이 실행되었습니다.(2)<br>";
+                    if (num == 100) {
+                        document.querySelector("#sample03 .button-result").innerHTML += "조건문이 실행되었습니다.(3)<br>";
+                    }
                 }
+            } else {
+                document.querySelector("#sample03 .button-result").innerHTML += "조건문이 실행되었습니다.(3)<br>";
             }
-        } else {
-            document.write("*** 03. 중첩 if문***<br>");
-            document.write("조건문이 실행되었습니다.(4)<br><br>");
-        }
-        }
-        //sample4
-        //04. switch문 
-        {
+            document.querySelector("#sample03 .button").addEventListener("click", function () {
+                document.querySelector("#sample03 .button").classList.toggle("active");
+                document.querySelector("#sample03 .button-result").classList.toggle("before");
+            });
+            }
+
+            //sample4
+            //04. switch문
+            {
             let num = 100;
 
-            switch( num ) {
-                case 100 : 
-                    document.write("*** 04. switch문***<br>");
-                    document.write("조건문이 실행되었습니다.(num == 100)<br><br>");
+            switch (num) {
+                case 100:
+                document.querySelector("#sample04 .button-result").innerHTML += "조건문이 실행되었습니다.(num == 100)<br>";
                 break;
-                case 200 : 
-                    document.write("*** 04. switch문***<br>");
-                    document.write("조건문이 실행되었습니다.(num == 200)<br><br>");
+
+                case 200:
+                document.querySelector("#sample04 .button-result").innerHTML += "조건문이 실행되었습니다.(num == 200)<br>";
                 break;
-                case 300 : 
-                    document.write("*** 04. switch문***<br>");
-                    document.write("조건문이 실행되었습니다.(num == 300)<br><br>");
+
+                case 300:
+                document.querySelector("#sample04 .button-result").innerHTML += "조건문이 실행되었습니다.(num == 300)<br>";
                 break;
-                default:  
-                    document.write("*** 04. switch문***<br>");
-                    document.write("조건문이 실행되었습니다.(num == 값이 없음)<br><br>");
+
+                default:
+                document.querySelector("#sample04 .button-result").innerHTML += "조건문이 실행되었습니다.(num == 값이 없음)<br>";
                 break;
             }
-        }
-        //sample5
-        //05. 삼항 연산자(조건부 연산자)
-        {
-        let num = 100;
+            document.querySelector("#sample04 .button").addEventListener("click", function () {
+                document.querySelector("#sample04 .button").classList.toggle("active");
+                document.querySelector("#sample04 .button-result").classList.toggle("before");
+            });
+            }
 
-        //if ( num == 100) {
-        //    document.write("true<br><br>");        
-        //} else {
-        //    document.write("false<br><br>");
-        //}
+            //sample5
+            //05. 삼항연산자(조건부 연산자)
+            {
+            let num = 100;
 
-        document.write("*** 05. 조건부 연산자***<br>");
-        (num == 100) ? document.write("true<br><br>") : document.write("false<br><br>");
-        }
+            (num == 100) ? document.querySelector("#sample05 .button-result").innerHTML += "true<br>" : document.querySelector("#sample5 .button-result").innerHTML += "false<br>";
 
-        //sample6
-        //06. if문 생략
-        {
-        let num = 100;
-        document.write("*** 06. if문 생략***<br>");
-        if ( num == 100) document.write("true<br><br>");        
-        else document.write("false<br><br>");
-        }
-        //sample7 반복문
-        //07. while문
-        {
-            document.write("*** 07. while문***<br>");
+            document.querySelector("#sample05 .button").addEventListener("click", function () {
+                document.querySelector("#sample05 .button").classList.toggle("active");
+                document.querySelector("#sample05 .button-result").classList.toggle("before");
+            });
+            }
+
+            //sample6
+            //if문 생략
+            {
+            let num = 100;
+
+            // document.write("*** 06. if문 생략 ***<br>");
+            if (num == 100)
+                document.querySelector("#sample06 .button-result").innerHTML += "true<br>";
+            else
+                document.querySelector("#sample06 .button-result").innerHTML += "false<br>";
+
+            document.querySelector("#sample06 .button").addEventListener("click", function () {
+                document.querySelector("#sample06 .button").classList.toggle("active");
+                document.querySelector("#sample06 .button-result").classList.toggle("before");
+            });
+            }
+
+            //sample7
+            //07. while문
+            {
 
             let num = 1;
-            while( num <= 10 ){
-                document.write(num + ". 반복문이 실행되었습니다.<br>");
+            while (num <= 10) {
+                document.querySelector("#sample07 .button-result").innerHTML += num + ". 반복문이 실행되었습니다. <br>";
                 num++;
             }
+            document.querySelector("#sample07 .button").addEventListener("click", function () {
+                document.querySelector("#sample07 .button").classList.toggle("active");
+                document.querySelector("#sample07 .button-result").classList.toggle("before");
+            });
+            }
 
-            document.write("<br>");
-        }
-        //sample8 
-        //08. do while문
-        {
-            document.write("*** 08. do while문***<br>");
+            //sample8
+            //do while문
+            {
 
             let num = 1;
             do {
-                document.write(num + ". 반복문이 실행되었습니다.<br>");
+                document.querySelector("#sample08 .button-result").innerHTML += `${num}. 반복문이 실행되었습니다.<br>`;
                 num++;
-            } while ( num <= 10 );
-
-            document.write("<br>");
-        }
-        //sample9
-        //09. for문 : 반복문 (제일중요해*****)
-        {
-            document.write("*** 09. for문 ***<br>");
-
-            //for(초깃값; 조건식; 증감값){
-            //    //실행문
-            //}
-            
-            for( let i=1; i<=10; i++ ){
-                document.write( i + ". 반복문이 실행되었습니다.<br>");
+            } while (num <= 10);
+            document.querySelector("#sample08 .button").addEventListener("click", function () {
+                document.querySelector("#sample08 .button").classList.toggle("active");
+                document.querySelector("#sample08 .button-result").classList.toggle("before");
+            });
             }
 
-            document.write("<br>");
-        }
-        //sample10
-        //10. 중첩 for문
-        {
-            document.write("*** 10. 중첩 for문 ***<br>");
-            for(var i=1; i<=5; i++){
-                document.write(i + ". 반복문(i)이 실행되었습니다.<br>");
-                for(var j=1; j<=5; j++){
-                    document.write(j + ". 반복문(j)이 실행되었습니다.<br>");
+            //sample9
+            //for문
+            {
+            for (let i = 1; i <= 10; i++) {
+                document.querySelector("#sample09 .button-result").innerHTML += i + ".반복문이 실행되었습니다. <br>";
+            }
+            document.querySelector("#sample09 .button").addEventListener("click", function () {
+                document.querySelector("#sample09 .button").classList.toggle("active");
+                document.querySelector("#sample09 .button-result").classList.toggle("before");
+            });
+            }
+
+            //sample10
+            //10. 중첩 for문
+            {
+            for (var i = 1; i <= 5; i++) {
+                document.querySelector("#sample10 .button-result").innerHTML += i + ".반복문(아이)이 실행되었습니다. <br>";
+                for (var j = 1; j <= 5; j++) {
+                document.querySelector("#sample10 .button-result").innerHTML += j + ".반복문(제이)이 실행되었습니다. <br>";
                 }
             }
-            document.write("<br>");
-        }
-        //sample11
-        //11. forEach() : 배열에서만 사용 가능
-        {
-            document.write("*** 11. forEach() ***<br>");
-            //배열방법
+            document.querySelector("#sample10 .button").addEventListener("click", function () {
+                document.querySelector("#sample10 .button").classList.toggle("active");
+                document.querySelector("#sample10 .button-result").classList.toggle("before");
+            });
+            }
+
+            //sample11
+            //11. forEach() : 배열에서만 사용 가능
+            {
             const num = [100, 200, 300, 400, 500];
 
-            document.write(num[0],"<br>");
-            document.write(num[1],"<br>");
-            document.write(num[2],"<br>");
-            document.write(num[3],"<br>");
-            document.write(num[4],"<br>");
-            document.write("<br>");
-            //for문
-            for(let i=0; i<num.length; i++){
-                document.write(num[i],"<br>");
-            }
-            document.write("<br>");
-
-            //forEach() 점점 축약된다
-
-            num.forEach((el) => {
-                document.write(el,"<br>");
-            });
-            document.write("<br>");
-            //forEach(element, index, array)
             num.forEach((element, index, array) => {
-            document.write(element,"<br>");
-            document.write(index,"<br>");
-            document.write(array,"<br>");
+                document.querySelector("#sample11 .button-result").innerHTML += `${element} ${index} ${array} <br>`;
             });
-            document.write("<br>");
-        }
-        //sample12
-        //12. for of문 : 배열에서만 사용 가능
-        {
-            document.write("*** 12. for of문 ***<br>");
-            //배열방법
+
+            document.querySelector("#sample11 .button").addEventListener("click", function () {
+                document.querySelector("#sample11 .button").classList.toggle("active");
+                document.querySelector("#sample11 .button-result").classList.toggle("before");
+            });
+            }
+
+            //sample12
+            //12. for of문 : 배열에서 사용
+            {
             const num = [100, 200, 300, 400, 500];
 
-            for( let i of num ){
-                document.write( i + ". 반복문이 실행되었습니다.<br>");
+            for (let i of num) {
+                document.querySelector("#sample12 .button-result").innerHTML += i + ". 반복문이 실행되었습니다.<br>";
             }
-            document.write("<br>");
-        }
-        //sample13
-        //13. for in문 : 객체에서 사용 가능
-        {
-            document.write("*** 13. for in문 ***<br>");
+            document.querySelector("#sample12 .button").addEventListener("click", function () {
+                document.querySelector("#sample12 .button").classList.toggle("active");
+                document.querySelector("#sample12 .button-result").classList.toggle("before");
+            });
+            }
+
+            //sample13
+            //13. for in문 : 객체에서 사용
+            {
             //배열
             const num = [100, 200, 300, 400, 500];
 
-            for( let i in num ){
-                document.write( num[i], "<br>" );
+            for (let i in num) {
+                document.querySelector("#sample13 .button-result").innerHTML += num[i] + ' ';
             }
-            document.write("<br>");
+            document.querySelector("#sample13 .button-result").innerHTML += "<br>";
+
             //객체
             const obj = {
                 a: 100,
                 b: 200,
                 c: 300,
                 d: 400,
-                e: 500,
+                e: 500
+            };
+
+            for (let key in obj) {
+                document.querySelector("#sample13 .button-result").innerHTML += `${key} : ${obj[key]} `;
+            }
+            document.querySelector("#sample13 .button").addEventListener("click", function () {
+                document.querySelector("#sample13 .button").classList.toggle("active");
+                document.querySelector("#sample13 .button-result").classList.toggle("before");
+            });
             }
 
-            for( let key in obj ){
-                document.write( key, "<br>" );
-                document.write( obj[key], "<br>" );
-            }
-            document.write("<br>");
-        }
-        //sample14
-        //14. break문
-        {
-            document.write("*** 14. break문 ***<br>");
-            //while문을 이용해서 1부터 20까지 
-            //초기값->while(조건식)->{출력문->증감값};
-            let num = 0;
-            while( num < 20 ){
+            //sample14
+            //14. break문
+            {
+            let num = 1;
+            while (num <= 20) {
+                document.querySelector("#sample14 .button-result").innerHTML += `${num} `;
+                if (num == 10) {
+                break;
+                }
                 num++;
-                document.write(num, "&nbsp");
-                if( num == 10 ){
-                    break;
-                }
             }
-            document.write("<br>");
-            //for문 이용해서 1부터 20까지
-            for(i=1; i<=20; i++){
-                document.write(i, "&nbsp");
-                if( i == 10 ){
-                    break;
-                }
-            }
-            document.write("<br><br>");
-        }
-        //sample15
-        //15. continue문
-        {
-            document.write("*** 15. continue문 ***<br>");
-            let num = 0;
-            while( true ){
-                num++;
-                if( num == 3 ){
-                    continue;
-                }
-                if( num > 19 ){
-                    break;  //break안걸면 무한으로 숫자끝나니까 꼭 주의
-                }
-                document.write(num, "&nbsp");
-            }
-        }
 
-    </script>
+            document.querySelector("#sample14 .button-result").innerHTML += "<br>";
+
+            for (let i = 1; i <= 20; i++) {
+                document.querySelector("#sample14 .button-result").innerHTML += `${i} `;
+                if (i == 10) {
+                break;
+                }
+            }
+            document.querySelector("#sample14 .button").addEventListener("click", function () {
+                document.querySelector("#sample14 .button").classList.toggle("active");
+                document.querySelector("#sample14 .button-result").classList.toggle("before");
+            });
+            }
+
+            //sample15
+            //15. continue문
+            {
+            let num = 0;
+            while (true) {
+                num++;
+                if (num == 3) {
+                continue;
+                }
+                if (num > 19) {
+                break;
+                }
+                document.querySelector("#sample15 .button-result").innerHTML += `${num} `;
+            }
+            document.querySelector("#sample15 .button").addEventListener("click", function () {
+                document.querySelector("#sample15 .button").classList.toggle("active");
+                document.querySelector("#sample15 .button-result").classList.toggle("before");
+            });
+            }
+        </script>
 </body>
 </html>
