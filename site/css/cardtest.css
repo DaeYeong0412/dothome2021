@@ -70,7 +70,8 @@ body {
     width: 381px;
     height: 594px;
     margin: 0 12.5px 40px 13px;
-    border: solid 1px #c4c4c4;
+    border: solid 0.1px #ebebeb;
+    border-radius: 5px;
 }
 .cardtest2 .card:nth-child(1),
 .cardtest2 .card:nth-child(4) {
@@ -86,21 +87,27 @@ margin-right: 0px;
 margin-bottom: 0px;
 }
 .cardtest2 .card .card-img {
+    width: 381px;
+    border-radius: 4px 4px 0 0;
     margin-bottom: 25px;
 }
 .cardtest2 .card .card-title {
+    font-family: 'S-CoreDream';
     display: inline-block;
-    font-size: 24px;
-    font-weight: 800;
+    font-size: 21px;
+    font-weight: 900;
     margin: 0 4px 10px 40px;
 }
 .cardtest2 .card .card-new {
-    padding: 4px 8px;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 2px 9px 0 9px;
     font-size: 11px;
     font-weight: 800;
     color: #fff;
     border-radius: 25px;
     background-color: #FA615B;
+    vertical-align: top;
 }
 .cardtest2 .card .card-desc {
     display: block;
@@ -110,15 +117,16 @@ margin-bottom: 0px;
     margin: 0 0 30px 40px;
 }
 .cardtest2 .card .card-keyword {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 1px;
-    border: solid 1px #c4c4c4;
-    color: #c4c4c4;
+    padding: 8px 17px;
+    border-radius: 2.5px;
+    border: solid 1px #ebe9e9;
+    color: #555555;
     margin-left: 40px;
 }
 .cardtest2 .card .card-keyword.green {
+    border : solid 1px #05D686;
     margin-right: -35px;
     color: #fff;
     background-color: #05D686;
