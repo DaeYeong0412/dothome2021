@@ -2,15 +2,15 @@
 body {
     background-color: #f3f3f3;
 }
-/* cardtest */
 .cardType {
-    font-family: 'NanumSquare';
-    font-weight: 800;
     margin: 100px 0;
     background-color: #fff;
     box-shadow: 0 0 50px rgba(0,0,0,0.1);
 }
+/* cardtest1 */
 .cardtest {
+    font-family: 'NanumSquare';
+    font-weight: 800;
     padding: 100px 0;
 }
 .cardtest h2 {
@@ -42,4 +42,84 @@ body {
     font-size: 26px;
     margin: 0 0 60px 15px;
     line-height: 1.4;
+}
+
+/* cardtest2 */
+.cardtest2 {
+    font-family: 'NanumSquare';
+    padding: 100px 0;
+}
+.cardtest2 h2 {
+    font-size: 43px;
+    margin-bottom: 3px;
+    text-align: center;
+    font-weight: 800;
+}
+.cardtest2 p {
+    font-size: 16px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 300;
+    color: #555555;
+}
+.cardtest2 .card-wrap {
+    overflow: hidden;
+}
+.cardtest2 .card {
+    float: left;
+    width: 381px;
+    height: 594px;
+    margin: 0 12.5px 40px 13px;
+    border: solid 1px #c4c4c4;
+}
+.cardtest2 .card:nth-child(1),
+.cardtest2 .card:nth-child(4) {
+margin-left: 0px;
+}
+.cardtest2 .card:nth-child(3),
+.cardtest2 .card:nth-child(6) {
+margin-right: 0px;
+}
+.cardtest2 .card:nth-child(4),
+.cardtest2 .card:nth-child(5),
+.cardtest2 .card:nth-child(6) {
+margin-bottom: 0px;
+}
+.cardtest2 .card .card-img {
+    margin-bottom: 25px;
+}
+.cardtest2 .card .card-title {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 4px 10px 40px;
+}
+.cardtest2 .card .card-new {
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #fff;
+    border-radius: 25px;
+    background-color: #FA615B;
+}
+.cardtest2 .card .card-desc {
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    color: #555555;
+    margin: 0 0 30px 40px;
+}
+.cardtest2 .card .card-keyword {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 1px;
+    border: solid 1px #c4c4c4;
+    color: #c4c4c4;
+    margin-left: 40px;
+}
+.cardtest2 .card .card-keyword.green {
+    margin-right: -35px;
+    color: #fff;
+    background-color: #05D686;
 }
