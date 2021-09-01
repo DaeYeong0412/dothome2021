@@ -256,7 +256,7 @@ button {
     font-size: 17vw;
   }
   #nav {
-    bottom: 30px;
+    bottom: 50px;
   }
   #nav ul {
     display: -webkit-box;
@@ -345,6 +345,12 @@ button {
 .info button:hover {
   -webkit-box-shadow: 0 -50px 0 #fff inset;
           box-shadow: 0 -50px 0 #fff inset;
+}
+
+@media (max-width: 800px) {
+  .info.bottom {
+    bottom: 50px;
+  }
 }
 
 #modal {

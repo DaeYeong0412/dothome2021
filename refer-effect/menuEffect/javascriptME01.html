@@ -45,12 +45,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
 
     <script>
-        $(".info.bottom button").click(function(){
-            $("#modal").removeClass().addClass("show");
+        // $(".info.bottom button").click(function(){
+        //     $("#modal").removeClass().addClass("show");
+        // });
+        document.querySelector(".info.bottom button").addEventListener("click",()=>{ 
+            document.querySelector("#modal").classList.add("show");
+            document.querySelector("#modal.hide").classList.remove("hide");
         });
-
-        $(".modal-cont button").click(function(){
-            $("#modal").addClass("hide");
+        // $(".modal-cont button").click(function(){
+        //     $("#modal").addClass("hide");
+        // });
+        document.querySelector(".modal-cont button").addEventListener("click",()=>{
+            document.querySelector("#modal").classList.add("hide");
         });
     </script>
 </body>

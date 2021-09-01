@@ -221,7 +221,7 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
         }
     }
     #nav {
-        bottom: 30px;
+        bottom: 50px;
         ul {
             display: flex;
             justify-content: space-between;
@@ -304,7 +304,14 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
         }
     }
 }
-
+//모바일
+@media (max-width: 800px) {
+    .info {
+        &.bottom {
+            bottom: 50px;
+        }
+    }
+}
 // 메뉴이펙트 bg 소스 CSS
 #modal {
     position: fixed;
