@@ -223,15 +223,14 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
     #nav {
         bottom: 5px;
         ul {
-            width: 300px;
             display: flex;
             justify-content: space-between;
             li {
                 a{
-                    font-size: 9px;
+                    font-size: 10px;
                     height: 24px;
                     line-height: 24px;
-                    width: 50px;
+                    width: 60px;
                 }
             }
         }

@@ -259,7 +259,6 @@ button {
     bottom: 5px;
   }
   #nav ul {
-    width: 300px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -268,10 +267,10 @@ button {
             justify-content: space-between;
   }
   #nav ul li a {
-    font-size: 9px;
+    font-size: 10px;
     height: 24px;
     line-height: 24px;
-    width: 50px;
+    width: 60px;
   }
 }
 
