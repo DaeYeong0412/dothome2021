@@ -258,12 +258,20 @@ button {
   #nav {
     bottom: 5px;
   }
-  #nav li a {
-    margin: 3px 3px 5px 3px;
-    font-size: 7px;
-    height: 23px;
-    line-height: 23px;
-    width: 45px;
+  #nav ul {
+    width: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #nav ul li a {
+    font-size: 9px;
+    height: 24px;
+    line-height: 24px;
+    width: 50px;
   }
 }
 
