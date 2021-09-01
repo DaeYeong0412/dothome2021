@@ -221,7 +221,7 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
         }
     }
     #nav {
-        bottom: 5px;
+        bottom: 30px;
         ul {
             display: flex;
             justify-content: space-between;
@@ -251,7 +251,7 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
 
     &.bottom {
         position: absolute;
-        bottom: 0px;
+        bottom: 10px;
         right: 0px;
     }
 
