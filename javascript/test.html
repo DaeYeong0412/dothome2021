@@ -5,71 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
-    <style>
-.button a{
-    color: #272822;
-    border: 1px solid #272822;
-    padding: 10px 15px 10px 15px;
-    display: inline-block;
-    border-radius: 5px;
-    font-size: 15px;
-    margin: 10px 0 0 0;
-    box-shadow: inset 0 0 0 #E5E5E5;
-    transition: all 0.4s;
-    font-weight: bold;
-}
-.button a:hover {
-    box-shadow: inset 0 -100px 0 #E5E5E5;
-    color: #272822;
-    border-style: solid;
-}
-.button.active a {
-    border-radius: 5px 5px 0;
-    background-color: #E5E5E5;
-    color: #272822;
-}
-.button-result{
-    display: none;
-}
-.button-result .active{
-    width:100%;
-    background-color: #272822;
-    color:#f8f8f2;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    padding:15px;
-    text-align: left;
-    border-radius: 0  5px 5px 5px;
-}
-    </style>
 </head>
 <body>
-    <div class="button"><a href="#c">결과보기</a></div>
-    <div class="button ac">100 200 300</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
-    //     function opneClose() {
-    //     if(document.querySelector(".button-result").style.display === "block") {
-    //         document.querySelector(".button-result").style.display = "none";
-    //     } else {
-    //         document.querySelector(".button-result").style.display = "block";
-    //     }
-    // }
+        // const num = [100, 200, 300, 400, 500]
+        // // for문
+        // for(i=0; i<num.length; i++){
+        //     document.write(num[i]);
+        // };
+        // //forEach문
+        // num.forEach ((element, index, array) => {
+        //     document.write(element);
+        //     document.write(index);
+        //     document.write(array);
+        // });
+        // //map문
+        // num.map((el)=>{
+        //     document.write(el);
+        // })
+        // //펼침연산자
+        // document.write(...num);
 
-    const button = document.querySelector("")
+        const obj = [
+            {a:100},
+            {a:200},
+            {a:300}
+        ]
+        document.write(obj[0].a)
+        document.write(obj[1].a)
+        document.write(obj[2].a)
 
-    document.querySelectorAll(".button").forEach((el) =>{
-        el.addEventListener("click", function(){
-            this.classList.toggle("active")
-        });
-    });
-    document.querySelectorAll(".button-result").forEach((el) =>{
-        el.addEventListener("click", function(){
-            this.classList.toggle("active")
-        });
-    });
+        obj.map((el)=>{
+            document.write(el.a)
+        })
+
+        obj.map(el=> document.write(el.a));
+        
+        function func(num, name, job){
+            this.num = num;
+            this.name = name;
+            this.job = job;
+
+            this.result = function(){
+                document.write `${this.num}. 내이름은${this.name}이며 직업은 ${this.job}입니다."`;
+            }
+        }
+        const info = new func("1","웹쓰","웹 퍼블리셔")
+        info.result();
+
+        // 1. 내이름은 웹쓰이며 직업은 웹 퍼블리셔 입니다.
     </script>
 </body>
 </html>
