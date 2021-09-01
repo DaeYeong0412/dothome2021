@@ -260,10 +260,10 @@ button {
   }
   #nav li a {
     margin: 3px 3px 5px 3px;
-    font-size: 11px;
-    height: 28px;
-    line-height: 28px;
-    width: 64px;
+    font-size: 7px;
+    height: 23px;
+    line-height: 23px;
+    width: 45px;
   }
 }
 
