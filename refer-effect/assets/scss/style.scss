@@ -311,8 +311,22 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
 //모바일
 @media (max-width: 800px) {
     .info {
+        h1 {
+            font-size: 14px;
+        }
+        p {
+            font-size: 10px;
+        }
         &.bottom {
             bottom: 80px;
+        }
+        li {
+            a {
+                width: 15px;
+                height: 15px;
+                line-height: 15px;
+                font-size: 7px;
+            }
         }
     }
 }
