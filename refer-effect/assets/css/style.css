@@ -357,10 +357,10 @@ button {
     padding: 10px;
   }
   .info h1 {
-    font-size: 12px;
+    font-size: 15px;
   }
   .info p {
-    font-size: 8px;
+    font-size: 11px;
   }
   .info.bottom {
     bottom: 80px;
