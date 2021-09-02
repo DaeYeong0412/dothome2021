@@ -353,11 +353,14 @@ button {
 }
 
 @media (max-width: 800px) {
+  .info {
+    padding: 10px;
+  }
   .info h1 {
-    font-size: 14px;
+    font-size: 12px;
   }
   .info p {
-    font-size: 10px;
+    font-size: 8px;
   }
   .info.bottom {
     bottom: 80px;
