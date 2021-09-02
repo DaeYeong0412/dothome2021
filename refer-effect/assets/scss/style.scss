@@ -465,6 +465,7 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
 //모바일
 @media (max-width: 800px) {
     .code-view {
+        width: 90vw;
         .view-header {
             .dot {
                 padding: 10px 8px 8px 13px;
