@@ -645,5 +645,6 @@ button {
   .code-view .view-cont {
     height: 300px;
     font-size: 10px;
+    border-radius: 5px;
   }
 }
