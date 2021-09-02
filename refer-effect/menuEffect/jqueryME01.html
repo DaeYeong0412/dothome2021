@@ -78,7 +78,7 @@
         }
     </style>
 </head>
-<body class="bg bg1">
+<body class="bg bg4">
     <!-- contents -->
     <main>
         <div id="tab-menu">
@@ -119,20 +119,20 @@
 
     <!-- info -->
     <div class="info">
-        <h1>javascript Menu Effect01</h1>
+        <h1>Jquery Menu Effect01</h1>
         <p>메뉴 이펙트 - 탭 메뉴</p>
     </div>
 
     <div class="info right">
         <ul>
-            <li class="active"><a href="javascriptME01.html">1</a></li>
+            <li><a href="javascriptME01.html">1</a></li>
             <li><a href="javascriptME02.html">2</a></li>
             <li><a href="javascriptME03.html">3</a></li>
             <li><a href="javascriptME04.html">4</a></li>
             <li><a href="javascriptME05.html">5</a></li>
         </ul>
         <ul>
-            <li><a href="jqueryME01.html">1</a></li>
+            <li class="active"><a href="jqueryME01.html">1</a></li>
             <li><a href="jqueryME02.html">2</a></li>
             <li><a href="jqueryME03.html">3</a></li>
             <li><a href="jqueryME04.html">4</a></li>
@@ -160,7 +160,7 @@
                         <ul>
                             <li class="active"><a href="#">Html</a></li>
                             <li><a href="#">Css</a></li>
-                            <li><a href="#">Javascript</a></li>
+                            <li><a href="#">Jquery</a></li>
                         </ul>
                     </div>
                     <div class="view-cont">
@@ -269,23 +269,19 @@
 }
 </code></pre>
                         </div>
-                        <div class="javascript">
-<pre><code class="language-javascript">const tabBtn = document.querySelectorAll(".tab-btn ul li");
-const tabCont = document.querySelectorAll(".tab-cont &gt; div");
+                        <div class="jquery">
+<pre><code class="language-javascript">const tabBtn = $(".tab-btn ul li");
+    const tabCont = $(".tab-cont > div");
 
-tabBtn.forEach((element, index)=&gt; {
-    element.addEventListener("click", function(){
-        tabBtn.forEach(el =&gt; {
-            el.classList.remove("active");
-        });
-        element.classList.add("active");
+    tabBtn.click(function(){
+        let target = $(this);
+        tabBtn.removeClass("active");
+        target.addClass("active");
 
-        tabCont.forEach(el =&gt; {
-            el.style.display = "none";
-        })
-        tabCont[index].style.display = "block";
+        let index = target.index();
+        tabCont.css("display", "none");
+        tabCont.eq(index).css("display", "block");
     });
-});
 </code></pre>
                         </div>
                     </div>
@@ -295,6 +291,7 @@ tabBtn.forEach((element, index)=&gt; {
         </div>
     </div>
 
+    <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script>
@@ -304,22 +301,18 @@ tabBtn.forEach((element, index)=&gt; {
         //4. 첫번째 버튼은 첫번째 컨텐츠 연결
         //5. 모든 컨텐츠를 안보이게 설정
         //6. 클릭한 버튼의 해당 컨텐츠만 보이게 설정
+        
+        const tabBtn = $(".tab-btn ul li");     //5개의 버튼을 변수에 할당
+        const tabCont = $(".tab-cont > div");   //5개의 컨텐츠를 변수에 할당
 
-        const tabBtn = document.querySelectorAll(".tab-btn ul li");
-        const tabCont = document.querySelectorAll(".tab-cont > div");
+        tabBtn.click(function(){
+            let target = $(this);
+            tabBtn.removeClass("active");
+            target.addClass("active");
 
-        tabBtn.forEach((element, index)=> {
-            element.addEventListener("click", function(){
-                tabBtn.forEach(el => {
-                    el.classList.remove("active");
-                });
-                element.classList.add("active");
-
-                tabCont.forEach(el => {
-                    el.style.display = "none";
-                })
-                tabCont[index].style.display = "block";
-            });
+            let index = target.index();
+            tabCont.css("display", "none");
+            tabCont.eq(index).css("display", "block");
         });
     </script>
 </body>
