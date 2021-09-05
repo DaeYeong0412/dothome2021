@@ -29,7 +29,6 @@ body {
     display: inline-block;
     text-align: center;
     line-height: 2;
-    position: relative;
 }
 .testType header ul li {
     display: inline-block;
