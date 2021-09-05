@@ -6,13 +6,15 @@ body {
     font-family:  'NanumSquare';
 }
 .testType header {
-    padding: 2% 2% 2% 2%;
+    padding: 1.6% 7.5% 1.6% 7.5%;
     position: fixed;
     left: 0;
     top: 0;
-    width: 96%;
+    width: 85%;
     z-index: 1000;
     transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
 }
 .testType header strong{
     display: inline-block;
@@ -25,10 +27,9 @@ body {
 }
 .testType header ul {
     display: inline-block;
-    position: absolute;
-    width: 1000px;
     text-align: center;
     line-height: 2;
+    position: relative;
 }
 .testType header ul li {
     display: inline-block;
@@ -41,31 +42,31 @@ body {
     color: rgb(74, 204, 70);
 }
 .testType .sub_1 {
-    text-align: left;
-    top: 70px;
-    left: -250px;
-    width: 2000px;
-    padding: 18px 0 18px 550px;
+    text-align: center;
+    position: fixed;
+    left: 50%;  top: 10.8%;
+    transform: translate(-50%);
+    width: 100%;
+    padding: 15px 0;
     background-color: rgba(0, 0, 0, 0.7);
 }
 .testType .sub_1 > li {
     color: rgb(144, 144, 144)
 }
 .testType .sub_2 {
-    text-align: left;
-    top: 70px;
-    left: -250px;
-    width: 2000px;
-    padding: 18px 0 18px 410px;
+    text-align: center;
+    position: fixed;
+    left: 50%;  top: 10.8%;
+    transform: translate(-50%);
+    width: 100%;
+    padding: 15px 0;
     background-color: rgba(0, 0, 0, 0.7);
 }
 .testType .sub_2 > li {
     color: rgb(144, 144, 144)
 }
 .testType header .testkeyword {
-    position: absolute;
-    top: 30px;
-    right: 55px;
+    display: inline-block;
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.424);
     border-radius: 40px;
