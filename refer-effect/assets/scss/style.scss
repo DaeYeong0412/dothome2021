@@ -126,6 +126,11 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
         background: rgba(0,0,0,0.6);
         z-index: -1;
     }
+    &.blue {
+        &::before{
+            background-color: rgba(0, 0, 0, 0.603);
+        }
+    }
 }
 
 @for $i from 1 through 10 {
@@ -254,15 +259,21 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
 
     &.right {
         left: auto;
-        right: 0px;
+        right: 0;
     }
 
     &.bottom {
         top: auto;
         left: auto;
-        bottom: 0px;
-        right: 0px;
+        bottom: 0;
+        right: 0;
         position: fixed;
+    }
+
+    &.left {
+        top: auto;
+        left: 0;
+        bottom: 0;
     }
 
     h1{
@@ -272,6 +283,11 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
         border-bottom: 1px dashed #fff;
         display: inline-block;
         margin-bottom: 10px;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
     }
     p {
         font-weight: 300;
@@ -301,6 +317,20 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
             }   
         }
     }
+    &.list {
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 20px;
+        font-size: 12px;
+        line-height: 1.8;
+        border-radius: 10px;
+        margin: 20px;
+        
+        li {
+            display: block;
+        }
+    }
+
     button {
         background: transparent;
         border: 1px solid #fff;
