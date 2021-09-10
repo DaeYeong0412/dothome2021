@@ -30,6 +30,7 @@ select,
 figure,
 figcaption,
 button {
+    box-sizing: border-box;
     margin: 0;
     padding: 0
 }
@@ -70,6 +71,28 @@ img {
     width: 100%;
 }
 
+/* 제목 초기화 */
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+
+/* 리스트 스타일 유형 */
+ul.list li,
+ol.list li,
+dl.list li {
+    position: relative;
+    padding-left: 10px;
+ }
+ ul.list li::before,
+ ol.list li::before,
+ dl.list li::before {
+    content: '';
+    width: 3px; height: 3px;
+    background: #000;
+    position: absolute;
+    left: 0; top: 7px;
+ }
+
 /* ir 효과 */
 /* 
     img 태그를 이용해 표현 -> 이미지에 의미가 있을때 --> alt(대체 문자)
@@ -95,7 +118,7 @@ img {
     width: 100%; height: 100%;
 } 
 /* 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때 */
-.ir_su {
+.ir_so {
     overflow: hidden;
     position: absolute; 
     width: 0; height: 0; 

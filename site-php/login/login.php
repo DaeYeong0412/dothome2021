@@ -23,7 +23,7 @@
     <!-- //skip -->
 
     <header id="header">
-        <h1><a href="../pages/main.php">php <em>class</em></a></h1>
+        <h1><a href="#">php <em>class</em></a></h1>
         <nav>
             <h2 class="ir_so">메인 메뉴</h2>
             <ul>
@@ -43,7 +43,7 @@
     <!-- //header -->
 
     <main id="contents">
-        contents
+        <h2>회원가입</h2>
     </main>
     <!-- //contents -->
 
@@ -51,6 +51,5 @@
         footer
     </footer>
     <!-- //footer -->
-
 </body>
 </html>

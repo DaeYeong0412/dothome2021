@@ -242,20 +242,20 @@
             // }
 
             //each문
-            // $(".mouseCont span").each(function(index){
-            //     $(".mouseCont .style"+(index+1)).hover(function(){
-            //         $(".cursor").addClass("style"+(index+1));
-            //     }, function(){
-            //         $(".cursor").removeClass("style"+(index+1));
-            //     });
-            // });
+            $(".mouseCont span").each(function(index){
+                $(".mouseCont .style"+(index+1)).hover(function(){
+                    $(".cursor").addClass("style"+(index+1));
+                }, function(){
+                    $(".cursor").removeClass("style"+(index+1));
+                });
+            });
 
             //attr()
-            $(".mouseCont span").hover(function(){
-                $(".cursor").addClass($(this).attr("class"));
-            }, function(){
-                $(".cursor").removeClass($(this).attr("class"));
-            });
+            // $(".mouseCont span").hover(function(){
+            //     $(".cursor").addClass($(this).attr("class"));
+            // }, function(){
+            //     $(".cursor").removeClass($(this).attr("class"));
+            // });
         });
     </script>
 </body>
