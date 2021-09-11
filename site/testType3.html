@@ -16,159 +16,6 @@
     <!-- 나눔스퀘어 웹 폰트 -->
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 
-    <style>
-        body {
-            font-family: 'NanumSquare';
-            margin: 0 auto;
-        }
-        /* container */
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            position: relative;
-            /* background-color: rgba(255, 255, 255, 0.979); */
-        }
-
-        #header { 
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            top: 0; left: 0;
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
-        }
-        .header01 {
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-            box-sizing: border-box;
-        }
-        .header01 h1 {
-            font-family: 'S-CoreDream';
-            font-weight: 900;
-        }
-        .header01 h1 a {
-            font-size: 13px;
-        }
-        .header01 h1 a em {
-            font-size: 25px;
-        }
-        .header01 nav li {
-            display: inline;
-        }
-        .header01 nav li a {
-            padding: 10px 20px;
-            margin: 20px;
-            display: inline-block;
-            font-size: 16px;
-        }
-        .header01 nav li a:hover {
-            font-weight: 800;
-            text-decoration: underline;
-        }
-        .header01 .member a {
-            border: 1px solid rgba(128, 128, 128, 0.596);
-            padding: 8px 10px;
-            font-size: 12px;
-            font-weight: 600;
-            border-radius: 3px;
-            transition: background 0.3s, color 0.3s;
-        }
-        .header01 .member a:first-child {
-            margin-right: 5px;
-        }
-        .header01 .member a:hover {
-            background: #05D685;
-            color: #fff;
-        }
-        .banner {
-            margin: 80px 0;
-            height: 450px;
-        }
-        .banner > ul > li { 
-            position: absolute;
-        }
-        .cont-h2 {
-            font-size: 45px;
-            font-weight: 800;
-            text-align: center;
-            line-height: 1.5;
-        }
-        .cont-p {
-            font-size: 16px;
-            font-weight: 500;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        /* card */
-        .card {
-            float: left;
-            width: 381px;
-            height: 594px;
-            margin: 0 12.5px 40px 13px;
-            border: solid 0.1px #ebebeb;
-            border-radius: 5px;
-        }
-        .card:nth-child(1),
-        .card:nth-child(4) {
-        margin-left: 0px;
-        }
-        .card:nth-child(3),
-        .card:nth-child(6) {
-        margin-right: 0px;
-        }
-        .card:nth-child(4),
-        .card:nth-child(5),
-        .card:nth-child(6) {
-        margin-bottom: 0px;
-        }
-        .card .card-img {
-            border-radius: 4px 4px 0 0;
-            margin-bottom: 25px;
-        }
-        .card .card-title {
-            font-family: 'S-CoreDream';
-            display: inline-block;
-            font-size: 21px;
-            font-weight: 900;
-            margin: 0 4px 10px 40px;
-        }
-        .card .card-new {
-            display: inline-block;
-            margin-top: 5px;
-            padding: 2px 9px 0 9px;
-            font-size: 11px;
-            font-weight: 800;
-            color: #fff;
-            border-radius: 25px;
-            background-color: #FA615B;
-            vertical-align: top;
-        }
-        .card .card-desc {
-            display: block;
-            font-size: 17px;
-            font-weight: 500;
-            color: #555555;
-            margin: 0 0 30px 40px;
-        }
-        .card .card-keyword {
-            font-size: 14px;
-            font-weight: 500;
-            padding: 8px 17px;
-            border-radius: 2.5px;
-            border: solid 1px #ebe9e9;
-            color: #555555;
-            margin-left: 40px;
-        }
-        .card .card-keyword.green {
-            border : solid 1px #05D686;
-            margin-right: -35px;
-            color: #fff;
-            background-color: #05D686;
-        }
-    </style>
 </head>
 <body>
     <header id="header">
@@ -206,7 +53,7 @@
                 <p class="cont-p">AI 기술이 집약된 제품으로 편리한 일상을 만나보세요.</p>
                 <div class="card-wrap">
                     <div class="card">
-                        <img src="img/lamp.png" alt="lamp" class="card-img">
+                        <img src="img/lamp.png" alt="첫번째 이미지입니다." class="card-img">
                         <strong class="card-title">CLOVA Lamp</strong>
                         <span class="card-new">NEW</span>
                         <span class="card-desc">책을 읽어주는 아이 친구<br>프리미엄 기능의 스마트 램프</span>
@@ -245,39 +92,88 @@
                         <strong class="card-title">Doraemon edition</strong>
                         <span class="card-desc">고양이형 만능 로봇 도라에몽을<br>모티브로 한 스마트 스피커</span>
                         <span class="card-keyword">알아보기</span>
+                    </div>
+                </div>
+                <div class="card last">
+                    <img src="img/minions.png" alt="일곱번째 이미지입니다." class="card-img">
+                    <strong class="card-title">MINIONS edition</strong>
+                    <span class="card-desc">귀여운 악동 미니언즈를<br>모티브로 한 스마트 스피커</span>
+                    <span class="card-keyword">알아보기</span>
                 </div>
             </div>
             <!-- //main-cont1 -->
             <div class="main-cont2">
-
+                <h2 class="cont-h2">With Partners</h2>
+                <p class="cont-p">파트너사와 함께 만든 클로바 스마트 디바이스들을 만나보세요.</p>
+                <div class="card-wrap">
+                    <div class="card">
+                        <img src="img/clock.png" alt="2-첫번째 이미지입니다." class="card-img">
+                        <span class="card-lg">with LG U+</span>
+                        <strong class="card-title">CLOVA Clock+2</strong>
+                        <span class="card-desc">집 안을 확장하고 연결하는<br>우리 집 생활 필수품</span>
+                        <span class="card-keyword">알아보기</span>
+                    </div>
+                    <div class="card">
+                        <img src="img/clock.png" alt="2-두번째 이미지입니다." class="card-img">
+                        <span class="card-lg">with LG U+</span>
+                        <strong class="card-title">CLOVA Clock+</strong>
+                        <span class="card-desc">매일의 일상을 편리하게<br>변화시켜줄 스마트 클락</span>
+                        <span class="card-keyword">알아보기</span>
+                    </div>
+                    <div class="card">
+                        <img src="img/friends+.png" alt="2-세번째 이미지입니다." class="card-img">
+                        <span class="card-lg">with LG U+</span>
+                        <strong class="card-title">CLOVA Friends+</strong>
+                        <span class="card-desc">유플러스 전용 기능을<br>더한 스마트 스피커</span>
+                        <span class="card-keyword">알아보기</span>
+                    </div>
+                </div>
+                <div class="card last">
+                    <img src="img/on.png" alt="2-네번째 이미지입니다." class="card-img">
+                    <span class="card-lg">with LG U+</span>
+                    <strong class="card-title">CLOVA ON+</strong>
+                    <span class="card-desc">미니멀 디자인의<br>컴팩트 스마트 스피커</span>
+                    <span class="card-keyword">알아보기</span>
+                </div>
             </div>
+        </div>
             <!-- //main-cont2 -->
             <div class="main-cont3">
-
+                <h2>인공지능 플랫폼 클로바와 함께<br>당신의 일상이 더욱 편리해집니다.</h2>
+                <p>스마트 디바이스를 더욱 스마트하게 이용하는 명령어 가이드</p>
+                <span class="btn">클로바 명령어 가이드</span>
             </div>
             <!-- //main-cont3 -->
-        </div>
     </main>
     <!-- main -->
-    <footer id="footer">
-
+    <footer class="footerType">
+        <div class="footer-container">
+            <div class="footer-info">
+                <span class="info-logo"></span>
+                <div class="info-sns">
+                    <a href="https://blog.naver.com/clova_ai" class="sns_link blog" target="_blank"></a>
+                    <a href="https://www.facebook.com/ClovaAI/" class="sns_link facebook" target="_blank"></a>
+                    <a href="https://www.instagram.com/naver_clova/" class="sns_link instagram" target="_blank"></a>
+                    <a href="https://www.youtube.com/channel/UCUuTYvmFcwOg06KnH5xx2sQ" class="sns_link youtube" target="_blank"></a>
+                </div>
+            </div>
+            <div class="footer-info2">
+                <div class="info-text">
+                    <span class="text">고객센터 1833-5387</span>
+                    <span class="text2">09:00 - 18:00 (주말, 공휴일 휴무)</span>
+                    <span class="center">Powered by <strong>NAVER · LINE</strong></span>
+                </div>
+                <div class="info-more">
+                    <span class="more">공지사항</span>
+                    <span class="more">이용약관</span>
+                    <span class="more">CLOVA 채용안내</span>
+                    <span class="more">CLOVA JP</span>
+                </div>
+            </div>
     </footer>
     <!-- //footer -->
 
     <script>
-            const header = document.querySelector("#header");
-            window.addEventListener("scroll", e => {
-                let scroll = document.documentElement.scrollTop;
-
-                if(scroll > 0) {
-                    header.style.position = "stick";
-                    header.style.backgroundColor = "rgba(20, 20, 20, 0.8)";
-                } else {
-                    header.style.position = "";
-                    header.style.top = "";
-                    header.style.backgroundColor = "";
-                }
-            });
 
         $('.banner>ul>li').hide(); $('.banner>ul>li:first-child').show();
             
