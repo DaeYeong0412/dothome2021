@@ -104,7 +104,11 @@ button {
 }
 
 .bg.blue::before {
-  background-color: rgba(0, 0, 0, 0.603);
+  background-color: rgba(5, 36, 70, 0.6);
+}
+
+.bg.brown::before {
+  background-color: rgba(50, 37, 11, 0.6);
 }
 
 .bg1 {

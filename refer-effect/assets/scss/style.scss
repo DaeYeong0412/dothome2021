@@ -128,7 +128,12 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
     }
     &.blue {
         &::before{
-            background-color: rgba(0, 0, 0, 0.603);
+            background-color: rgba(5, 36, 70, 0.6);
+        }
+    }
+    &.brown {
+        &::before{
+            background-color: rgba(50, 37, 11, 0.6);
         }
     }
 }
