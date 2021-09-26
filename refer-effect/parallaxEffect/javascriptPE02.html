@@ -223,7 +223,7 @@
                         <ul>
                             <li class="active"><a href="#">Html</a></li>
                             <li><a href="#">Css</a></li>
-                            <li><a href="#">Jquery</a></li>
+                            <li><a href="#">Javascript</a></li>
                         </ul>
                     </div>
                     <div class="view-cont">
@@ -526,32 +526,72 @@
     background: url(../img/bg9@2.jpg) no-repeat;
     background-size: cover;
 }
+.paraDot {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    z-index: 1000;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    padding: 20px 10px;
+    border-radius: 30px;
+}
+.paraDot li {
+    list-style: none;
+}
+.paraDot li a {
+    width: 20px; height: 20px;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin: 8px;
+    position: relative;
+    text-decoration: none;
+}
+.paraDot li.active a {
+    background: #fff;
+}
+.paraDot li a span {
+    position: absolute;
+    left: -105px; top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #000;
+    display: block;
+    padding: 2px 15px;
+    border-radius: 30px;
+    opacity: 0;
+}
+.paraDot li.active a span {
+    opacity: 1;
+}
 </code></pre>
                         </div>
                         <div class="javascript">
-<pre><code class="language-javascript">$(".paraNav ul li").click(function(e){
-    e.preventDefault();
-    let target = $(this);
-    let index = target.index();
-    let section = $(".paraCont &gt; section").eq(index);
-    let offset = section.offset().top +10;
-    $("html, body").animate({ scrollTop : offset }, 600);
+<pre><code class="language-javascript">document.querySelectorAll(".paraDot ul li a").forEach((element) =&gt; {
+    element.addEventListener("click", (e) =&gt; {
+        e.preventDefault();
+        document.querySelector(element.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
 });
 
-$(window).scroll(function(){
-    let scrollTop = $(window).scrollTop();
+window.addEventListener("scroll", () =&gt; {
+    
+    let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset;
 
-    $(".content-item").each(function(index){
-        if(scrollTop &gt;= $(".paraCont &gt; section").eq(index).offset().top){
-            $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
-        }
-    });
-    
-    $(".paraScroll span").text(parseInt(scrollTop));
-    
+    document.querySelector(".paraScroll span").innerText = parseInt(scrollTop) + "px";
+
     for(i=1; i&lt;=9; i++){
-        $(".offset"+i).text(parseInt($("#section"+i).offset().top +10) + "px");
+        if( scrollTop &gt;= document.getElementById("section"+i).offsetTop -2){
+            document.querySelectorAll(".paraDot ul li").forEach(el =&gt; {
+                el.classList.remove("active");
+            });
+            document.querySelector(".paraDot ul li:nth-child("+i+")").classList.add("active");
+        };
     }
+});
 </code></pre>
                         </div>
                     </div>

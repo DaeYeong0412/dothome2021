@@ -502,32 +502,66 @@
     background: url(../img/bg9@2.jpg) no-repeat;
     background-size: cover;
 }
+.paraNav {
+    top: 20px;
+    transition: top 0.4s ease;
+}
+.paraNav.hide {
+    top: -200px;
+}
+.paraNav li a {
+    width: auto;
+    padding: 5px 20px;
+}
+.paraNav li.active a {
+    border-radius: 30px;
+}
 </code></pre>
                         </div>
-                        <div class="javascript">
+                        <div class="jquery">
 <pre><code class="language-javascript">$(".paraNav ul li").click(function(e){
     e.preventDefault();
     let target = $(this);
     let index = target.index();
-    let section = $(".paraCont &gt; section").eq(index);
+    let section = $(".content-item").eq(index);
     let offset = section.offset().top +10;
-    $("html, body").animate({ scrollTop : offset }, 600);
+    $("html, body").animate({ scrollTop:offset}, 800, "easeInOutCirc");
 });
 
-$(window).scroll(function(){
-    let scrollTop = $(window).scrollTop();
+let nowScrollTop;
+let lastScrollTop = 0;
 
-    $(".content-item").each(function(index){
-        if(scrollTop &gt;= $(".paraCont &gt; section").eq(index).offset().top){
+$(window).scroll(function(){
+    nowScrollTop = true;
+
+    setInterval(()=&gt;{
+        if( nowScrollTop ){
+            nowScrollTop = false;
+            hasScroll();
+        }
+    }, 1000);
+});
+
+function hasScroll(){
+    let scrollTop = $(this).scrollTop();
+
+    if( scrollTop &gt; lastScrollTop ){
+        $(".paraNav").addClass("hide");
+    } else {
+        $(".paraNav").removeClass("hide");
+    }      
+    lastScrollTop = scrollTop;
+
+    //버튼용
+    $(".content-item").each(function(index, element){
+        if( scrollTop &gt; $(this).offset().top ){
             $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
         }
     });
-    
-    $(".paraScroll span").text(parseInt(scrollTop));
-    
-    for(i=1; i&lt;=9; i++){
-        $(".offset"+i).text(parseInt($("#section"+i).offset().top +10) + "px");
-    }
+
+    //출력용
+    $(".paraScroll span").text(scrollTop);
+};
 </code></pre>
                         </div>
                     </div>

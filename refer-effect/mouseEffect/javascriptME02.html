@@ -137,20 +137,125 @@
                         <ul>
                             <li class="active"><a href="#">Html</a></li>
                             <li><a href="#">Css</a></li>
-                            <li><a href="#">javascript</a></li>
+                            <li><a href="#">Javascript</a></li>
                         </ul>
                     </div>
                     <div class="view-cont">
                         <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;main&gt;
+    &lt;div class="cursor"&gt;&lt;/div&gt;
+    &lt;div class="cursor-follower"&gt;&lt;/div&gt;
+
+    &lt;article class="mouseCont"&gt;
+        &lt;p&gt;&lt;em&gt;Confidence&lt;/em&gt; is contagious. So is lack of confidence.&lt;/p&gt;
+        &lt;h2&gt;자신감은 전염된다. &lt;em&gt;자신감&lt;/em&gt;의 부족도 마찬가지다.&lt;/h2&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">.mouseCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'NEXONLv1Gothic';
+    cursor: none;
+}
+.mouseCont p {
+    font-size: 2.5vw;
+    line-height: 2.3;
+    font-weight: 300;
+}
+.mouseCont h2 {
+    font-size: 3vw;
+    font-weight: normal;
+    font-weight: 400;
+}
+.mouseCont em {
+    font-style: normal;
+    border-bottom: 0.2vw dashed orange;
+    color: orange;
+}
+.cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    z-index: 999;
+    background-color: rgb(255, 255, 255, 0.6);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s opacity 0.2s;
+}
+.cursor.active {
+    opacity: 0.5;
+    transform: scale(0);
+}
+.cursor-follower {
+    position: absolute;
+    width: 30px; height: 30px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.4s ease-in-out, background 0.4s ease-in-out;
+}
+.cursor-follower.active {
+    background: rgba(255, 166, 0, 0.6);
+    transform: scale(5);
+}
+.cursor-follower.show {
+    transform: scale(5);
+    background: rgba(255, 51, 0, 0.6);
+}
+.info, .info a {
+    cursor: none;
+}
 </code></pre>
                         </div>
                         <div class="javascript">
-<pre><code class="language-javascript">
+<pre><code class="language-javascript">const cursor = document.querySelector(".cursor");
+const follower = document.querySelector(".cursor-follower");
+
+//움직임 효과
+document.addEventListener("mousemove", (e) =&gt; {
+
+    gsap.to(cursor, {duration: 0.2, left: e.pageX -5, top: e.pageY -5});
+    gsap.to(follower, {duration: 0.5, left: e.pageX -15, top: e.pageY -15});
+    
+    // 오버 효과
+    document.querySelectorAll(".mouseCont em").forEach(em =&gt; {
+        em.addEventListener("mouseenter", () =&gt; {
+            cursor.classList.add("active");
+            follower.classList.add("active");
+        });
+        em.addEventListener("mouseleave", () =&gt; {
+            cursor.classList.remove("active");
+            follower.classList.remove("active");
+        });
+    })
+    
+    // 오버 효과
+    document.querySelectorAll(".info").forEach(em =&gt; {
+        em.addEventListener("mouseenter", () =&gt; {
+            cursor.classList.add("show");
+            follower.classList.add("show");
+        });
+        em.addEventListener("mouseleave", () =&gt; {
+            cursor.classList.remove("show");
+            follower.classList.remove("show");
+        });
+    })
+
+    // 출력용
+    document.querySelector(".pageX").innerText = e.pageX;
+    document.querySelector(".pageY").innerText = e.pageY;
+});
 </code></pre>
                         </div>
                     </div>

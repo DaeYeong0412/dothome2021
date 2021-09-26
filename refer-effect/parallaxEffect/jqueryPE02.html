@@ -526,32 +526,68 @@
     background: url(../img/bg9@2.jpg) no-repeat;
     background-size: cover;
 }
+.paraDot {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    z-index: 1000;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    padding: 20px 10px;
+    border-radius: 30px;
+}
+.paraDot li {
+    list-style: none;
+}
+.paraDot li a {
+    width: 20px; height: 20px;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin: 8px;
+    position: relative;
+    text-decoration: none;
+}
+.paraDot li.active a {
+    background: #fff;
+}
+.paraDot li a span {
+    position: absolute;
+    left: -105px; top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #000;
+    display: block;
+    padding: 2px 15px;
+    border-radius: 30px;
+    opacity: 0;
+}
+.paraDot li.active a span {
+    opacity: 1;
+}
 </code></pre>
                         </div>
-                        <div class="javascript">
-<pre><code class="language-javascript">$(".paraNav ul li").click(function(e){
+                        <div class="jquery">
+<pre><code class="language-javascript">$(".paraDot ul li").click(function(e){
     e.preventDefault();
-    let target = $(this);
-    let index = target.index();
-    let section = $(".paraCont &gt; section").eq(index);
+    let target = $(this);           //타켓 설정 : 사용자가 클릭한 버튼을 저장
+    let index = target.index();     //인덱스 설정
+    let section = $(".content-item").eq(index); //section 의 오프셋값 구하기
     let offset = section.offset().top +10;
-    $("html, body").animate({ scrollTop : offset }, 600);
+    $("html, body").animate({scrollTop:offset}, 800, "easeOutCubic"); //애니메이션 효과 추가
 });
 
 $(window).scroll(function(){
-    let scrollTop = $(window).scrollTop();
+    let scrollTop = $(this).scrollTop();
 
-    $(".content-item").each(function(index){
-        if(scrollTop &gt;= $(".paraCont &gt; section").eq(index).offset().top){
-            $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
-        }
-    });
-    
     $(".paraScroll span").text(parseInt(scrollTop));
-    
-    for(i=1; i&lt;=9; i++){
-        $(".offset"+i).text(parseInt($("#section"+i).offset().top +10) + "px");
-    }
+
+    for(i=0; i&lt;=8; i++){
+        if( scrollTop &gt;= $(".content-item").eq(i).offset().top){
+            $(".paraDot ul li").eq(i).addClass("active").siblings().removeClass("active");
+        }
+    };
+});
 </code></pre>
                         </div>
                     </div>
@@ -572,7 +608,7 @@ $(window).scroll(function(){
             let index = target.index();     //인덱스 설정
             let section = $(".content-item").eq(index); //section 의 오프셋값 구하기
             let offset = section.offset().top +10;
-            $("html, body").animate({scrollTop:offset}, 800, "easeOutCubic"); //애니메이션 효과 추기
+            $("html, body").animate({scrollTop:offset}, 800, "easeOutCubic"); //애니메이션 효과 추가
         });
 
         $(window).scroll(function(){

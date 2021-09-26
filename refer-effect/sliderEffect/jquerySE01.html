@@ -107,15 +107,70 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;main&gt;
+    &lt;div class="slider-wrap"&gt;
+        &lt;div class="slider-img"&gt;
+            &lt;div class="slider" data-name="이미지1"&gt;&lt;img src="../assets/img/bg9.jpg" alt="이미지1"&gt;&lt;/div&gt;
+            &lt;div class="slider" data-name="이미지2"&gt;&lt;img src="../assets/img/bg10.jpg" alt="이미지2"&gt;&lt;/div&gt;
+            &lt;div class="slider" data-name="이미지3"&gt;&lt;img src="../assets/img/bg2.jpg" alt="이미지3"&gt;&lt;/div&gt;
+            &lt;div class="slider" data-name="이미지4"&gt;&lt;img src="../assets/img/bg1.jpg" alt="이미지4"&gt;&lt;/div&gt;
+            &lt;div class="slider" data-name="이미지5"&gt;&lt;img src="../assets/img/bg4.jpg" alt="이미지5"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">.slider-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.slider-img {
+    width: 800px; height: 480px;
+    position: relative;
+}
+.slider-img img {
+    width: 100%;
+}
+.slider {
+    position: absolute;
+    top: 0; left: 0;
+    transition: all 0.4s;
+}
+.slider::before {
+    position: absolute;
+    left: 5px; top: 5px;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 5px 10px 3px;
+    font-family: "NEXONLv1Gothic";
+}
+.slider::before {content: attr(data-name);}
+.slider:nth-child(1) {z-index: 5;}
+.slider:nth-child(2) {z-index: 4;}
+.slider:nth-child(3) {z-index: 3;}
+.slider:nth-child(4) {z-index: 2;}
+.slider:nth-child(5) {z-index: 1;}
 </code></pre>
                         </div>
-                        <div class="javascript">
-<pre><code class="language-javascript">
+                        <div class="jquery">
+<pre><code class="language-javascript">const sliderWrap = $(".slider-wrap");
+    const sliderImg = $(".slider-img");
+    const slider = $(".slider");
+
+    let currentIndex = 0;                //현재 보이는 이미지( 첫번째 이미지 )
+    let sliderCount = slider.length;     //이미지 갯수
+
+    setInterval(function(){
+    let nextIndex = (currentIndex + 1) % sliderCount;
+
+    slider.eq(currentIndex).fadeOut()    //현재 이미지를 사라지게
+    slider.eq(nextIndex).fadeIn()//다음 이미지를 나타나게
+
+    currentIndex = nextIndex;
+    }, 2000);
 </code></pre>
                         </div>
                     </div>

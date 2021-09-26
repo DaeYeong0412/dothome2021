@@ -150,15 +150,118 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;main&gt;
+    &lt;div class="cursor"&gt;&lt;/div&gt;
+
+    &lt;article class="mouseCont"&gt;
+        &lt;p&gt;&lt;span class="style4"&gt;It always&lt;/span&gt; seems &lt;span class="style3"&gt;impossible&lt;/span&gt; until its done&lt;/p&gt;
+        &lt;h2&gt;끝까지 해보기 &lt;span class="style2"&gt;전까지는&lt;/span&gt; 늘 &lt;span class="style1"&gt;불가능해&lt;/span&gt; 보인다.&lt;/h2&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">.mouseCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'NEXONLv1Gothic';
+    cursor: none;
+}
+.mouseCont p {
+    font-size: 2.5vw;
+    line-height: 2.3;
+    font-weight: 300;
+}
+.mouseCont h2 {
+    font-size: 3vw;
+    font-weight: normal;
+    font-weight: 400;
+}
+.mouseCont span {
+    font-style: normal;
+    border-bottom: 0.2vw dashed rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+.cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    z-index: 999;
+    background-color: rgba(255,255,255,0.1);
+    user-select: none;
+    pointer-events: none;
+    transition: 
+        background-color 0.6s,
+        border-color 0.6s,
+        border-radius 0.6s,
+        transform 0.6s;
+}
+.cursor.style1 {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-color: red;
+}
+.cursor.style2 {
+    background-color: rgba(0, 0, 255, 0.2);
+    border-color: blue;
+    transform: rotateY(720deg) scale(2);
+}
+.cursor.style3 {
+    background-image: url(../assets/img/active3.jpg);
+    background-position: center;
+    background-size: cover;
+    transform: scale(6);
+    border-radius: 5px;
+}
+.cursor.style4 {
+    background-color: rgba(0, 255, 0, 0.2);
+    border-color: green;
+    border-radius: 5px;
+    transform: rotate(585deg) scale(2);
+}
 </code></pre>
                         </div>
                         <div class="javascript">
-<pre><code class="language-javascript">
+<pre><code class="language-javascript">//출력용
+window.addEventListener("mousemove", function(e){
+    document.querySelector(".clientX").innerText = e.clientX + "px";   //브라우저 X좌표 기준
+    document.querySelector(".clientY").innerText = e.clientY + "px";   //브라우저 Y좌표 기준
+    document.querySelector(".offsetX").innerText = e.offsetX + "px";   //요소 X좌표 기준
+    document.querySelector(".offsetY").innerText = e.offsetY + "px";   //요소 Y좌표 기준
+    document.querySelector(".pageX").innerText = e.pageX + "px";       //페이지 X좌표 기준
+    document.querySelector(".pageY").innerText = e.pageY + "px";       //페이지 Y좌표 기준
+    document.querySelector(".screenX").innerText = e.screenX + "px";   //디바이스 X좌표 기준
+    document.querySelector(".screenY").innerText = e.screenY + "px";   //디바이스 Y좌표 기준
+});
+
+//마우스 움직이기
+window.addEventListener("mousemove", function(e){
+    // document.querySelector(".cursor").style.left = e.clientX -25 + "px";
+    // document.querySelector(".cursor").style.top = e.clientY -25 + "px";
+
+    let x = e.clientX -25 + "px";
+    let y = e.clientY -25 + "px";
+    document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;
+
+    //마우스 오버
+    const Feach = document.querySelectorAll(".mouseCont span")
+
+    Feach.forEach((element, index) =&gt; {
+        document.querySelector(".mouseCont .style"+(index+1)).addEventListener("mouseover", function(){
+            document.querySelector(".cursor").classList.add("style"+(index+1));
+        });
+        document.querySelector(".mouseCont .style"+(index+1)).addEventListener("mouseout", function(){
+            document.querySelector(".cursor").classList.remove("style"+(index+1));
+        });
+    });
+});
 </code></pre>
                         </div>
                     </div>

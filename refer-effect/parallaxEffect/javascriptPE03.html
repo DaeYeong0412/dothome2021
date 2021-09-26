@@ -199,7 +199,7 @@
                         <ul>
                             <li class="active"><a href="#">Html</a></li>
                             <li><a href="#">Css</a></li>
-                            <li><a href="#">Jquery</a></li>
+                            <li><a href="#">Javascript</a></li>
                         </ul>
                     </div>
                     <div class="view-cont">
@@ -502,32 +502,49 @@
     background: url(../img/bg9@2.jpg) no-repeat;
     background-size: cover;
 }
+.paraNav {
+    top: -200px;
+    transition: top 0.4s ease;
+}
+.paraNav.show {
+    top: 20px;
+}
+.paraNav li a {
+    width: auto;
+    padding: 5px 20px;
+}
+.paraNav li.active a {
+    border-radius: 30px;
+}
 </code></pre>
                         </div>
                         <div class="javascript">
-<pre><code class="language-javascript">$(".paraNav ul li").click(function(e){
-    e.preventDefault();
-    let target = $(this);
-    let index = target.index();
-    let section = $(".paraCont &gt; section").eq(index);
-    let offset = section.offset().top +10;
-    $("html, body").animate({ scrollTop : offset }, 600);
-});
-
-$(window).scroll(function(){
-    let scrollTop = $(window).scrollTop();
-
-    $(".content-item").each(function(index){
-        if(scrollTop &gt;= $(".paraCont &gt; section").eq(index).offset().top){
-            $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
+<pre><code class="language-javascript">document.querySelectorAll(".paraNav ul li a").forEach((element) =&gt; {
+    element.addEventListener("click", (e) =&gt; {
+        e.preventDefault();
+        document.querySelector(element.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        })
+    });
+})
+window.addEventListener("scroll", () =&gt; {
+    let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset;
+    document.querySelector(".paraScroll span").innerHTML = parseInt(scrollTop); 
+    // 메뉴숨기기
+    if (scrollTop &gt; 10) {
+        document.querySelector(".paraNav").classList.add("show");
+    } else {
+        document.querySelector(".paraNav").classList.remove("show");
+    }
+    document.querySelectorAll(".content-item").forEach((el, index) =&gt; {
+        if ( scrollTop &gt; el.offsetTop -2 ) {
+            document.querySelectorAll(".paraNav ul li ").forEach(el =&gt; {
+                el.classList.remove("active");
+            })
+            document.querySelector(`.paraNav ul li:nth-child(${index + 1})`).classList.add("active")
         }
     });
-    
-    $(".paraScroll span").text(parseInt(scrollTop));
-    
-    for(i=1; i&lt;=9; i++){
-        $(".offset"+i).text(parseInt($("#section"+i).offset().top +10) + "px");
-    }
+})
 </code></pre>
                         </div>
                     </div>

@@ -118,15 +118,93 @@
                     </div>
                     <div class="view-cont">
                         <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;main&gt;
+    &lt;div class="slider-wrap"&gt;
+        &lt;div class="slider-img"&gt;
+            &lt;div class="slider-inner"&gt;
+                &lt;div class="slider" data-name="이미지1"&gt;&lt;img src="../assets/img/bg5.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                &lt;div class="slider" data-name="이미지2"&gt;&lt;img src="../assets/img/bg9.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                &lt;div class="slider" data-name="이미지3"&gt;&lt;img src="../assets/img/bg8.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                &lt;div class="slider" data-name="이미지4"&gt;&lt;img src="../assets/img/bg7.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                &lt;div class="slider" data-name="이미지5"&gt;&lt;img src="../assets/img/bg6.jpg" alt="이미지5"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">.slider-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.slider-img {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; height: 480px;
+    overflow: hidden;
+}
+.slider-img img {
+    width: 100%;
+}
+.slider-inner {
+    width: 4000px; height: 480px;
+    position: relative;
+    overflow: hidden;
+}
+.slider-inner .slider {
+    float: left;
+    width: 800px; height: 480px;
+    position: relative;
+}
+.slider-inner .slider::before {
+    position: absolute;
+    left: 5px; top: 5px;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 5px 10px 3px;
+    font-family: "NEXONLv1Gothic";
+}
+.slider-inner .slider::before {content: attr(data-name);}
+.slider-inner .slider:nth-child(2) {z-index: 4;}
+.slider-inner .slider:nth-child(3) {z-index: 3;}
+.slider-inner .slider:nth-child(4) {z-index: 2;}
+.slider-inner .slider:nth-child(1) {z-index: 5;}
+.slider-inner .slider:nth-child(5) {z-index: 1;}
 </code></pre>
                         </div>
-                        <div class="javascript">
-<pre><code class="language-javascript">
+                        <div class="jquery">
+<pre><code class="language-javascript">const sliderWrap = $(".slider-wrap");
+    const sliderImg = $(".slider-img");
+    const sliderInner = $(".slider-inner");
+    const slider = $(".slider");
+
+    let currentIndex = 0;
+    let sliderCount = slider.length;     //이미지 갯수
+    let sliderWidth = slider.width();
+    let sliderDuration = 600;
+    let sliderEasing = "easeOutExpo";
+
+    setInterval(function(){
+        //3초에 한번씩 왼쪽으로 800px을 이동 시켜야 함
+
+        // currentIndex = currentIndex % 5;
+
+        // if( currentIndex &gt; 4 ) {
+        //     currentIndex++;
+        // } else {
+        //     currentIndex = 0;
+        // }
+
+        ( currentIndex &gt; sliderCount -1 ) ? currentIndex++ : currentIndex = 0
+
+        let sliderPosition = currentIndex * -sliderWidth;
+
+        sliderInner.animate({ left: sliderPosition }, sliderDuration, sliderEasing);
+    }, 3000);
 </code></pre>
                         </div>
                     </div>
