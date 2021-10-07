@@ -546,11 +546,41 @@
     top: -200px;
 }
 .paraNav li a {
-    width: auto;
-    padding: 5px 20px;
+    width: 30px; height: 30px;
+    padding: 5px;
 }
 .paraNav li.active a {
     border-radius: 30px;
+}
+
+/* 한번에 나타나기 */
+/* .content-item .content-item-desc {
+    opacity: 0;
+    transform: translateY(100px) skewX(30deg);
+    transition: all 0.33s ease-in-out;
+}
+.content-item .content-item-desc.show {
+    opacity: 1;
+    transform: translateY(0) skewX(0);
+} */
+
+/* 한 글자씩 나타나기 */
+/* .content-item .content-item-desc span {
+    opacity: 0;
+    transform: translateY(100px) skewX(30deg);
+    transition: all 0.33s ease-in-out;
+}
+.content-item .content-item-desc span.show {
+    opacity: 1;
+    transform: translateY(0) skewX(0);
+} */
+
+/* GSAP 한 글자씩 나타나기 시작값 세팅 */
+.content-item .content-item-desc span {
+    opacity: 0;
+    display: inline-block;
+    min-width: 1vw;
+    transform: translateY(100px) rotate(90deg) scale(2);
 }
 </code></pre>
                         </div>
@@ -680,7 +710,6 @@ $(window).scroll(function(){
             // 출력
             $(".paraScroll span").text(parseInt(scrollTop));
         });
-        
     </script>
 </body>
 </html>
