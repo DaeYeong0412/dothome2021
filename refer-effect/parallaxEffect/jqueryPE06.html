@@ -531,43 +531,29 @@
     let index = target.index();
     let section = $(".content-item").eq(index);
     let offset = section.offset().top +10;
-    $("html, body").animate({ scrollTop:offset}, 800, "easeInOutCirc");
+    $("html, body").animate({ scrollTop : offset}, 600);
 });
-
-let nowScrollTop;
-let lastScrollTop = 0;
 
 $(window).scroll(function(){
-    nowScrollTop = true;
+    let scrollTop = $(window).scrollTop();
 
-    setInterval(()=&gt;{
-        if( nowScrollTop ){
-            nowScrollTop = false;
-            hasScroll();
-        }
-    }, 1000);
-});
-
-function hasScroll(){
-    let scrollTop = $(this).scrollTop();
-
-    if( scrollTop &gt; lastScrollTop ){
-        $(".paraNav").addClass("hide");
-    } else {
-        $(".paraNav").removeClass("hide");
-    }      
-    lastScrollTop = scrollTop;
-
-    //버튼용
+    // each()
     $(".content-item").each(function(index, element){
-        if( scrollTop &gt; $(this).offset().top ){
-            $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
-        }
+        let offset1 = (scrollTop - $(this).offset().top) * 0.1;
+        let offset2 = (scrollTop - $(this).offset().top) * 0.2;
+
+        $(this).find(".content-item-img").css({transform: "translateY("+offset2+"px)"});
+        $(this).find(".content-item-desc").css({transform: "translateY("+-offset1+"px)"});
+
+        // 메뉴
+        if( scrollTop > $(this).offset().top - 2 ){
+                $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
+        };
     });
 
-    //출력용
-    $(".paraScroll span").text(scrollTop);
-};
+    // 출력
+    $(".paraScroll span").text(parseInt(scrollTop));
+});
 </code></pre>
                         </div>
                     </div>

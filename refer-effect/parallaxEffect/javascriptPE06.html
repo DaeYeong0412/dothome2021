@@ -525,49 +525,38 @@
 </code></pre>
                         </div>
                         <div class="javascript">
-<pre><code class="language-javascript">$(".paraNav ul li").click(function(e){
-    e.preventDefault();
-    let target = $(this);
-    let index = target.index();
-    let section = $(".content-item").eq(index);
-    let offset = section.offset().top +10;
-    $("html, body").animate({ scrollTop:offset}, 800, "easeInOutCirc");
-});
+<pre><code class="language-javascript">const scrollMenu = function(){
+    document.querySelectorAll(".paraNav ul li a").forEach(li =&gt; {
+        li.addEventListener("click", e =&gt; {
+            e.preventDefault();
+            document.querySelector(li.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });
+};
 
-let nowScrollTop;
-let lastScrollTop = 0;
+const scrollProgress = function(){
+    let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset
 
-$(window).scroll(function(){
-    nowScrollTop = true;
-
-    setInterval(()=&gt;{
-        if( nowScrollTop ){
-            nowScrollTop = false;
-            hasScroll();
-        }
-    }, 1000);
-});
-
-function hasScroll(){
-    let scrollTop = $(this).scrollTop();
-
-    if( scrollTop &gt; lastScrollTop ){
-        $(".paraNav").addClass("hide");
-    } else {
-        $(".paraNav").removeClass("hide");
-    }      
-    lastScrollTop = scrollTop;
-
-    //버튼용
-    $(".content-item").each(function(index, element){
-        if( scrollTop &gt; $(this).offset().top ){
-            $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
+    document.querySelectorAll(".content-item").forEach( (item, index) =&gt; {
+        let offset = (scrollTop - item.offsetTop) * 0.1;
+        item.querySelector(".content-item-img").style.transform = "translateX("+offset+"px)";
+        item.querySelector(".content-item-desc").style.transform = "translateX("+-offset+"px)";
+        if( scrollTop &gt; item.offsetTop - 2 ){
+            document.querySelectorAll(".paraNav ul li").forEach( li =&gt; {
+                li.classList.remove("active");
+            })
+            document.querySelector(".paraNav ul li:nth-child("+(index+1)+")").classList.add("active");
         }
     });
 
-    //출력용
-    $(".paraScroll span").text(scrollTop);
+    // 출력
+    document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
 };
+
+window.addEventListener("scroll", scrollProgress);
+scrollMenu();
 </code></pre>
                         </div>
                     </div>
