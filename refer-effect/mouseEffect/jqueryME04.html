@@ -152,86 +152,120 @@
                         <div class="html">
 <pre><code class="language-html">&lt;main&gt;
     &lt;div class="cursor"&gt;&lt;/div&gt;
-    &lt;div class="cursor-follower"&gt;&lt;/div&gt;
 
-    &lt;article class="mouseCont"&gt;
-        &lt;p&gt;&lt;em&gt;When you go through&lt;/em&gt; hardships and decide not to surrender, that is strength.&lt;/p&gt;
-        &lt;h2&gt;당신이 어려움을 겪고 항복하지 않기로 결정할 때, &lt;em&gt;그것이 힘이다.&lt;/em&gt;&lt;/h2&gt;
-    &lt;/article&gt;
+    &lt;div class="moveWrap"&gt;
+        &lt;div class="moveImage"&gt;
+            &lt;div class="mImg"&gt;&lt;img src="../assets/img/bg8@2.jpg" alt="이미지"&gt;&lt;/div&gt;
+            &lt;div class="mText"&gt;
+                &lt;p&gt;You cannot change what you are, only what you do.&lt;/p&gt;
+                &lt;p&gt;본연의 모습은 바꿀 수 없다. 바꿀 수 있는 것은 자신의 행동 뿐.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
 &lt;/main&gt;
 </code></pre>
                         </div>
                         <div class="css">
-<pre><code class="language-css">.mouseCont {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: #fff;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    font-family: 'NEXONLv1Gothic';
+<pre><code class="language-css">body {
     cursor: none;
+    width: 100%; height: 100vh;
+    overflow: hidden;
 }
-.mouseCont p {
-    font-size: 2vw;
-    line-height: 2.3;
-    font-weight: 300;
+.moveWrap {
+    width: 100%; height: 100vh;
+    overflow: hidden;
 }
-.mouseCont h2 {
-    font-size: 2.5vw;
-    font-weight: normal;
-    font-weight: 400;
+.moveImage {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%) perspective(600px) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: all 0.2s;
 }
-.mouseCont em {
-    font-style: normal;
-    border-bottom: 0.2vw dashed yellow;
-    color: yellow;
+.moveImage .mImg {
+    width: 50vw;
+    position: relative;
+}
+.moveImage .mImg::before {
+    content: '';
+    position: absolute;
+    left: 5%; bottom: -3%;
+    width: 90%; height: 40px;
+    background: url(../assets/img/bg1@2.jpg) no-repeat;
+    background-size: 100% 30px;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0.9;
+}
+.moveImage .mImg img{
+    width: 100%;
+    border-radius: 5px;
+}
+.moveImage .mText {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate3d(-50%, -50%, 150px);
+    text-align: center;
+    color: #fff;
+    font-family: "NEXONLv1Gothic";
+    background: rgba(0,0,0,0.3);
+    padding: 2vw;
+    font-size: 1.2vw;
+    line-height: 1.6;
+    white-space: nowrap;
+    border-radius: 5px;
 }
 .cursor {
     position: absolute;
-    left: 0; top: 0;
     width: 10px; height: 10px;
+    background: #fff;
     border-radius: 50%;
-    z-index: 999;
-    background-color: #fff;
+    z-index: 1000;
     user-select: none;
     pointer-events: none;
-    transition: transform 0.4s;
-    mix-blend-mode: difference;
-}
-.cursor.active {
-    transform: scale(20);
-}
-.info.left.list li.active{
-    text-decoration: underline;
-    color: yellow;
 }
 </code></pre>
                         </div>
                         <div class="jquery">
-<pre><code class="language-javascript">const w = $(".cursor").width() /2;
-const h = $(".cursor").height() /2;
+<pre><code class="language-javascript">$(window).mousemove(function(e){
+    let pageX = e.pageX;
+    let pageY = e.pageY;
 
-//움직임 효과
-$(window).mousemove(function(e){
-    gsap.to(".cursor", {duration:0.4, left: e.pageX -w, top: e.pageY -h});
-});
+    // 기준점 가운데로 변경
+    let standardX = $(window).width()/2 - pageX;
+    let standardY = $(window).height()/2 - pageY;
 
-//오버 효과
-$(".mouseCont em").hover(function(){
-    $(".cursor").addClass("active");
-}, function(){
-    $(".cursor").removeClass("active");
-});
+    // 최소값 -100 최대값 100 설정
+    let maxX = Math.max(-100, Math.min(100, standardX));
+    let maxY = Math.max(-100, Math.min(100, standardY));
 
-//출력용
-$(".info.left.list li").click(function(){
-    $(".info.left.list li").removeClass("active");
-    $(this).addClass("active");
-    const text = $(this).text();
-    $(".cursor").css("mix-blend-mode", text);
+    // 각도를 줄이는 설정
+    let angleX = maxX * 0.12;
+    let angleY = maxY * 0.12;
+
+    // 부드럽게 설정
+    let softX = 0;
+    let softY = 0;
+
+    softX += (angleX - softX) * 0.7;
+    softY += (angleY - softY) * 0.7;
+
+    // 이미지
+    $(".moveImage").css({"transform": "translate(-50%, -50%) perspective(600px) rotateX("+ softY+"deg) rotateY("+ -softX +"deg)"});
+
+    // 커서
+    gsap.to(".cursor", {duration: 0.3, left: pageX, top: pageY});
+
+    // 출력
+    $(".pageX").text(pageX);
+    $(".pageY").text(pageY);
+    $(".standardX").text(standardX);
+    $(".standardY").text(standardY);
+    $(".maxX").text(maxX);
+    $(".maxY").text(maxY);
+    $(".angleX").text(parseInt(angleX));
+    $(".angleY").text(parseInt(angleY));
 });
 </code></pre>
                         </div>

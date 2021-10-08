@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOTTE WORLD</title>
+    <!-- 나눔스퀘어 웹 폰트 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+    <style>
+        body {
+            font-family: 'NanumSquare';
+        }
+        .container {
+            max-width: 960px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        #header {
+            margin-top: 50px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #header ul {
+            list-style: none;
+            margin-top: 50px;
+        }
+        #header li {
+            display: inline-block;
+            margin-right: 30px;
+            font-weight: 800;
+            font-size: 17px;
+        }
+        #header li:last-child {
+            margin-right: 0;
+        }
+        #header li a{
+            color: #000;
+            text-decoration: none
+        }
+        #main .main1 {
+            margin-bottom: 20px;
+        }
+        #main .main1 .slider img {
+            width: 100%;
+        }
+        #main .main2 {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+        #main .main2 .newslist {
+            width: 410px;
+            height: 178.5px;
+            border: 1px solid #ccc;
+            padding: 25px 50px 5px 0;
+        }
+        #main .main2 .tab_title {
+            list-style: none;
+        }
+        #main .main2 .tab_title li {
+            display: inline-block;
+        }
+        #main .main2 .tab_title li:first-child::after {
+            content: '|';
+            font-weight: 700;
+            margin: 0 5px;
+        }
+        #main .main2 .tab_title li a {
+            color: #979797;
+            text-decoration: none
+        }
+        #main .main2 .tab_title li.active a {
+            color: #000;
+            font-weight: 800;
+        }
+        #main .main2 .newslist .span1 {
+            font-size: 15px;
+            float: right;
+            color: #979797;
+        }
+        #main .main2 .newslist .span1::after {
+            content: '+';
+            padding: 1px 4.5px;
+            background-color: #6735F6;
+            margin-left: 5px;
+            color: #ccc;
+            border-radius: 50%;
+            font-weight: 800;
+        }
+        #main .main2 .newslist .tab_cont {
+            font-size: 15px;
+        }
+        #main .main2 .newslist .tab_cont ul {
+            list-style: none;
+            line-height: 1.7;
+        }
+        #main .main2 .newslist .tab_cont ul a {
+            color: #000;
+            text-decoration: none
+        }
+        #main .main2 .newslist .span2 {
+            font-size: 15px;
+            float: right;
+            color: #979797;
+        }
+        #main .main2 .banner img {
+            width: 470px;
+        }
+        #main .main3 {
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ccc;
+        }
+        #main .main3 .imgtab {
+            display: flex;
+            justify-content: space-between;
+        }
+        #main .main3 .imgtab img {
+            display: block;
+            margin-bottom: 20px;
+            width: 220px;
+        }
+        #footer {
+            margin: 30px 0 80px 0;
+        }
+        #footer .span3 {
+            display: block;
+            color: #979797;
+            font-size: 13px;
+        }
+        #footer .span4 {
+            color: #ccc;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <img src="img/logo.jpg" alt="logo">
+            <ul>
+                <li><a href="#">즐길거리</a></li>
+                <li><a href="#">요금/우대혜택</a></li>
+                <li><a href="#">참여프로그램</a></li>
+                <li><a href="#">이용가이드</a></li>
+                <li><a href="#">소통서비스</a></li>
+            </ul>
+        </header>
+        <main id="main">
+            <section class="main1">
+                <div class="slider">
+                    <img src="img/mainbanner.jpg" alt="슬라이드 이미지">
+                </div>
+            </section>
+            <section class="main2">
+                <div class="newslist">
+                    <div class="tab_menu">
+                        <div class="tab_btn">
+                            <ul class="tab_title">
+                                <li class="active"><a href="#">롯데월드 소식</a></li>
+                                <li><a href="#">뉴스·공지</a></li>
+                                <span class="span1">더보기</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab_cont">
+                        <div>
+                            <ul>
+                                <li><a href="#">그럴싸진관 미라클</a><span class="span2">2018.11.19</span></li>
+                                <li><a href="#">드림스테이지'힘내 소중한 너'</a><span class="span2">2018.11.20</span></li>
+                                <li><a href="#">'힘내 소중한 너'음원 발매</a><span class="span2">2018.11.13</span></li>
+                                <li><a href="#">이용 요금 조정 안내</a><span class="span2">2018.11.12</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a href="#">공지사항 1번 입니다.</a><span class="span2">2018.11.19</span></li>
+                                <li><a href="#">공지사항 2번 입니다.</a><span class="span2">2018.11.20</span></li>
+                                <li><a href="#">공지사항 3번 입니다.</a><span class="span2">2018.11.13</span></li>
+                                <li><a href="#">공지사항 4번 입니다.</a><span class="span2">2018.11.12</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner">
+                    <img src="img/subbanner.jpg" alt="광고 배너">
+                </div>
+            </section>
+            <section class="main3">
+                <h2>특별한 경험</h2>
+                <div class="imgtab">
+                    <div>
+                        <img src="img/silder1.jpg" alt="연간회원안내">
+                        <span>연간회원안내</span>
+                    </div>
+                    <div>
+                        <img src="img/silder2.jpg" alt="프리미엄투어">
+                        <span>프리미엄투어</span>
+                    </div>
+                    <div>
+                        <img src="img/silder3.jpg" alt="공연참여 프로그램">
+                        <span>공연참여 프로그램</span>
+                    </div>
+                    <div>
+                        <img src="img/silder4.jpg" alt="단체프로그램">
+                        <span>단체프로그램</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <span class="span3">서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드 | 대표자:박동기</span>
+            <span class="span3">사업등록자번호:219-85-00014 | 통신판매업신고번호:송파 제5513호 | 전화:1661-2000</span>
+            <br>
+            <span class="span4">COPYRIGHT 2018 LOTTEWORLD.ALL RIGHTS RESERVED.</span>
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+			let tabMenu = $(".tab_btn > .tab_title > li");
+			let tabCont  = $(".tab_cont > div > ul");
+
+			tabCont.hide().eq(0).show();
+			tabMenu.click(function(e){
+				e.preventDefault();
+				let target = $(this);
+				let index = target.index();
+
+				tabMenu.removeClass("active");
+				target.addClass("active");
+				tabCont.css("display","none");
+				tabCont.eq(index).css("display","block");
+			});
+		});
+    </script>
+</body>
+</html>

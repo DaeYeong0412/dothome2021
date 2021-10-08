@@ -130,93 +130,105 @@
                         <ul>
                             <li class="active"><a href="#">Html</a></li>
                             <li><a href="#">Css</a></li>
-                            <li><a href="#">Jquery</a></li>
+                            <li><a href="#">javascript</a></li>
                         </ul>
                     </div>
                     <div class="view-cont">
                         <div class="html">
 <pre><code class="language-html">&lt;main&gt;
     &lt;div class="cursor"&gt;&lt;/div&gt;
-    &lt;div class="cursor-follower"&gt;&lt;/div&gt;
 
-    &lt;article class="mouseCont"&gt;
-        &lt;p&gt;&lt;em&gt;When you go through&lt;/em&gt; hardships and decide not to surrender, that is strength.&lt;/p&gt;
-        &lt;h2&gt;당신이 어려움을 겪고 항복하지 않기로 결정할 때, &lt;em&gt;그것이 힘이다.&lt;/em&gt;&lt;/h2&gt;
-    &lt;/article&gt;
+    &lt;div class="moveWrap"&gt;
+        &lt;div class="moveImage"&gt;
+            &lt;div class="mImg"&gt;
+                &lt;img src="../assets/img/bg10@2.jpg" alt="이미지"&gt;
+            &lt;/div&gt;
+            &lt;div class="mText"&gt;
+                &lt;p&gt;Don't dream, Be it&lt;/p&gt;
+                &lt;p&gt;꿈만 꾸지 말고 되어라.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
 &lt;/main&gt;
 </code></pre>
                         </div>
                         <div class="css">
-<pre><code class="language-css">.mouseCont {
+<pre><code class="language-css">.moveWrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    color: #fff;
-    width: 100%;
-    height: 100vh;
+    width: 100%; height: 100vh;
+}
+.moveImage {
+    position: relative;
+}
+.moveImage .mImg {
+    width: 50vw; height: 60vh;
     overflow: hidden;
-    font-family: 'NEXONLv1Gothic';
-    cursor: none;
+    position: relative;
+    transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
 }
-.mouseCont p {
-    font-size: 2vw;
-    line-height: 2.3;
-    font-weight: 300;
+.moveImage:hover .mImg {
+    transform: scale(1.025);
 }
-.mouseCont h2 {
-    font-size: 2.5vw;
-    font-weight: normal;
-    font-weight: 400;
+.moveImage .mImg img {
+    position: absolute;
+    width: 110%; height: 110%;
+    left: -5%; top: -5%;
+    object-fit: cover;
+    transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
 }
-.mouseCont em {
-    font-style: normal;
-    border-bottom: 0.2vw dashed yellow;
-    color: yellow;
+.moveImage .mText {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.3vw;
+    white-space: nowrap;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    padding: 1vw;
+    line-height: 1.6;
+    font-family: "NEXONLv1Gothic";
 }
 .cursor {
     position: absolute;
-    left: 0; top: 0;
-    width: 10px; height: 10px;
+    width: 20px; height: 20px;
+    background: #fff;
     border-radius: 50%;
-    z-index: 999;
-    background-color: #fff;
+    z-index: 1000;
     user-select: none;
     pointer-events: none;
-    transition: transform 0.4s;
-    mix-blend-mode: difference;
-}
-.cursor.active {
-    transform: scale(20);
-}
-.info.left.list li.active{
-    text-decoration: underline;
-    color: yellow;
 }
 </code></pre>
                         </div>
-                        <div class="jquery">
-<pre><code class="language-javascript">const w = $(".cursor").width() /2;
-const h = $(".cursor").height() /2;
+                        <div class="javascript">
+<pre><code class="language-javascript">// 선택 및 이벤트 활성화
+document.querySelector(".moveImage").addEventListener("mousemove", function(e){
+    let pageX = 0,
+        pageY = 0,
+        standardX = 0,
+        standardY = 0;
+    
+    // 마우스 값
+    pageX = e.pageX;
+    pageY = e.pageY;
 
-//움직임 효과
-$(window).mousemove(function(e){
-    gsap.to(".cursor", {duration:0.4, left: e.pageX -w, top: e.pageY -h});
-});
+    // 기준점 가운데로 변경
+    standardX = window.innerWidth/2 - pageX;
+    standardY = window.innerHeight/2 - pageY;
 
-//오버 효과
-$(".mouseCont em").hover(function(){
-    $(".cursor").addClass("active");
-}, function(){
-    $(".cursor").removeClass("active");
-});
+    gsap.to(".cursor", {duration: 0.2, left: pageX-10, top: pageY-10});
 
-//출력용
-$(".info.left.list li").click(function(){
-    $(".info.left.list li").removeClass("active");
-    $(this).addClass("active");
-    const text = $(this).text();
-    $(".cursor").css("mix-blend-mode", text);
+    // img x/y축 -> 마우스 값/20
+    const move = document.querySelector(".mImg img");
+    move.style.transform = "translate("+ standardX/20+"px," + standardY/20 + "px)";
+
+    // 출력
+    document.querySelector(".pageX").innerText = pageX;
+    document.querySelector(".pageY").innerText = pageY;
+    document.querySelector(".standardX").innerText = standardX;
+    document.querySelector(".standardY").innerText = standardY;
 });
 </code></pre>
                         </div>
