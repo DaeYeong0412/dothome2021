@@ -152,12 +152,16 @@
     &lt;div class="slider-wrap"&gt;
         &lt;div class="slider-img"&gt;
             &lt;div class="slider-inner"&gt;
-                &lt;div class="slider" data-name="이미지1"&gt;&lt;img src="../assets/img/bg1.jpg" alt="이미지1"&gt;&lt;/div&gt;
-                &lt;div class="slider" data-name="이미지2"&gt;&lt;img src="../assets/img/bg2.jpg" alt="이미지2"&gt;&lt;/div&gt;
-                &lt;div class="slider" data-name="이미지3"&gt;&lt;img src="../assets/img/bg3.jpg" alt="이미지3"&gt;&lt;/div&gt;
-                &lt;div class="slider" data-name="이미지4"&gt;&lt;img src="../assets/img/bg4.jpg" alt="이미지4"&gt;&lt;/div&gt;
-                &lt;div class="slider" data-name="이미지5"&gt;&lt;img src="../assets/img/bg5.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                &lt;div class="slider" data-name="이미지1"&gt;&lt;img src="../assets/img/bg4.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                &lt;div class="slider" data-name="이미지2"&gt;&lt;img src="../assets/img/bg5.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                &lt;div class="slider" data-name="이미지3"&gt;&lt;img src="../assets/img/bg6.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                &lt;div class="slider" data-name="이미지4"&gt;&lt;img src="../assets/img/bg7.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                &lt;div class="slider" data-name="이미지5"&gt;&lt;img src="../assets/img/bg8.jpg" alt="이미지5"&gt;&lt;/div&gt;
             &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="slider-btn"&gt;
+            &lt;a class="prev" href="#"&gt;prev&lt;/a&gt;
+            &lt;a class="next" href="#"&gt;next&lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/main&gt;
@@ -204,24 +208,64 @@
 .slider-inner .slider:nth-child(4) {z-index: 2;}
 .slider-inner .slider:nth-child(1) {z-index: 5;}
 .slider-inner .slider:nth-child(5) {z-index: 1;}
+
+.slider-btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 50px; height: 50px;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+.slider-btn a:hover {
+    background: rgba(241,96,86,1);
+}
+.slider-btn .prev {
+    left: 0;
+}
+.slider-btn .next {
+    right: 0;
+}
 </code></pre>
                         </div>
                         <div class="jquery">
 <pre><code class="language-javascript">const sliderWrap = $(".slider-wrap");
-const sliderImg = $(".slider-img");
-const sliderInner = $(".slider-inner");
-const slider = $(".slider");
+    const sliderImg = $(".slider-img");
+    const sliderInner = $(".slider-inner");
+    const slider = $(".slider");
+    const sliderBtn = $(".slider-btn");
 
-let currentIndex = 0;
-let sliderWidth = slider.width();
+    let sliderWidth = slider.width();
+    let sliderCount = slider.length;
 
-// 콜백함수 재귀함수차이점을 알자.
-setInterval(function(){
-    sliderInner.animate({left: -sliderWidth}, 400, function(){
-        $(".slider:first-child").appendTo(sliderInner)
-        sliderInner.css("left","");
+    sliderInner.css({ marginLeft: -sliderWidth});
+    $(".slider:last-child").prependTo(sliderInner);
+
+    function movePrev(){
+        sliderInner.animate({ left: sliderWidth }, 400, function(){
+            $(".slider:last-child").prependTo(sliderInner);
+            sliderInner.css("left","");
+        });
+    }
+    function moveNext(){
+        sliderInner.animate({ left: -sliderWidth }, 400, function(){
+            $(".slider:first-child").appendTo(sliderInner);
+            sliderInner.css("left","");
+        });
+    }
+
+    sliderBtn.find(".prev").click(function(){
+        movePrev();
     });
-}, 3000);
+    sliderBtn.find(".next").click(function(){
+        moveNext();
+    });
 </code></pre>
                         </div>
                     </div>
