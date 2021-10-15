@@ -336,6 +336,10 @@
 	height: 100%;
 }
 
+.image-wrap.figma {
+	background-color: #144d68;
+}
+
 .image-wrap img {
 	width: 55%;
     padding-top: 70px;
@@ -348,7 +352,6 @@
 	display: block;
 	width: 100%;
 	height: 100%;
-	
 	opacity: 0;
 	filter: alpha(opacity=0);
 	
@@ -396,6 +399,10 @@
 	filter: alpha(opacity=100);
 }
 
+.image-wrap.figma .hover-wrap .overlay-img-donut {
+	background: #a5d5fa;
+}
+
 .image-wrap .hover-wrap .overlay-img-donut.black {
 
 	background: #000;
@@ -416,6 +423,10 @@
 	opacity: 1;
 	filter: alpha(opacity=100);
     text-align: center;
+}
+
+.image-wrap.figma .hover-wrap .overlay-text-thumb-donut {
+	color: #144d68;
 }
 
 .image-wrap .hover-wrap .overlay-text-thumb1-donut {

@@ -70,6 +70,20 @@ em {
 img {
     width: 100%;
 }
+fieldset {
+    border: 0 none;
+}
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* 테이블 초기화 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
 /* 제목 초기화 */
 h1,h2,h3,h4,h5,h6 {
@@ -91,7 +105,71 @@ dl.list li {
     background: #000;
     position: absolute;
     left: 0; top: 7px;
- }
+}
+
+/* 인풋 스타일 유형 */
+.input_write {
+    width: 100%; height: 56px;
+    display: block;
+    border: 1px solid #dfdfdf;
+    padding: 13px;
+    font-size: 16px;
+    line-height: 22px;
+    box-sizing: border-box;
+}
+.input_write2 {
+    border: 2px solid #a69cf7;
+    padding: 15px 30px;
+    margin: 5px;
+    border-radius: 50px;
+    outline: none;
+    background: #d3cef8;
+    color: #7266c7;
+}
+.input_write2.w100 {
+    min-width: 300px;
+}
+.input_write2::-webkit-input-placeholder {
+    color: #7266c7;
+}
+.input_write2:-ms-input-placeholder {
+    color: #7266c7;
+}
+.input_write2::placeholder{
+    color: #7266c7;
+}
+
+/* 버튼 스타일 유형 */
+.btn_submit {
+    width: 100%;
+    padding: 16px;
+    background-color: #eee;
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+.btn_submit:hover {
+    box-shadow: inset 0 0 0 2px #000;
+    background-color: #fff;
+}
+.btn_submit2 {
+    background: #a69cf7;
+    color: #fff;
+    border-radius: 50px;
+    width: 58px; height: 58px;
+    margin-top: 4px; margin-left: 4px;
+    transition: box-shadow 0.3s
+}
+.btn_submit2:hover {
+    box-shadow: inset 0 0 0 5px #9082f5;
+}
+
+/* 간격 */
+.mt0 {margin-top: 0;}
+.mt10 {margin-top: 10px;}
+.mt20 {margin-top: 20px;}
+.mt30 {margin-top: 30px;}
+.mt40 {margin-top: 40px;}
+.mt50 {margin-top: 50px;}
+
 
 /* ir 효과 */
 /* 
