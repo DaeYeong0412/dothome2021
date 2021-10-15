@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookit</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+    <style>
+        /* 기본 세팅 */
+        body {
+            font-family: 'NanumSquare';
+            width: 100%;
+            margin: 0 auto;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* 헤더 */
+        #header {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #header .headerImg {
+            line-height: 4.5;
+        }
+        #header li {
+            margin-left: 65px;
+            font-weight: 800;
+            font-size: 22px;
+            display: inline-block;
+        }
+
+        /* 메인 */
+        /* 배너1 슬라이드 */
+        .banner1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .banner1 .sliderImg {
+            position: relative;
+            width: 1000px; height: 390px;
+        }
+        .banner1 .slider {
+            position: absolute;
+            top: 0; left: 0;
+            transition: all 0.6s;
+        }
+        .banner1 .slider::before {
+            position: absolute;
+            right: 20px; bottom: 20px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 5px 10px 3px;
+            font-family: "NEXONLv1Gothic";
+            content: attr(data-name);
+        }
+        .slider:nth-child(1) {z-index: 3;}
+        .slider:nth-child(2) {z-index: 2;}
+        .slider:nth-child(3) {z-index: 1;}
+
+        /* 배너2 검색박스 */
+        .banner2 {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .banner2 .contentsBox {
+            width: 45%;
+            background-color: #F2F2F2;
+            padding: 1% 2% 2% 2%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .banner2 .contentsBox .contText h3 {
+            font-size: 22px;
+            display: block;
+            font-weight: 800;
+            margin-bottom: -5px;
+        }
+        .banner2 .contentsBox .contText p {
+            display: block;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .banner2 .contentsBox .contText strong {
+            font-weight: 800;
+            font-size: 18px;
+        }
+        .banner2 .contentsBox:first-child .contText strong::before {
+            content: '';
+            background-image: url(img/cookit3.jpg);
+            display: inline-block;
+            width: 13px; height: 16px;
+            margin-right: 5px;
+            border-radius: 50%;
+            vertical-align: -2px;
+        }
+        .banner2 .contentsBox:last-child .contText strong::before {
+            content: '';
+            background-image: url(img/cookit5.jpg);
+            border-radius: 50%;
+            display: inline-block;
+            width: 18px; height: 18px;
+            margin-right: 5px;
+            vertical-align: -3px;
+        }
+        .banner2 .contentsBox .contText span {
+            font-size: 15px;
+            font-weight: 800;
+            margin-left: 5px;
+            color: #999;
+        }
+        .banner2 .contentsBox .contImg {
+            margin-top: 35px;
+        }
+
+        /* 배너3 상품주문박스 */
+        .banner3 h2{
+            display: inline-block;
+            font-weight: 800;
+            font-size: 30px;
+        }
+        .banner3 h3{
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: 800;
+            font-size: 30px;
+            color: #999;
+        }
+        .banner3 .menu {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+        .banner3 .menu .food {
+            position: relative;
+        }
+        .banner3 .food p {
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 0.5;
+        }
+        .banner3 .food strong {
+            display: inline-block;
+            font-weight: 800;
+            margin-right: 5px;
+            font-size: 18px;
+        }
+        .banner3 .food span {
+            display: inline-block;
+            font-weight: 800;
+            color: #999;
+        }
+        .banner3 .food a img {
+            position: absolute;
+            bottom: 0; right: 0;
+        }
+
+        /* 푸터 */
+        #footer {
+            background-color: #202020;
+            width: 100%;
+            padding: 20px 0 50px 0;
+        }
+        .footerWarp {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footerWarp .footerImg {
+            margin-top: 15px;
+        }
+        .footerWarp .footerText .footers {
+            color: #fff;
+            margin-bottom: 50px;
+            font-size: 15px;
+        }
+        .footerWarp .footerText .footers.two {
+            color: #999;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+        .footerWarp .footerText li {
+            display: inline-block;
+        }
+        .footerText .footers li::after {
+            content: '|';
+            margin: 0 30px;
+        }
+        .footerText .footers.two li::after {
+            content: '|';
+            margin: 0 10px;
+        }
+        .footerWarp .footerText li:last-child:after {
+            content: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <div class="headerImg">
+                <img src="img/cookit1.jpg" alt="logo">
+            </div>
+            <ul>
+                <li>COOKIT소개</li>
+                <li>COOKIT메뉴</li>
+                <li>리뷰</li>
+                <li>이벤트</li>
+                <li>MY쿡킷</li>
+            </ul>
+        </header>
+        <main id="main">
+            <section class="banner1">
+                <div class="sliderImg">
+                    <div class="slider" data-name="슬라이더1"><img src="img/cookit2.jpg" alt="슬라이더1"></div>
+                    <div class="slider" data-name="슬라이더2"><img src="img/cookit2.jpg" alt="슬라이더2"></div>
+                    <div class="slider" data-name="슬라이더3"><img src="img/cookit2.jpg" alt="슬라이더3"></div>
+                </div>
+            </section>
+            <section class="banner2">
+                <div class="contentsBox">
+                    <div class="contText">
+                        <h3>우리집도 COOKIT 배송이 되나요?</h3>
+                        <p>배송이 가능한지 알려드려요.</p>
+                        <strong>배송지 검색</strong>
+                    </div>
+                    <div class="contImg">
+                        <img src="img/cookit4.jpg" alt="배송">
+                    </div>
+                </div>
+                <div class="contentsBox">
+                    <div class="contText">
+                        <h3>7월 30일 (화)에 받을 수 있어요</h3>
+                        <p>오전 7시까지 주문하시면 다음날 배송됩니다.</p>
+                        <strong>63:28:32<span>남은시간</span></strong>
+                    </div>
+                    <div class="contImg">
+                        <img src="img/cookit6.jpg" alt="주문">
+                    </div>
+                </div>
+            </section>
+            <section class="banner3">
+                <h2>실시간 베스트 |<h3>생생한 리뷰</h3></h2>
+                <div class="menu">
+                    <div class="food">
+                        <img src="img/cookit7.jpg" alt="어복쟁반">
+                        <p>평양식 어복쟁반</p>
+                        <strong>33,800원</strong><span>/3인분</span>
+                        <a href="#"><img src="img/cookit10.jpg" alt="장바구니"></a>
+                    </div>
+                    <div class="food">
+                        <img src="img/cookit8.jpg" alt="새우쭈꾸미삼겹살">
+                        <p>새우주꾸미삼겹살</p>
+                        <strong>29,800원</strong><span>/3인분</span>
+                        <a href="#"><img src="img/cookit10.jpg" alt="장바구니"></a>
+                    </div>
+                    <div class="food">
+                        <img src="img/cookit9.jpg" alt="아귀찜">
+                        <p>방풍나물 아귀찜</p>
+                        <strong>32,800원</strong><span>/3인분</span>
+                        <a href="#"><img src="img/cookit10.jpg" alt="장바구니"></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer id="footer">
+        <div class="container">
+            <div class="footerWarp">
+                <div class="footerImg">
+                    <img src="img/cookit11.jpg" alt="footerlogo">
+                </div>
+                <div class="footerText">
+                    <ul class="footers">
+                        <li>이용약관</li>
+                        <li>개인정보처리 방침</li>
+                        <li>법적고지</li>
+                        <li>사업자정보 확인</li>
+                    </ul>
+                    <ul class="footers two">
+                        <li>씨제이제일제당(주)</li>
+                        <li>대표자:신현재</li>
+                    </ul>
+                    <ul class="footers two">
+                        <li>주소:서울 중구 동호로 330 CJ제일제당 센터 (우)04560</li>
+                        <li>사업자등록번호:104-86-09535</li>
+                    </ul>
+                    <ul class="footers two">
+                        <li>통신판매업신고 중구 제 07767호</li>
+                        <li>개인정보보호책임자:류화정</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 슬라이더 페이더 효과 스크립트 -->
+
+    <script>
+        const sliderWrap = document.querySelector(".slider-wrap");
+        const sliderImg = document.querySelector(".slider-img");
+        const slider = document.querySelectorAll(".slider");
+
+        let currentIndex = 0;
+        let sliderCount = slider.length;
+
+        setInterval(() => {
+        let nextIndex = (currentIndex + 1) % sliderCount;
+
+        slider[currentIndex].style.opacity ="0";
+        slider[nextIndex].style.opacity = "1";
+
+        currentIndex = nextIndex;
+       }, 2000);
+    </script>
+</body>
+</html>
