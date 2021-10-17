@@ -16,8 +16,7 @@
   <link rel="stylesheet" href="../assets/css/var.css">
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-  </style>
+
 </head>
 <body>
     <div id="skip">
@@ -44,7 +43,6 @@
                                 $sql = "SELECT b.boardTitle ,b.boardContent, b.boardView, b.boardLike, b.regTime, b.myMemberID, m.youName, m.youScore, m.youImg, m.youIntro FROM gBoard b JOIN gmember m ON (b.myMemberID = m.myMemberID) WHERE b.myBoardID = ${boardID}";
                                 $result = $connect -> query($sql);
                                 $info = $result -> fetch_array(MYSQLI_ASSOC);
-                                
                             ?>
    
                             <?php 
@@ -242,8 +240,6 @@
         });
         }
         
-       
-        
         let temp = document.querySelector('.temp');
         let temp2 = document.querySelector('.temp2');
         const temper = parseInt(temp.innerText.match(/\d+/));
@@ -256,8 +252,6 @@
                 temp.style.color = 'red';
                 outer.classList.remove('w3-green');
                 outer.classList.add('w3-red');
- 
-                
                 //37 보다 클때 레드   
             } else if ( temper < 36){
                 //37 보다 클때 36보다 작을때 블루
@@ -267,7 +261,6 @@
                 outer.classList.add('w3-blue');
             }
         }
-       
     </script>
 </body>
 </html>

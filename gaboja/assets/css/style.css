@@ -51,11 +51,11 @@
     margin: 15px;
     display: inline-block;
     font-size: 16px;
+    transition: all 0.2s;
 }
 #header nav li a:hover {
     color: #629CD9;
 }
-#header nav li:nth-child(1) a:hover,
 #header nav li:nth-child(2) a:hover {
     color: #fa1717;
 }
@@ -67,9 +67,6 @@
 }
 #header .member:last-child a {
     margin-right: 30px;
-}
-#header .member a:hover {
-    color: #629CD9;
 }
 #header .member .memberlog {
     display: flex;
@@ -114,9 +111,10 @@
     color: #777;
     margin-right: 15px;
     font-size: 8px;
+    transition: all 0.2s;
 }
 #header .member .memberText ul li a:hover {
-    color: #629CD9;
+    color: #62d98a;
 }
 
 /* 메인 컨텐츠 */
@@ -870,7 +868,7 @@
     margin-bottom: 45px;
 }
 
-.memberInfo {
+#mainView .memberInfo {
     box-sizing: border-box;
     width: 100%;
     border: 1px solid #CCCCCC;
@@ -878,25 +876,25 @@
     margin-bottom: 30px;
     display: flex;
 }
-.memberInfo img {
+#mainView .memberInfo img {
     width: 320px;
     height: 230px;
     margin-right: 56px;
 }
-.memScore {
+#mainView .memScore {
     margin-right: 56px;
 }
-.memScore span {
+#mainView .memScore span {
     display: inline-block;
     font-size: 16px;
     margin-bottom: 30px;
 }
-.memScore .scoreWrap {
+#mainView .memScore .scoreWrap {
     border: 1px solid #ccc;
     border-radius: 5px;
     position: relative;
 }
-.memScore .w3-light-grey {
+#mainView .memScore .w3-light-grey {
     position: absolute;
     border: 2px solid none;
     background: #E8ECEF;
@@ -905,25 +903,23 @@
     border-radius: 8px;
     transform: rotate(270deg);
 }
-.memScore .w3-green {
-}
-.scoreWrap {
+#mainView .scoreWrap {
     width: 63px; height: 176px;
 }
-.scoreFace img {
+#mainView .scoreFace img {
     display: block;
     width: 25px; height: 45px;
     position: absolute;
     left: 25px; top: 9px;
 }
-.scoreFace span {
+#mainView .scoreFace span {
     display: block;
     position: absolute;
     left: 23px; top: 50px;
     font-size: 9px;
     color: #46A858;
 }
-.nowScroe span {
+#mainView .nowScroe span {
     position: absolute;
     width: 50px;
     font-size: 9px;
@@ -1067,7 +1063,7 @@
 .howtouse .content-article > div {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     padding: 5%;
     border: 1px solid #CCCCCC;
 }
@@ -1084,7 +1080,7 @@
     margin-bottom: 100px;
 }
 
-/* 내 정보 페이지 */
+/* 내 정보 페이지 왼쪽 메뉴*/
 #informationMain {
     background: #F8F8FA;
     margin-top: -50px;
@@ -1099,12 +1095,130 @@
     padding: 2%;
     background-color: #fff;
 }
+#informationMain .left .info {
+    position: relative;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+#informationMain .left .info .infoAlarm {
+    display: block;
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+#informationMain .left .info .infoRedalarm {
+    position: absolute;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: red;
+    left: 5%;
+}
+#informationMain .left .info .infoAlarm::before {
+    content: '';
+    display: inline-block;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    margin-right: 30px;
+    background-image: url(../ico/icon13.svg);
+    vertical-align: -5px;
+}
+#informationMain .left .info .infoImg {
+    margin-bottom: 20px;
+}
+#informationMain .left .info .infoText {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+#informationMain .left .info .infoText h2 {
+    font-size: 20px;
+}
+#informationMain .left .info .infoText p {
+    font-weight: 300;
+    font-size: 12px;
+}
+#informationMain .left .info .scoreWrap {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 35px 20px 20px 20px;
+    margin-bottom: 20px;
+}
+#informationMain .left .info .scoreWrap .w3-light-grey {
+    display: block;
+}
+#informationMain .left .info .scoreWrap .scoreFace {
+    position: absolute;
+    top: 1%; left: 70%;
+}
+#informationMain .left .info .scoreWrap .scoreFace img {
+    width: 17px; height: 35px;
+    margin-bottom: 3px;
+}
+#informationMain .left .info .scoreWrap .scoreFace span {
+    font-weight: 800;
+    font-size: 13px;
+}
+#informationMain .left .info .scoreWrap .nowScroe span {
+    position: absolute;
+    font-size: 10px;
+    color: #ADB6BD;
+    top: 20%; left: 10%;
+}
+#informationMain .left .info .scoreWrap .nowScroe span::after {
+    content: '';
+    display: inline-block;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: 8px solid #ADB6BD;
+    margin-left: 10px;
+}
+#informationMain .left .info .infoBtn {
+    display: block;
+    text-align: center;
+    border: 1px solid #363C48;
+    padding: 10px;
+    color: #363C48;
+}
+#informationMain .left .info .infoBtn.b {
+    background: #363C48;
+    margin-bottom: 10px;
+    color: #fff;
+}
+#informationMain .left .clickInfo li {
+    padding: 10px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #888888;
+    color: #888888;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+#informationMain .left .clickInfo li.active {
+    background: #888888;
+    color: #fff;
+}
+
+/* 내정보 페이지 오른쪽 메뉴 */
 #informationMain .right {
     border: 1px solid #ccc;
     width: 69%;
     padding: 2%;
     background-color: #fff;
 }
+#informationMain .right .memberInfo > div {
+    display: none;
+}
+#informationMain .right .memberInfo > div:first-child {
+    display: block;
+}
+#informationMain .right .memberInfo > div h2 {
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 20px;
+    color: #363C48;
+}
+#informationMain .right .memberInfo .memberCheck h2 {}
 
 /* 푸터 */
 footer {

@@ -7,7 +7,7 @@
 <nav>
     <h2 class="ir_so">메인 메뉴</h2>
     <ul>
-        <li><a href="#">일정 만들기</a></li>
+        <li><a href="../schedule/main.php">일정 만들기</a></li>
         <li><a href="#">같이가요</a></li>
         <li><a href="../board/freeBoard.php">자유게시판</a></li>
         <li><a href="../howtouse/howtouseMain.php">이용방법</a></li>
@@ -21,7 +21,7 @@
         <div class="memberlog">
             <div class="memberImg">
                 <div>
-                    <span></span>
+                    <!-- <span></span> -->
                 </div>
             </div>
             <div class="memberText">

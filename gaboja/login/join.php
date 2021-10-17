@@ -66,7 +66,6 @@
                         </fieldset>
                         <button id="joinBtn" class="btn_submit" type="submit">회원가입 완료</button>
                     </form>
-
                 </div>
             </div>
         </article>

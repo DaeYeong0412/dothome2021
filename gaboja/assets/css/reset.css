@@ -136,13 +136,16 @@ dl.list li::before {
     width: 80%;
 }
 .input_write2 {
-    border: 2px solid #A69CF7;
-    padding: 15px 30px;
-    margin: 5px;
-    border-radius: 50px;
-    outline: none;
-    background: #C2BAFF;
-    color: #7B6AFF;
+    width: 100%;
+    display: block;
+    border: 1px solid #737373;
+    border-radius: 8px;
+    padding: 13px 14px;
+    height: 150px;
+    font-size: 14px;
+    line-height: 22px;
+    box-sizing: border-box;
+    resize: none;
 }
 .input_write2.w100 {
     min-width: 300px;
