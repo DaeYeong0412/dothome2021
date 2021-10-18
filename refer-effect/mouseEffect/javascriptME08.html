@@ -10,112 +10,151 @@
     <link rel="stylesheet" href="../assets/css/highlight.css">
 
     <style>
-        .textWrap {
-            position: absolute;
-            left: 50%; top: 50%;
-            transform: translate(-50%, -10%);
-            color: #fff;
-            font-size: 2vw;
-            font-family: 'NEXONLv1Gothic';
-            line-height: 1.5;
-        }
-        .textWrap .line {
-            width: 100%;
+        .mouseCont {
             display: flex;
-        }
-        .textWrap .line .left {
-            width: 50vw;
-            color: skyblue;
-            overflow: hidden;
-            transform: skew(0deg, -15deg);
-        }
-        .textWrap .line .left .spanWrap {
-            width: 100vw;
-            text-align: center;
-        }
-        .textWrap span {
-            display: inline-block;
-        }
-        .textWrap .line .right {
-            width: 50vw;
-            overflow: hidden;
-            transform: skew(0deg, 15deg);
-        }
-        .textWrap .line .right .spanWrap {
-            width: 100vw;
-            text-align: center;
-            transform: translateX(-50vw);
-        }
-        .imgWrap {
-            position: absolute;
-            left: 50%; top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            width: 50%;
-        }
-        .imgWrap img {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
             width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'NEXONLv1Gothic';
+            cursor: none;
+            position: relative;
+            z-index: 10;
+        }
+        .mouseCont p {
+            font-size: 2vw;
+            line-height: 2.3;
+            font-weight: 300;
+        }
+        .mouseCont h2 {
+            font-size: 2.5vw;
+            font-weight: normal;
+            font-weight: 400;
+        }
+        .mouseCont em {
+            font-style: normal;
+            border-bottom: 0.2vw dashed orange;
+            color: orange;
+        }
+        .cursor {
+            position: absolute;
+            left: 0; top: 0;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            z-index: 999;
+            background-color: skyblue;
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.4s;
+            mix-blend-mode: difference;
+        }
+        .cursor.active {
+            transform: scale(20);
+        }
+        .box-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%;
+            height: 100vh;
+        }
+        .box-item {
+            display: grid;
+            grid-template-columns: repeat(10, 100px);
+            grid-template-rows: repeat(6, 50px);
+            grid-gap: 30px;
+        }
+        .box-item .item {
+            width: 50px; height: 50px;
+            margin: 20px;
+            background-color: rgba(255,255,255,0.3);
+        }
+        .box-item.two .item {
+            border-radius: 50%;
+            transform: scale(0.2);
+        }
+        .info.right {
+            z-index: 100;
         }
     </style>
 </head>
-<body class="bg bg6 blue">
+<body class="bg bg15 blue">
     <!-- contents -->
     <main>
-        <div class="contents">
-            <div class="moveImage">
-                <div class="textWrap">
-                    <div class="line">
-                        <div class="left">
-                            <div class="spanWrap">
-                                <span class="spanSlow">I never dreamed about</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="spanWrap">
-                                <span class="spanSlow">I never dreamed about</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <div class="left">
-                            <div class="spanWrap">
-                                <span class="spanFast">success, I worked for it</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="spanWrap">
-                                <span class="spanFast">success, I worked for it</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <div class="left">
-                            <div class="spanWrap">
-                                <span class="spanSlow">나는 결코 성공에 대해 꿈꾸지</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="spanWrap">
-                                <span class="spanSlow">나는 결코 성공에 대해 꿈꾸지</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <div class="left">
-                            <div class="spanWrap">
-                                <span class="spanFast">않았다, 나는 꿈을 위해 행동했다.</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="spanWrap">
-                                <span class="spanFast">않았다, 나는 꿈을 위해 행동했다.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="imgWrap">
-                    <img src="../assets/img/bg8@2.jpg" alt="이미지">
-                </div>
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+
+        <article class="mouseCont">
+            <p><em>When you go through</em> hardships and decide not to surrender, that is strength.</p>
+            <h2>당신이 어려움을 겪고 항복하지 않기로 결정할 때, <em>그것이 힘이다.</em></h2>
+        </article>
+        <div class="box-wrap">
+            <div class="box-item two">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
             </div>
         </div>
     </main>
@@ -124,7 +163,7 @@
     <!-- info -->
     <div class="info">
         <h1><a href="index.html">Mouse Effect08 - javascript</a></h1>
-        <p>마우스 이펙트 - 텍스트 효과</p>
+        <p>마우스 이펙트 - 오버 효과</p>
     </div>
 
     <div class="info right">
@@ -147,13 +186,6 @@
             <li><a href="jqueryME06.html">6</a></li>
             <li><a href="jqueryME07.html">7</a></li>
             <li><a href="jqueryME08.html">8</a></li>
-        </ul>
-    </div>
-
-    <div class="info left list">
-        <ul>
-            <li>pageX : <span class="pageX">0</span></li>
-            <li>pageY : <span class="pageY">0</span></li>
         </ul>
     </div>
 
@@ -183,130 +215,86 @@
                     <div class="view-cont">
                         <div class="html">
 <pre><code class="language-html">&lt;main&gt;
-    &lt;div class="contents"&gt;
-        &lt;div class="moveImage"&gt;
-            &lt;div class="textWrap"&gt;
-                &lt;div class="line"&gt;
-                    &lt;div class="left"&gt;
-                        &lt;div class="spanWrap"&gt;
-                            &lt;span class="spanSlow"&gt;I never dreamed about&lt;/span&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="right"&gt;
-                        &lt;div class="spanWrap"&gt;
-                            &lt;span class="spanSlow"&gt;I never dreamed about&lt;/span&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class="line"&gt;
-                    &lt;div class="left"&gt;
-                        &lt;div class="spanWrap"&gt;
-                            &lt;span class="spanFast"&gt;success, I worked for it&lt;/span&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="right"&gt;
-                        &lt;div class="spanWrap"&gt;
-                            &lt;span class="spanFast"&gt;success, I worked for it&lt;/span&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class="line"&gt;
-                    &lt;div class="left"&gt;
-                        &lt;div class="spanWrap"&gt;
-                            &lt;span class="spanSlow"&gt;나는 결코 성공에 대해 꿈꾸지&lt;/span&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="right"&gt;
-                        &lt;div class="spanWrap"&gt;
-                            &lt;span class="spanSlow"&gt;나는 결코 성공에 대해 꿈꾸지&lt;/span&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class="line"&gt;
-                    &lt;div class="left"&gt;
-                        &lt;div class="spanWrap"&gt;
-                            &lt;span class="spanFast"&gt;않았다, 나는 꿈을 위해 행동했다.&lt;/span&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;div class="right"&gt;
-                        &lt;div class="spanWrap"&gt;
-                            &lt;span class="spanFast"&gt;않았다, 나는 꿈을 위해 행동했다.&lt;/span&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class="imgWrap"&gt;
-                &lt;img src="../assets/img/bg8@2.jpg" alt="이미지"&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;div class="cursor"&gt;&lt;/div&gt;
+    &lt;div class="cursor-follower"&gt;&lt;/div&gt;
+
+    &lt;article class="mouseCont"&gt;
+        &lt;p&gt;&lt;em&gt;When you go through&lt;/em&gt; hardships and decide not to surrender, that is strength.&lt;/p&gt;
+        &lt;h2&gt;당신이 어려움을 겪고 항복하지 않기로 결정할 때, &lt;em&gt;그것이 힘이다.&lt;/em&gt;&lt;/h2&gt;
+    &lt;/article&gt;
 &lt;/main&gt;
 </code></pre>
                         </div>
                         <div class="css">
-<pre><code class="language-css">.textWrap {
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -10%);
-    color: #fff;
-    font-size: 2vw;
-    font-family: 'NEXONLv1Gothic';
-    line-height: 1.5;
-}
-.textWrap .line {
-    width: 100%;
+<pre><code class="language-css">.mouseCont {
     display: flex;
-}
-.textWrap .line .left {
-    width: 50vw;
-    color: skyblue;
-    overflow: hidden;
-    transform: skew(0deg, -15deg);
-}
-.textWrap .line .left .spanWrap {
-    width: 100vw;
-    text-align: center;
-}
-.textWrap span {
-    display: inline-block;
-}
-.textWrap .line .right {
-    width: 50vw;
-    overflow: hidden;
-    transform: skew(0deg, 15deg);
-}
-.textWrap .line .right .spanWrap {
-    width: 100vw;
-    text-align: center;
-    transform: translateX(-50vw);
-}
-.imgWrap {
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 50%;
-}
-.imgWrap img {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
     width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'NEXONLv1Gothic';
+    cursor: none;
+    position: relative;
+    z-index: 10;
+}
+.mouseCont p {
+    font-size: 2vw;
+    line-height: 2.3;
+    font-weight: 300;
+}
+.mouseCont h2 {
+    font-size: 2.5vw;
+    font-weight: normal;
+    font-weight: 400;
+}
+.mouseCont em {
+    font-style: normal;
+    border-bottom: 0.2vw dashed orange;
+    color: orange;
+}
+.cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    z-index: 999;
+    background-color: skyblue;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.4s;
+    mix-blend-mode: difference;
+}
+.cursor.active {
+    transform: scale(20);
+}
+.box-item {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0 10%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.box-item .item {
+    width: 50px; height: 50px;
+    margin: 20px;
+    background-color: rgba(255,255,255,0.3);
+}
+.info.right {
+    z-index: 100;
 }
 </code></pre>
                         </div>
                         <div class="javascript">
-<pre><code class="language-javascript">function moueseMove(e){
-    let positionSlow = (e.pageX - ($(window).width()/2)) * 0.1;
-    let positionFast = (e.pageX - ($(window).width()/2)) * 0.2;
-
-    gsap.to(".spanSlow", {duration: 0.4, x: positionSlow})
-    gsap.to(".spanFast", {duration: 0.4, x: -positionFast})
-
-    let pageX = e.pageX;
-    let pageY = e.pageY;
-
-    $(".pageX").text(pageX);
-    $(".pageY").text(pageY);
-}
-$(window).on("mousemove", moueseMove);
+<pre><code class="language-javascript">
 </code></pre>
                         </div>
                     </div>
@@ -316,11 +304,42 @@ $(window).on("mousemove", moueseMove);
         </div>
     </div>
 
-    <script src= "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script>
+        //박스 움직임 효과
+        window.addEventListener("mousemove", function(e){
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            const item = document.querySelectorAll(".item");
 
+            item.forEach(item => {
+                // const itemX = item.offsetLeft + 25;
+                // const itemY = item.offsetTop + 25;
+                // const diftX = mouseX - itemX;
+                // const diftY = mouseY - itemY;
+                // const radians = Math.atan2(diftY, diftX);
+                // const angle = radians * 180 / Math.PI;
+
+                // item.style.transform = "rotate("+ angle +"deg)";
+
+                const itemX = item.offsetLeft - mouseX;
+                const itemY = item.offsetTop - mouseY;
+
+                const dist = Math.sqrt(itemX * itemX + itemY * itemY);
+                const score = Math.exp(dist * -0.003);
+
+                item.style.transform = `scale(${score})`
+            });
+        });
+
+        // 커서 움직임 효과
+        document.addEventListener("mousemove", e => {
+            const w = document.querySelector(".cursor").offsetWidth /2;
+            const h = document.querySelector(".cursor").offsetHeight /2;
+            gsap.to(".cursor", {duration: 0.4, left: e.pageX -w, top: e.pageY -h});
+        });
     </script>
 </body>
 </html>

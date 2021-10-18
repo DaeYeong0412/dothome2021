@@ -138,9 +138,9 @@ $gradient6: linear-gradient(to bottom,  #fccb90 0%,#d57eeb 100%);
     }
 }
 
-@for $i from 1 through 10 {
+@for $i from 1 through 20 {
     .bg#{$i} {     
-        background-image: url(../img/bg#{$i}@2.jpg);
+        background-image: url(../img/bg#{$i}.jpg);
     }
 }
 
