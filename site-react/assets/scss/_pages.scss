@@ -16,4 +16,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    br {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    #mainCont {
+        font-size: 15vw;
+        br {
+            display: block;
+        }
+    }
 }

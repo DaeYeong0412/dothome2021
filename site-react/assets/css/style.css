@@ -8,6 +8,22 @@
 }
 
 @font-face {
+  font-family: 'Kharkiv';
+  src: url(../fonts/Kharkiv-Tone-0410202.woff) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helveti';
+  src: url(../fonts/HelveticaNeueCyr-Rom.woff) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Chosunilbo_myungjo';
   src: url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff) format("woff");
   font-weight: normal;
@@ -477,6 +493,23 @@
   font-display: swap;
 }
 
+:root {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -819,6 +852,7 @@ table {
   font-family: "Rajdhani";
   border-top: 1px solid #2e2e30;
   border-bottom: 1px solid #2e2e30;
+  z-index: 1000;
 }
 
 #header .header__port {
@@ -872,7 +906,7 @@ table {
 
 #header .header__ham {
   position: absolute;
-  left: 18px;
+  left: 14px;
   top: 18px;
   width: 40px;
   height: 40px;
@@ -920,6 +954,18 @@ table {
   }
 }
 
+@media (max-width: 800px) {
+  #header .header__logo a {
+    font-size: 22px;
+  }
+  #header .header__ham {
+    top: 12px;
+    left: 10px;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
 #footer {
   position: fixed;
   left: 0;
@@ -938,6 +984,7 @@ table {
           justify-content: space-between;
   font-family: "Rajdhani";
   border-top: 1px solid #2e2e30;
+  z-index: 999;
 }
 
 #footer div {
@@ -1004,6 +1051,12 @@ table {
   }
 }
 
+@media (max-width: 800px) {
+  #footer div {
+    padding: 14px;
+  }
+}
+
 #mainCont {
   background-color: #000;
   height: 100vh;
@@ -1021,4 +1074,17 @@ table {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+#mainCont br {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  #mainCont {
+    font-size: 15vw;
+  }
+  #mainCont br {
+    display: block;
+  }
 }

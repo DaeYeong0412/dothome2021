@@ -8,6 +8,22 @@
 }
 
 @font-face {
+    font-family: 'Kharkiv';
+    src: url(../fonts/Kharkiv-Tone-0410202.woff) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helveti';
+    src: url(../fonts/HelveticaNeueCyr-Rom.woff) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Chosunilbo_myungjo';
     src: url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff) format('woff');
     font-weight: normal;
