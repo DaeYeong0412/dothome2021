@@ -38,6 +38,144 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        #main {
+            background-color: #E5E5E5;
+        }
+        #main .aboutWarp {
+            max-width: 1200px;
+            margin: 0 auto;
+            align-content: center;
+            position: relative;
+            padding: 150px 0;
+            font-family: 'Chosunilbo_myungjo';
+            line-height: 1.52;
+            font-size: 18px;
+        }
+        .aboutWarp h2 {
+            font-family: 'saol';
+            font-size: 144px;
+            line-height: 132px;
+            margin-bottom: 230px;
+        }
+        .aboutWarp strong {
+            display: block;
+            margin-bottom: 25px;
+        }
+        .aboutWarp .about1 {
+            margin-bottom: 300px;
+        }
+        .aboutWarp .about1 img {
+            margin-bottom: 50px;
+        }
+        .aboutWarp .about1 span {
+            display: block;
+            width: 74%;
+        }
+        .aboutWarp .about2 {
+            margin-bottom: 300px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .aboutWarp .about2 .aboutImg {
+            width: 62%;
+        }
+        .aboutWarp .about2 .aboutText {
+            width: 33%;
+        }
+        .aboutWarp .about3 {
+            margin-bottom: 200px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .aboutWarp .about3 .aboutImg {
+            width: 55%;
+        }
+        .aboutWarp .about3 .aboutImg.mobile {
+            display: none;
+        }
+        .aboutWarp .about3 .aboutText {
+            width: 40%;
+        }
+        .aboutlogic {
+            background-color: #000;
+            width: 100%;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Rajdhani';
+            font-size: 20px;
+            text-align: center;
+        }
+        .aboutlogic .about4 h2 {
+            font-family: 'saol';
+            font-size: 144px;
+            margin-bottom: 50px;
+        }
+        .aboutlogic .about4 a {
+            border: 1px solid #fff;
+            padding: 1.5% 5%;
+            border-radius: 50px;
+        }
+
+        @media (max-width: 800px) {
+            #main .aboutWarp {
+                max-width: 600px;
+                padding: 100px 5%;
+                font-size: 15px;
+            }
+            .aboutWarp h2 {
+                font-size: 80px;
+                line-height: 1;
+                margin-bottom: 100px;
+            }
+            .aboutWarp strong {
+                margin-bottom: 20px;
+            }
+            .aboutWarp .about1 {
+                margin-bottom: 100px;
+            }
+            .aboutWarp .about1 img {
+                margin-bottom: 20px;
+            }
+            .aboutWarp .about1 span {
+                width: 100%;
+            }
+            .aboutWarp img {
+                margin-bottom: 20px;
+            }
+            .aboutWarp .about2 {
+                display: block;
+                margin-bottom: 100px;
+            }
+            .aboutWarp .about2 .aboutImg {
+                width: 100%;
+            }
+            .aboutWarp .about2 .aboutText {
+                width: 100%;
+            }
+            .aboutWarp .about3 {
+                display: block;
+                margin-bottom: 100px;
+            }
+            .aboutWarp .about3 .aboutImg {
+                display: none;
+            }
+            .aboutWarp .about3 .aboutImg.mobile {
+                display: block;
+                width: 100%;
+            }
+            .aboutWarp .about3 .aboutText {
+                width: 100%;
+            }
+            .aboutlogic {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <noscript>페이지를 보려면 자바스크립트 옵션이 활성화 되어 있어야 합니다. You need to enable JavaScript to run this app</noscript>
@@ -64,7 +202,42 @@
     </header>
     <!-- //header -->
     <main id="main">
-
+        <div class="aboutWarp">
+            <section class="about1">
+                <h2>ABOUT<br>ME</h2>
+                <img src="./assets/img/aboutImg03.jpg" alt="aobut1">
+                <strong>꿈을 설계하고 디자인 하다.</strong>
+                <span>나는 공간을 만드는 것을 좋아한다 어려을 때부터 나만의 공간을 만드는 것을 좋아했고 나만의 다락방을 좋아했다. 단 한 사람이라도 내가 만든 공간 속에서 영감을 받거나 마음이 움직였으면 좋겠다. 서울에는 집이 없지만, 이곳에서는 나만의 집이 많다. 그 집은 비용도 들지 않고 언제든지 만들 수 있다. 나만의 공간을 마음것 만들 수 있다는 건 코딩에 엄청난 매력인거 같다. 그 한구석에 나만의 꿈을 설계하고 디자인을 하며 앞으로도 살고 싶다.</span>
+            </section>
+            <section class="about2">
+                <div class="aboutImg">
+                    <img src="./assets/img/aboutImg01.jpg" alt="aobut2">
+                </div>
+                <div class="aboutText">
+                    <strong>열심히 할수록 기회는 따른다.</strong>
+                    <span>운이 좋은 사람은 없다. 단지 운을 만들 뿐이다. 운을 만들기 위해서는 내가 좋아하는 일이나 내가 하고 싶은 일에 몰두하면 된다. 몰두 하다보면 길이 보이고 방향이 보이게 된다. 운이란 고된 노동과 노력을 통해 스스로 만들어 내는 것이다. 복권에 당첨되는 사람들은 금방 돈을 허비하게 된다. 단지 행운만 좋았기 때문이다. 운을 만든 사람은 돈을 날려먹거나 헛되게 쓰지 않는다. 열심히 할수록 운은 나에게 온다.</span>
+                </div>
+            </section>
+            <section class="about3">
+                <div class="aboutImg mobile">
+                    <img src="./assets/img/aboutImg02.jpg" alt="aobut3">
+                </div>
+                <div class="aboutText">
+                    <strong>나에게 정직하다.</strong>
+                    <span>정직은 다른 사람보다 나에게 큰 의미를 부여해야 한다. 자신이 정직하지 않으면 진정으로 원하는 일을 열정적으로 밀고 나갈 수 없다. 마음에서 우러나오는 일을 해야 정직해지며 삶을 더 즐길 줄 알게 된다. 다름 사람에게도 정직해야 하지만 그 무엇보다 나 자신한테 정직해야 한다.</span>
+                </div>
+                <div class="aboutImg">
+                    <img src="./assets/img/aboutImg02.jpg" alt="aobut3">
+                </div>
+            </section>
+        </div>
+        <div class="aboutlogic">
+            <section class="about4">
+                <span>Let’s create something new</span>
+                <h2>LET`S Get IN TOUCH</h2>
+                <a href="#">Contant Us</a>
+            </section>
+        </div>
     </main>
     <!-- main -->
     <footer id="footer">
