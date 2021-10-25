@@ -356,17 +356,17 @@
             }
             .s3Text1 .s1 {
                 transform: translate(-40vw, 30vw);
-                left: -15vw;
-                color: orange;
+                left: -16vw;
+                color: rgba(255, 166, 0);
                 opacity: 0;
             }
             .s3Text1 .s2 {
                 transform: translate(-40vw, 30vw);
-                left: -10vw;
+                left: -11vw;
             }
             .s3Text1 .s3 {
                 transform: translate(-30vw, -50vw);
-                left: -3vw;
+                left: -4vw;
             }
             .s3Text1 .s4 {
                 transform: translate(40vw, -50vw);
@@ -380,27 +380,56 @@
                 transform: translate(5vw, 30vw);
                 left: 12vw;
             }
+            .box {
+                border: 5px solid rgba(255, 166, 0);
+                background: rgba(255, 255, 255);
+                width: 50vw;
+                height: 20vw;
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+            }
         </style>
         <section id="section3">
             <div class="s3Text1 fixed">
+                <div class="box"
+                    data-30000="opacity: 0; background: rgba(255, 255, 255);"
+                    data-31000="opacity: 1; background: rgba(255, 255, 255);"
+                    data-31500="opacity: 1; background: rgba(255, 255, 255);"
+                    data-32500="opacity: 1; background: rgba(255, 166, 0);"
+                ></div>
                 <span class="s1"
                     data-26000="transform: translate(-40vw, 30vw); font-size: 30vw; opacity: 0;"
                     data-27000="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1;"
+                    data-22000="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1;"
+                    data-32500="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: -16vw; top: -5vw; color: rgba(255, 166, 0);"
+                    data-33000="transform: translate(0vw, 0vw); font-size: 10vw; opacity: 1; left: -19vw; top: -6vw; color: rgba(255, 255, 255); border: 5px solid rgba(255, 166, 0); padding: 0 2vw;"
+                    data-34000="transform: translate(0vw, 0vw); font-size: 10vw; opacity: 1; left: -22vw; top: -6vw; color: rgba(255, 255, 255); border: 5px solid rgba(255, 255, 255);"
                 >s</span><span class="s2"
                     data-26500="transform: translate(-40vw, 30vw); font-size: 30vw; opacity: 0;"
                     data-27500="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1;"
+                    data-32500="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: -11vw; top: -5vw;"
+                    data-33000="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: -10vw; top: -4vw;"
                 >c</span><span class="s3"
                     data-27000="transform: translate(-30vw, -50vw); font-size: 30vw; opacity: 0;"
                     data-28000="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1;"
+                    data-32500="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: -4vw; top: -5vw;"
+                    data-33000="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: -3vw; top: -4vw;"
                 >r</span><span class="s4"
                     data-27500="transform: translate(40vw, -50vw); font-size: 30vw; opacity: 0;"
                     data-28500="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1;"
+                    data-32500="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: 3vw; top: -5vw;"
+                    data-33000="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: 4vw; top: -4vw;"
                 >i</span><span class="s5"
                     data-28000="transform: translate(40vw, 30vw); font-size: 30vw; opacity: 0;"
                     data-29000="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1;"
+                    data-32500="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: 6vw; top: -5vw;"
+                    data-33000="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: 7vw;"
                 >p</span><span class="s6"
                     data-28500="transform: translate(5vw, 30vw); font-size: 30vw; opacity: 0;"
                     data-29500="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1;"
+                    data-32500="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: 12vw; top: -5vw;"
+                    data-33000="transform: translate(0vw, 0vw); font-size: 8vw; opacity: 1; left: 13vw;"
                 >t</span>
             </div>
         </section><!-- //section3 -->
