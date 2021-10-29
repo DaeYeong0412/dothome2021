@@ -165,11 +165,11 @@
     
     <h1>Javascript 알고리즘 공부하기</h1>
     <ol>
-        <li class="active"><a href="javascriptText01.html">01</a></li>
+        <li><a href="javascriptText01.html">01</a></li>
         <li><a href="javascriptText02.html">02</a></li>
         <li><a href="javascriptText03.html">03</a></li>
         <li><a href="javascriptText04.html">04</a></li>
-        <li><a href="javascriptText05.html">05</a></li>
+        <li class="active"><a href="javascriptText05.html">05</a></li>
         <li><a href="javascriptText06.html">06</a></li>
         <li><a href="javascriptText07.html">07</a></li>
         <li><a href="javascriptText08.html">08</a></li>
@@ -182,77 +182,59 @@
     dd : 정의형 목록 태그 -->
 
     <div id="sample1" class="sample">
-        <h2>세 수 중 최솟값 <span class="dot"></span></h2>
-        <p class="problem">Q : 100이하의 자연수 A,B,C를 입력받아 세 수 중 가장 작은 값을 출력하는 프로그램을 작성하세요.</p>
+        <h2>홀수 <span class="dot"></span></h2>
+        <p class="problem">Q : 서울시는 6월 1일부터 교통 혼잡을 막기위해서 자동차 10부제를 시행한다. 자동차 10부제는 자동차 번호의 일의 자리 숫자가 날짜의 일의 자리 숫자가 일치하면 자동차의 운행을 금지하는것이다. 예를 들어 자동차 번호의 일의 자리 숫자가 7이면 7일, 17일, 27일에 운행하지못한다. 또한 자동차의 번호의 일의 자리 숫자가 0이면, 10일, 20일, 30일에는 운행하지 못한다. 여러분들이 일일 경찰관이 되어 10부제를 위반하는 자동차의 대수를 세는 봉사활동을 하려고 한다. 날짜의 일의 자리 숫자가 주어지고 7대의 자동차 번호의 끝 두자리수가 주어졌을 때 위반하는 자동차의 대수를 출력하는 프로그램을 작성하세요.</p>
         <div class="desc">
             <dl>
                 <dt><i class="fa fa-rss" aria-hidden="true"></i> 입력 설명</dt>
-                <dd>첫 번째 줄에 100이하의 세 자연수가 입력된다.</dd>
+                <dd>날짜의 일의 자리 숫자가 주어지고, 7대의 자동차 번호의 끝 두자리가 주어진다.</dd>
                 <dt><i class="fa fa-rss" aria-hidden="true"></i> 출력 설명</dt>
-                <dd>첫 번째 줄에 가장 작은 수를 출력한다.</dd>
+                <dd>주어진 날짜와 자동차의 일의 자리 숫자를 보고 10부제를 위반하는 차량의 대수를 출력하세요.</dd>
             </dl>
         </div>
         <div class="sam">
             <dl>
                 <dt><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 입력 예제</dt>
-                <dd>10 50 85</dd>
+                <dd>3일 25 23 11 47 53 17 33</dd>
                 <dt><i class="fa fa-paper-plane-o" aria-hidden="true"></i> 출력 예제</dt>
-                <dd>10</dd>
+                <dd>3</dd>
             </dl>
         </div>
         <div class="code">
-<pre class="line-number"><code class="language-js">function solution(a, b, c) {
-    let min;
-    if (a&lt;b) min=a;
-    else min=b;
-    if (c&lt;min) min=c;
-    return min;
-}
+<pre class="line-number"><code class="language-js">const arr = [25, 23, 11, 47, 53, 17, 33];
+let day = 3
+let count = 0;
 
-document.write(solution(10, 50, 85));
-</code></pre>
-        </div>
-    </div>
-    <hr>
-    <div id="sample2" class="sample">
-        <h2>최솟값 구하기<span class="dot"></span></h2>
-        <p class="problem">Q : 7개의 수가 주어지면 그 숫자 중 가장 작은 수를 출력하는 프로그램을 작성하세요.</p>
-        <div class="desc">
-            <dl>
-                <dt><i class="fa fa-rss" aria-hidden="true"></i> 입력 설명</dt>
-                <dd>7개의 수가 주어진다.</dd>
-                <dt><i class="fa fa-rss" aria-hidden="true"></i> 출력 설명</dt>
-                <dd>가장 작은 수를 출력한다.</dd>
-            </dl>
-        </div>
-        <div class="sam">
-            <dl>
-                <dt><i class="fa fa-pencil-square-o" aria-hidden="true"></i> 입력 예제</dt>
-                <dd>5 3 7 11 2 15 17</dd>
-                <dt><i class="fa fa-paper-plane-o" aria-hidden="true"></i> 출력 예제</dt>
-                <dd>2</dd>
-            </dl>
-        </div>
-        <div class="code">
-<pre class="line-number"><code class="language-js">let answer = [5,3,7,11,2,15,17];
-function solution(num){
-    let pre = answer[0];
-    answer.forEach(el => {
-        if(el &lt; pre){
-            pre = el;
+function solution(day, arr){
+    for(i=1; i&lt;=arr.length; i++){
+        if (arr[i] % 10 === day) {
+            count++
         }
-    });
-    return pre;
+    }
+    return (count);
 }
-console.log(solution(answer))
+console.log(solution(day, arr));
 </code></pre>
         </div>
     </div>
+
     <hr>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
+        const arr = [25, 23, 11, 47, 53, 17, 33];
+        let day = 3
+        let count = 0;
 
+        function solution(day, arr){
+            for(i=1; i<=arr.length; i++){
+                if (arr[i] % 10 === day) {
+                    count++
+                }
+            }
+            return (count);
+        }
+        console.log(solution(day, arr));
     </script>
 </body>
 </html>

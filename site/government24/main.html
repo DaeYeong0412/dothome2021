@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정부24</title>
+    <style>
+        @font-face {
+            font-family: 'ON-IGothic';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eleven@1.0/ON-IGothic.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /* setting */
+        body {
+            font-family: 'ON-IGothic';
+        }
+        .governmentWarp {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        main {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+        }
+        .left {
+            width: 28%;
+        }
+        .right {
+            width: 70%;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* accordion */
+        .accordionMenu img {
+            margin-bottom: 50px;
+        }
+        .accordion {
+            background-color: #ffffff;
+            cursor: pointer;
+            padding: 16px;
+            width: 100%;
+            outline: none;
+            border: none;
+            text-align: left;
+            font-size: 20px;
+            transition: 0.4s;
+            font-weight: bold;
+        }
+    
+        .active, .accordion:hover {
+            color: #0169E4;
+        }
+    
+        .panel {
+            padding: 0 16px;
+            background-color: #ffffff;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .panel p {
+            border-bottom: 1px solid #eeeeee;
+            font-weight: bold;
+        }
+        .panel p:hover {
+            color: #0169E4;
+            cursor: pointer;
+        }
+
+        /* slider */
+        .slider-wrap {
+            display: block;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider-img {
+            width: 100%; height: 400px;
+            overflow: hidden;
+        }
+        .slider-img img {
+            width: 100%;
+        }
+        .slider-inner {
+            width: 100%; height: 1600px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.6s;
+            top: 0;
+        }
+        .slider-inner .slider {
+            width: 100%; height: 400px;
+            position: relative;
+        }
+        .slider-inner .slider::before {
+            position: absolute;
+            right: 5px; top: 5px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 5px 10px 3px;
+        }
+        .slider-inner .slider::before {content: attr(data-name);}
+        .slider-inner .slider:nth-child(2) {z-index: 4;}
+        .slider-inner .slider:nth-child(3) {z-index: 3;}
+        .slider-inner .slider:nth-child(4) {z-index: 2;}
+        .slider-inner .slider:nth-child(1) {z-index: 5;}
+        .slider-inner .slider:nth-child(5) {z-index: 1;}
+
+        /* tabMenu */
+        .tabMenu {
+            margin-bottom: 50px;
+        }
+        .tabMenu .list {
+            display: flex;
+            justify-content: center;
+        }
+        .tabMenu .list li {
+            cursor: pointer;
+            font-size: 25px;
+            font-weight: bold;
+            color: #ccc;
+            margin-bottom: 50px;
+        }
+        .tabMenu .list li:first-child {
+            margin-right: 20px;
+        }
+        .tabMenu .list li:first-child::after {
+            content: '';
+            border-right: 3.5px solid #000;
+            margin-left: 20px;
+        }
+        .tabMenu .list li.active {
+            color: #000;
+        }
+        .tabMenu .contArea > div {
+            display: flex;
+            justify-content: space-between;
+        }
+        .tabMenu .contArea .cont2 {
+            display: none;
+        }
+        .tabMenu .contArea > div > div {
+            width: 19%;
+        }
+        .tabMenu .contArea img {
+            width: 80%;
+            margin-left: 10%;
+        }
+        .tabMenu .contArea span {
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        /* card */
+        .card {
+            width: 94%;
+            background-color: #F7F7F7;
+            padding: 3%;
+            margin-bottom: 50px;
+        }
+        .cardWrap {
+            display: flex;
+            justify-content: space-between;
+        }
+        .cardWrap > div {
+            border: 1px solid #CED6E1;
+            width: 30%;
+            background: #fff;
+            text-align: center;
+            position: relative;
+            padding: 1%;
+        }
+        .cardWrap > div h2 {
+            font-size: 16px;
+        }
+        .cardWrap > div span {
+            position: absolute;
+            border: 1px solid #EBEEF5;
+            border-radius: 50%;
+            box-shadow: 1px 1px 1px #ccc;
+            color: #02296A;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            align-items: center;
+            display: inline-block;
+            top: 7%; right: 10%;
+            padding: 0 5px 3px 5px;
+            cursor: pointer;
+        }
+        .cardWrap > div p {
+            font-size: 10px;
+            margin-left: 10px;
+            line-height: 1;
+            text-align: left;
+            cursor: pointer;
+        }
+        .cardWrap > div p::before {
+            content: '·';
+            font-size: 10px;
+            margin-right: 3px;
+            font-weight: bold;
+        }
+        /* footer */
+        footer {
+            width: 94%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            padding: 5% 3%;
+            background: #EDF2F8;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+        footer .img1 {
+            width: 10%;
+            margin-right: 5%;
+        }
+        footer p {
+            width: 65%;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        footer .img2 {
+            width: 20%;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="governmentWarp">
+        <main>
+            <section class="left">
+                <div class="accordionMenu">
+                    <img src="../img/government01.jpg" alt="governmentlogo">
+                    <button class="accordion">서비스</button>
+                    <div class="panel">
+                        <p>분야별 정책정보</p>
+                        <p>정책뉴스</p>
+                        <p>연구보고서</p>
+                        <p>간행물</p>
+                        <p>정책자료</p>
+                    </div>
+                    
+                    <button class="accordion">정책정보</button>
+                    <div class="panel">
+                        <p>내용 2</p>
+                    </div>
+                    
+                    <button class="accordion">기관정보</button>
+                    <div class="panel">
+                        <p>내용 3</p>
+                    </div>
+                    
+                    <button class="accordion">고객센터</button>
+                    <div class="panel">
+                        <p>내용 3</p>
+                    </div>
+                </div>
+                <!-- accordionMenu -->
+            </section>
+            <!-- left -->
+            <section class="right">
+                <div class="contents">
+                    <div class="slider-wrap">
+                        <div class="slider-img">
+                            <div class="slider-inner">
+                                <div class="slider" data-name="이미지1"><img src="../img/government02.jpg" alt="이미지1"></div>
+                                <div class="slider" data-name="이미지2"><img src="../img/government02.jpg" alt="이미지2"></div>
+                                <div class="slider" data-name="이미지3"><img src="../img/government02.jpg" alt="이미지3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slider -->
+                    <div class="tabMenu">
+                        <ul class="list">
+                            <li class="active">자주 찾는 서비스</li>
+                            <li>키워드 서비스</li>
+                        </ul>
+                        <div class="contArea">
+                            <div class="cont1">
+                                <div>
+                                    <img src="../img/government03.jpg" alt="표본">
+                                    <span>주민등록표등본<br>(초본)교부</span>
+                                </div>
+                                <div>
+                                    <img src="../img/government04.jpg" alt="토지">
+                                    <span>토지(임야)대장<br>열람/등본 발급신청</span>
+                                </div>
+                                <div>
+                                    <img src="../img/government05.jpg" alt="건축">
+                                    <span>건축물대장 등/초본<br>발급(열람) 신청</span>
+                                </div>
+                                <div>
+                                    <img src="../img/government06.jpg" alt="지방">
+                                    <span>지방세 납세증명</span>
+                                </div>
+                                <div>
+                                    <img src="../img/government07.jpg" alt="등본">
+                                    <span>지적도(임야도) 등본<br>발급 및 열람</span>
+                                </div>
+                            </div>
+                            <div class="cont2">
+                                <div>
+                                    <img src="../img/government07.jpg" alt="등본">
+                                    <span>지적도(임야도) 등본<br>발급 및 열람</span>
+                                </div>
+                                <div>
+                                    <img src="../img/government06.jpg" alt="지방">
+                                    <span>지방세 납세증명</span>
+                                </div>
+                                <div>
+                                    <img src="../img/government05.jpg" alt="건축">
+                                    <span>건축물대장 등/초본<br>발급(열람) 신청</span>
+                                </div>
+                                <div>
+                                    <img src="../img/government04.jpg" alt="토지">
+                                    <span>토지(임야)대장<br>열람/등본 발급신청</span>
+                                </div>
+                                <div>
+                                    <img src="../img/government03.jpg" alt="표본">
+                                    <span>주민등록표등본<br>(초본)교부</span>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <!-- tabMenu -->
+                <div class="card">
+                    <div class="cardWrap">
+                        <div>
+                            <h2>공지사항</h2>
+                            <span>+</span>
+                            <img src="../img/government08.jpg" alt="공지사항">
+                                <p>[어디서나 대학민원]호서대학교 팩스...</p>
+                                <p>[전라북도 고창군]새올행정시스템 D...</p>
+                                <p>교육부 행정전자서명인증센터 시스템...</p>
+                        </div>
+                        <div>
+                            <h2>자료실</h2>
+                            <span>+</span>
+                            <img src="../img/government09.jpg" alt="자료실">
+                                <p>인터넷 민원발급 위한 프로그램(주민...</p>
+                                <p>정부24 발급물 등록 프로그램</p>
+                                <p>전자문서 관련 설치 프로그램</p>
+                        </div>
+                        <div>
+                            <h2>FAQ</h2>
+                            <span>+</span>
+                            <img src="../img/government10.jpg" alt="FAQ">
+                                <p>'민원발급불가'또는 '발급불가' 프린터...</p>
+                                <p>가족관계증명서 프린터 발급이 가능...</p>
+                                <p>온라인 전입신고 시 [세대주확인]은 어...</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- card -->
+            </section>
+            <!-- right -->
+        </main>
+        <!-- main -->
+        <footer>
+            <img class="img1" src="../img/government11.jpg" alt="lastlogo">
+            <p>03171 서울특별시 세종대로 209(세종로)행정안전부<br>정부24 콜센터 1588-2188 정부민원안내콜센터 국번없이 110<br>Copyright ⓒ Ministy of the Interior and Safety. All Rights reserved.</p>
+            <img class="img2" src="../img/government12.jpg" alt="파비콘">
+        </footer>
+        <!-- footer -->
+    </div>
+
+    <script>
+        // accordion
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+    
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+
+        // slider
+        const sliderWrap = document.querySelector(".slider-wrap");
+        const sliderImg = sliderWrap.querySelector(".slider-img");
+        const sliderInner = sliderImg.querySelector(".slider-inner");
+        const slider = sliderInner.querySelectorAll(".slider");
+
+        let currentIndex = 0;
+        let sliderHeight = sliderInner.querySelector(".slider").offsetHeight;
+        let sliderCount = slider.length;
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true);
+        sliderInner.appendChild(sliderClone);
+
+        setInterval(()=>{
+            currentIndex++;
+            sliderInner.style.transition = "all 0.3s"
+            sliderInner.style.transform = "translateY("+-sliderHeight * currentIndex+"px)";
+
+            if( currentIndex == sliderCount ){
+                setTimeout(() => {
+                    sliderInner.style.transition = "0s";
+                    sliderInner.style.transform = "translateY(0)";
+                }, 300)
+                currentIndex = 0;
+            }
+        }, 3000);
+
+        // tab
+        const tabBtn = document.querySelectorAll(".tabMenu ul li");
+        const tabCont = document.querySelectorAll(".contArea > div");
+
+        tabBtn.forEach((element, index)=> {
+            element.addEventListener("click", function(){
+                tabBtn.forEach(el => {
+                    el.classList.remove("active");
+                });
+                element.classList.add("active");
+
+                tabCont.forEach(el => {
+                    el.style.display = "none";
+                })
+                tabCont[index].style.display = "flex";
+            });
+        });
+    </script>
+</body>
+</html>
