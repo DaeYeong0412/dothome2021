@@ -160,49 +160,6 @@
             background: #fff;
             color: #000;
         }
-        /* info */
-        .info {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            background: rgba(0,0,0,.4);
-            border-radius: 5px;
-            padding: 10px 20px;
-        }
-        .info li {
-            list-style: none;
-            font-size: 12px;
-            padding: 2px;
-            color: #fff;
-        }
-        .character  {
-            width: 400px;
-            height: 300px;
-            position: fixed;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            z-index: 1000;
-            background-image: url(../assets/img/bear.jpg);
-        }
-        .character.walking{
-            animation: walk 0.8s steps(12, start) infinite;
-        }
-        .character.left{
-            background-position: 0 -300px;
-        }
-        .character.left.walking{
-            animation: backWalk 0.8s steps(12, start) infinite;
-        }
-        @keyframes walk {
-            0% {background-position: 0 0;}
-            100% {background-position: 4800px 0;}
-        }
-        @keyframes backWalk {
-            0% {background-position: 0 -300px;}
-            100% {background-position: -4800px -300px;}
-        }
     </style>
 </head>
 <body class="parallax">
