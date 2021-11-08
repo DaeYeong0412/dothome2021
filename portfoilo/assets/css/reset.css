@@ -36,3 +36,7 @@ body{
     align-items:center;
     justify-content:center;
 }
+.pane.b {
+    flex:0 0 120vw;
+
+}
