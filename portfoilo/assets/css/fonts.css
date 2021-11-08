@@ -1,0 +1,29 @@
+/* font-setting */
+@font-face {
+    font-family: 'ChosunNm';
+    src: url(../fonts/ChosunNm.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'FZCSJW';
+    src: url(../fonts/FZCSJW.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Patrican';
+    src: url(../fonts/Patrican.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Rajdhani-Regular';
+    src: url(../fonts/Rajdhani-Regular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

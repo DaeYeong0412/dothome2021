@@ -1,0 +1,38 @@
+body{
+    -ms-overflow-style: none;
+    overflow-x:hidden;
+    color:#000;
+    cursor: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    z-index: 999;
+    background-color: rgb(53, 53, 53);
+    user-select: none;
+    pointer-events: none;
+}
+#page {
+    overflow:hidden;
+    white-space:nowrap;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:flex;
+    flex-wrap:no-wrap;
+}
+.pane {
+    flex:0 0 100vw;
+    height:100vh;
+    display:flex;
+    position:relative;
+    align-items:center;
+    justify-content:center;
+}

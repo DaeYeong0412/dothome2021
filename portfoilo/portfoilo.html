@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfoilo</title>
+    <style>
+        /* 1box */
+        .line {
+            left: 20px;
+            position: absolute;
+            height: 95vh;
+            width: 1px;
+            background: #000;
+        }
+        .line_text {
+            font-family: 'ChosunNm';
+            position: absolute;
+            transform: rotate(90deg);
+            left: -30px;
+            top: 82px;
+            font-size: 18px;
+        }
+        .line_text img {
+            margin: 0 5px;
+        }
+        .main_name {
+            position: absolute;
+            font-family: 'FZCSJW';
+            font-size: 12vw;
+        }
+        .main_name.a {
+            top: 15%; left: 10%;
+            transform: translate(-10%, -10%);
+        }
+        .main_name.b {
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .main_name.b::after {
+            content: '';
+            position: absolute;
+            width: 20vw; height: 1px;
+            left: 100%; bottom: 10%;
+            transform: translate(15%, 50%) rotate(20deg);
+            background: #000;
+            opacity: 0.3;
+        }
+        .main_name.b::before {
+            content: '';
+            position: absolute;
+            width: 20vw; height: 1px;
+            right: 100%; top: 5%;
+            transform: translate(-10%, 50%) rotate(20deg);
+            background: #000;
+            opacity: 0.3;
+        }
+        .main_name.c {
+            bottom: 10%; right: 10%;
+            transform: translate(10%, 10%);
+        }
+        .eng_box {
+            position: absolute;
+            font-family: 'Rajdhani-Regular';
+            font-size: 1vw;
+            top: 20%;
+            right: 12%;
+            padding-left: 20px;
+            border-left: 10px solid #000;
+        }
+        .kor_box {
+            position: absolute;
+            font-family: 'ChosunNm';
+            font-size: 1vw;
+            bottom: 20%;
+            left: 10%;
+            padding-left: 20px;
+            border-left: 20px solid #000;
+        }
+        .eng_box span {
+            color: #6AB1CF;
+        }
+        .kor_box span {
+            color: #F36233;
+        }
+        /* 2box */
+        .mainImg {
+            position: absolute;
+            left: 10%;
+            top: 3%;
+        }
+        .mainImg span{
+            font-family: 'ChosunNm';
+            position: absolute;
+            transform: rotate(-90deg);
+            margin-left: -50px;
+            bottom: 8.5%;
+        }
+        .subImg {
+            position: absolute;
+            left: 50%;
+            bottom: 3%;
+        }
+        .subImg span{
+            font-family: 'ChosunNm';
+            position: absolute;
+            transform: rotate(-90deg);
+            margin-left: -50px;
+            bottom: 10%;
+        }
+        .about_text {
+            position: absolute;
+            font-family: 'ChosunNm';
+        }
+        .about_text h2 {
+            font-size: 22px;
+        }
+        .about_text p {
+            font-size: 18px;
+        }
+    </style>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <main id="page">
+        <section class="pane">
+                <div class="line"></div>
+                <div class="line_text">포트폴리오<img src="./assets/img/cros.svg" alt="cros">메인</div>
+                <div class="main_name a">宋</div>
+                <div class="main_name b">大</div>
+                <div class="main_name c">永</div>
+                <div class="eng_box">Hello.<br>I'm Song Dae-young, a new front-end developer.<br>Thank you for visiting my <span>portfolio</span> site.</div>
+                <div class="kor_box">안녕하세요.<br>신입 프론트엔드 개발자 송대영입니다.<br>저의 <span>포트폴리오</span> 사이트에 방문해 주셔서 감사합니다.</div>
+        </section>
+        <!-- //section1 -->
+        <section class="pane b">
+            <div class="line"></div>
+            <div class="line_text">소개페이지<img src="./assets/img/cros.svg" alt="cros">메인</div>
+            <div class="mainImg">
+                <img src="./assets/img/mainPorfile.jpg" alt="mainPorfile">
+                <span>2021.11.18 시현하다</span>
+            </div>
+            <div class="subImg">
+                <img src="./assets/img/subPorfile.jpg" alt="subPorfile">
+                <span>2021.07.12 도전하다</span>
+            </div>
+            <div class="about_text">
+                <h2>프론트앤드개발자를 꿈꾸며</h2>
+                <p>화공과로 특성화 고등학교를 진학해 대학또한 동양 미래대학교의 생명화공과를 졸업해 약 6년간 화학에대해 공부만 해오던 전형적인 공대생 이였습니다.</p>
+                <p>대학 졸업이후 짧은 기간이지만 약 1년간 화공관련 일을 했습니다. QC쪽으로 취업을해 연구소에서 제품분석업무를 한뒤 기술 영업분야로 이직을해 여러 업체들을 돌아다니며 제품관리와 업체대응 같은 업무를 했습니다.</p>
+                <p>다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력을 했고 매번 하고싶었던 일이였지만 약 6년간 배워온 시간을 포기하고 새로운 길에 들어서는것에 큰 결심을 하고 퇴사를 하고 인터넷 서칭과 영상등의 매체로 프로그래밍에 대한 지식을 독학으로 공부를하며 프론트 앤드 개발자에 대한 꿈을 키워 나갔고 독학에 있어 점점 힘들어질무렵 학원을 알아본뒤 이와 같이 약 6개월 간의 학원 생활을 이어나갔습니다.</p>
+            </div>
+        </section>
+        <!-- //section2 -->
+        <section class="pane"><div>3</div></section>
+        <!-- //section3 -->
+        <section class="pane"><div>4</div></section>
+        <!-- //section4 -->
+        <section class="pane"><div>5</div></section>
+        <!-- //section5 -->
+        <section class="pane"><div>6</div></section>
+        <!-- //section6 -->
+        <section class="pane"><div>7</div></section>
+        <!-- //section7 -->
+        <section class="pane"><div>8</div></section>
+        <!-- //section8 -->
+        <section class="pane"><div>9</div></section>
+        <!-- //section9 -->
+        <section class="pane"><div>10</div></section>
+        <!-- //section10 -->
+        <section class="pane"><div>11</div></section>
+        <!-- //section11 -->
+        <section class="pane"><div>12</div></section>
+        <!-- //section12 -->
+        <section class="pane"><div>13</div></section>
+        <!-- //section13 -->
+        <section class="pane"><div>14</div></section>
+        <!-- //section14 -->
+        <section class="pane"><div>15</div></section>
+        <!-- //section15 -->
+        <section class="pane"><div>1<div>sdafsdafsadf</div></div></section>
+        <!-- //section1 system -->
+    </main>
+
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script type="text/javascript" src="./assets/js/pageset.js"></script>
+</body>
+</html>
