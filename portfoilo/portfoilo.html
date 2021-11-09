@@ -267,7 +267,7 @@
             color: #000;
             text-decoration: underline;
         }
-        /* sitebox */
+        /* sitebox_one */
         .site_one {
             position: absolute;
             top: 50%; left: 50%;
@@ -303,7 +303,85 @@
             display: inline-block;
             opacity: 0.5;
             color: #000;
+            font-family: 'Abel-Regular';
         }
+        /* sitebox_two */
+        .site_two {
+            position: absolute;
+            top: 48%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .site_two img {
+            height: 75vh;
+            width: 65vw;
+            display: block;
+            margin-top: 20px;
+        }
+        .site_two h2 {
+            font-family: 'Patrican';
+            font-size: 100px;
+            display: block;
+            margin-bottom: 50px;
+            line-height: 0.4;
+        }
+        .site_two span {
+            display: inline-block;
+            font-family: 'ChosunNm';
+            margin-left: 700px;
+        }
+        .site_two span::after {
+            display: inline-block;
+            content: '';
+            width: 30px;
+            border-bottom: 1px solid #000;
+            margin: 0 1px 0 5px;
+            opacity: 0.5;
+        }
+        .site_two a {
+            text-decoration: none;
+            display: inline-block;
+            opacity: 0.5;
+            color: #000;
+            font-family: 'Abel-Regular';
+        }
+        /* site_three */
+        .site_three {
+            position: absolute;
+            top: 47%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .site_three img {
+            display: block;
+            margin-bottom: 20px;
+        }
+        .site_three span {
+            display: inline-block;
+            font-family: 'ChosunNm';
+        }
+        .site_three span::after {
+            display: inline-block;
+            content: '';
+            width: 30px;
+            border-bottom: 1px solid #000;
+            margin: 0 1px 0 5px;
+            opacity: 0.5;
+        }
+        .site_three a {
+            text-decoration: none;
+            display: inline-block;
+            opacity: 0.5;
+            color: #000;
+            font-family: 'Abel-Regular';
+        }
+        .site_three h2 {
+            font-family: 'Patrican';
+            font-size: 100px;
+            position: absolute;
+            font-weight: normal;
+            top: 43%; left: 100%;
+            transform: translate(-41%, -70%) rotate(90deg);
+        }
+        
     </style>
 
     <!-- CSS -->
@@ -479,15 +557,23 @@
         <!-- //section5 -->
         <section class="pane s">
             <div class="line gray"></div>
-            <div class="site_one">
-                <img src="./assets/img/php.jpg" alt="MegaBox">
-                <h2>Megabox Site Coding</h2>
-                <span>기업형 사이트 코딩</span>
+            <div class="site_two">
+                <h2>Php Site Coding</h2>
+                <span>게시판 사이트 코딩</span>
                 <a href="#">CODE LINK</a>
+                <img src="./assets/img/php.jpg" alt="php">
             </div>
         </section>
         <!-- //section6 -->
-        <section class="pane"><div>7</div></section>
+        <section class="pane s">
+            <div class="line gray"></div>
+            <div class="site_three">
+                <img src="./assets/img/apple.jpg" alt="apple">
+                <span>애플 사이트 코딩</span>
+                <a href="#">CODE LINK</a>
+                <h2>Apple Site Coding</h2>
+            </div>
+        </section>
         <!-- //section7 -->
         <section class="pane"><div>8</div></section>
         <!-- //section8 -->

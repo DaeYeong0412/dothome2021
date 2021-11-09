@@ -42,6 +42,3 @@ body{
 .pane.s {
     flex:0 0 90vw;
 }
-.pane.xs {
-    flex:0 0 80vw;
-}
