@@ -14,6 +14,9 @@
             width: 1px;
             background: #000;
         }
+        .line.gray {
+            background: #aaa;
+        }
         .line_text {
             font-family: 'ChosunNm';
             position: absolute;
@@ -173,7 +176,7 @@
         .reference_text {
             font-family: 'ChosunNm';
             position: absolute;
-            right: 8%;
+            right: 7%;
             top: 35%;
         }
         .reference_text h2 {
@@ -196,6 +199,110 @@
         /* box4 */
         .line_text.b {
             top: 92px;
+        }
+        .site_choice {
+            position: absolute;
+            left: 21%;
+            top: 5%;
+            z-index: 500;
+        }
+        .site_choice ul {
+            font-size: 80px;
+            font-family: 'Patrican';
+        }
+        .site_choice li {
+            list-style: none;
+            color: #B4B4B4;
+            line-height: 1.2;
+        }
+        .site_choice li.active {
+            color: #000;
+        }
+        .site_info {
+            display: none;
+        }
+        .site_info.active {
+            display: block;
+        }
+        .site_info ul {
+            position: absolute;
+            left: 15%;
+            top: 5%;
+            font-size: 40px;
+            font-family: 'Rajdhani-Regular';
+        }
+        .site_info li {
+            list-style: none;
+            color: #B4B4B4;
+            line-height: 1.2;
+        }
+        .site_info li.active {
+            color: #000;
+        }
+        .site_info img {
+            position: absolute;
+            top: 43%; left: 53%;
+            transform: translate(-50%, -50%);
+            z-index: 499;
+        }
+        .site_info > div {
+            font-family: 'ChosunNm';
+            position: absolute;
+            right: 10%;
+            bottom: 2%;
+        }
+        .site_info > div h2 {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+        .site_info > div p {
+            font-size: 18px;
+            line-height: 1.4;
+        }
+        .site_info > div p a {
+            margin-top: 5px;
+            float: right;
+            font-size: 16px;
+            opacity: 0.7;
+            color: #000;
+            text-decoration: underline;
+        }
+        /* sitebox */
+        .site_one {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .site_one img {
+            height: 75vh;
+            width: 65vw;
+            margin-bottom: -20px;
+        }
+        .site_one h2 {
+            font-family: 'Patrican';
+            font-size: 100px;
+            display: block;
+            margin-bottom: 50px;
+            line-height: 0.4;
+        }
+        .site_one span {
+            display: inline-block;
+            font-family: 'ChosunNm';
+            margin-left: 900px;
+        }
+        .site_one span::after {
+            display: inline-block;
+            content: '';
+            width: 30px;
+            border-bottom: 1px solid #000;
+            margin: 0 1px 0 5px;
+            opacity: 0.5;
+        }
+        .site_one a {
+            text-decoration: none;
+            display: inline-block;
+            opacity: 0.5;
+            color: #000;
         }
     </style>
 
@@ -255,14 +362,130 @@
             </div>
         </section>
         <!-- //section3 -->
-        <section class="pane">
+        <section class="pane s">
             <div class="line"></div>
             <div class="line_text b">사이트정리<img src="./assets/img/cros.svg" alt="cros">깃허브</div>
+            <div class="site_choice">
+                <ul>
+                    <li class="active">Megabox</li>
+                    <li>Php</li>
+                    <li>Apple</li>
+                    <li>React</li>
+                    <li>Project</li>
+                    <li>Various</li>
+                </ul>
+            </div>
+            <div class="site_info active">
+                <ul>
+                    <li class="active">01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li>05</li>
+                    <li>06</li>
+                </ul>
+                <img src="./assets/img/MegaS.jpg" alt="MegaBox">
+                <div>
+                    <h2>메가박스 사이트 코딩</h2>
+                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                </div>
+            </div>
+            <div class="site_info">
+                <ul>
+                    <li>01</li>
+                    <li class="active">02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li>05</li>
+                    <li>06</li>
+                </ul>
+                <img src="./assets/img/phpS.jpg" alt="php">
+                <div>
+                    <h2>PHP 사이트 코딩</h2>
+                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                </div>
+            </div>
+            <div class="site_info">
+                <ul>
+                    <li>01</li>
+                    <li>02</li>
+                    <li class="active">03</li>
+                    <li>04</li>
+                    <li>05</li>
+                    <li>06</li>
+                </ul>
+                <img src="./assets/img/appleS.jpg" alt="apple">
+                <div>
+                    <h2>애플 사이트 코딩</h2>
+                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                </div>
+            </div>
+            <div class="site_info">
+                <ul>
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li class="active">04</li>
+                    <li>05</li>
+                    <li>06</li>
+                </ul>
+                <img src="./assets/img/ReactS.jpg" alt="React">
+                <div>
+                    <h2>리액트 사이트 코딩</h2>
+                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                </div>
+            </div>
+            <div class="site_info">
+                <ul>
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li class="active">05</li>
+                    <li>06</li>
+                </ul>
+                <img src="./assets/img/GabojaS.jpg" alt="Gaboja">
+                <div>
+                    <h2>팀프로젝트 사이트 코딩</h2>
+                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                </div>
+            </div>
+            <div class="site_info">
+                <ul>
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li>05</li>
+                    <li class="active">06</li>
+                </ul>
+                <img src="./assets/img/VariousS.jpg" alt="Various">
+                <div>
+                    <h2>다양한 사이트 코딩</h2>
+                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                </div>
+            </div>
         </section>
         <!-- //section4 -->
-        <section class="pane"><div>5</div></section>
+        <section class="pane s">
+            <div class="line gray"></div>
+            <div class="site_one">
+                <img src="./assets/img/Mega.jpg" alt="MegaBox">
+                <h2>Megabox Site Coding</h2>
+                <span>기업형 사이트 코딩</span>
+                <a href="#">CODE LINK</a>
+            </div>
+        </section>
         <!-- //section5 -->
-        <section class="pane"><div>6</div></section>
+        <section class="pane s">
+            <div class="line gray"></div>
+            <div class="site_one">
+                <img src="./assets/img/php.jpg" alt="MegaBox">
+                <h2>Megabox Site Coding</h2>
+                <span>기업형 사이트 코딩</span>
+                <a href="#">CODE LINK</a>
+            </div>
+        </section>
         <!-- //section6 -->
         <section class="pane"><div>7</div></section>
         <!-- //section7 -->

@@ -87,3 +87,20 @@ document.addEventListener("mousemove", e => {
     gsap.to(".cursor", {duration: 0.3, left: e.pageX -w, top: e.pageY -h});
 
 });
+
+const tabBtn = document.querySelectorAll(".site_choice ul li");
+const tabCont = document.querySelectorAll(".site_info");
+
+tabBtn.forEach((element, index)=> {
+    element.addEventListener("click", function(){
+        tabBtn.forEach(el => {
+            el.classList.remove("active");
+        });
+        element.classList.add("active");
+
+        tabCont.forEach(el => {
+            el.style.display = "none";
+        })
+        tabCont[index].style.display = "block";
+    });
+});
