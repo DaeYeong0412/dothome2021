@@ -2,20 +2,20 @@ body{
     -ms-overflow-style: none;
     overflow-x:hidden;
     color:#000;
-    cursor: none;
+    /* cursor: none; */
 }
 ::-webkit-scrollbar {
     display: none;
 }
 .cursor {
-    position: absolute;
+    /* position: absolute;
     left: 0; top: 0;
     width: 20px; height: 20px;
     border-radius: 50%;
     z-index: 999;
     background-color: rgb(53, 53, 53);
     user-select: none;
-    pointer-events: none;
+    pointer-events: none; */
 }
 #page {
     overflow:hidden;
@@ -41,4 +41,7 @@ body{
 }
 .pane.s {
     flex:0 0 90vw;
+}
+.pane.xs {
+    flex:0 0 25vw;
 }

@@ -279,6 +279,7 @@
             margin-bottom: -20px;
         }
         .site_one h2 {
+            font-weight: normal;
             font-family: 'Patrican';
             font-size: 100px;
             display: block;
@@ -289,6 +290,9 @@
             display: inline-block;
             font-family: 'ChosunNm';
             margin-left: 900px;
+        }
+        .site_one.t span {
+            margin-left: 800px;
         }
         .site_one span::after {
             display: inline-block;
@@ -319,6 +323,7 @@
         }
         .site_two h2 {
             font-family: 'Patrican';
+            font-weight: normal;
             font-size: 100px;
             display: block;
             margin-bottom: 50px;
@@ -328,6 +333,9 @@
             display: inline-block;
             font-family: 'ChosunNm';
             margin-left: 700px;
+        }
+        .site_two.t span {
+            margin-left: 820px;
         }
         .site_two span::after {
             display: inline-block;
@@ -347,7 +355,7 @@
         /* site_three */
         .site_three {
             position: absolute;
-            top: 47%; left: 50%;
+            top: 45%; left: 50%;
             transform: translate(-50%, -50%);
         }
         .site_three img {
@@ -381,7 +389,96 @@
             top: 43%; left: 100%;
             transform: translate(-41%, -70%) rotate(90deg);
         }
-        
+        /* site_four */
+        .site_four {
+            position: absolute;
+            top: 54.5%; left: 55%;
+            transform: translate(-50%, -50%);
+        }
+        .site_four h2 {
+            font-family: 'Patrican';
+            font-size: 100px;
+            position: absolute;
+            font-weight: normal;
+            top: 39%; left: 0%;
+            transform: translate(-60%, -50%) rotate(-90deg);
+        }
+        .site_four img {
+            display: block;
+        }
+        .site_four span {
+            margin-left: 980px;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-family: 'ChosunNm';
+        }
+        .site_four span::after {
+            display: inline-block;
+            content: '';
+            width: 30px;
+            border-bottom: 1px solid #000;
+            margin: 0 1px 0 5px;
+            opacity: 0.5;
+        }
+        .site_four a {
+            text-decoration: none;
+            display: inline-block;
+            opacity: 0.5;
+            color: #000;
+            font-family: 'Abel-Regular';
+        }
+        /* calculator */
+        .calculator {
+            text-align: center;
+            align-items: center;
+            font-family: 'Patrican';
+        }
+        .calculator img {
+            position: absolute;
+            top: 15%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .calculator h2 {
+            transform: rotate(-90deg);
+            font-size: 55px;
+            font-weight: normal;
+            display: inline-block;
+            padding-bottom: 25px;
+            margin-left: 20px;
+            border-bottom: 1px solid #000;
+        }
+        .calculator span {
+            display: inline-block;
+            transform: rotate(90deg);
+            font-size: 30px;
+            margin-left: -145px;
+        }
+        .calculator .boundary {
+            position: absolute;
+            width: 97%;
+            height: 1px;
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #aaa;
+        }
+        .calculator p {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            line-height: 0.1;
+        }
+        .calculator h3 {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 45px;
+            line-height: 0.1;
+            font-weight: normal;
+        }
     </style>
 
     <!-- CSS -->
@@ -575,13 +672,47 @@
             </div>
         </section>
         <!-- //section7 -->
-        <section class="pane"><div>8</div></section>
+        <section class="pane s">
+            <div class="line gray"></div>
+            <div class="site_four">
+                <h2>React Site Coding</h2>
+                <span>리액트 사이트 코딩</span>
+                <a href="#">CODE LINK</a>
+                <img src="./assets/img/React.jpg" alt="React">
+            </div>
+        </section>
         <!-- //section8 -->
-        <section class="pane"><div>9</div></section>
+        <section class="pane s">
+            <div class="line gray"></div>
+            <div class="site_one t">
+                <img src="./assets/img/Gaboja.jpg" alt="Gaboja">
+                <h2>Project Site Coding</h2>
+                <span>팀 프로젝트 사이트</span>
+                <a href="#">CODE LINK</a>
+            </div>
+        </section>
         <!-- //section9 -->
-        <section class="pane"><div>10</div></section>
+        <section class="pane s">
+            <div class="line gray"></div>
+            <div class="site_two t">
+                <h2>Various Site Coding</h2>
+                <span>다양한 사이트 카피 코딩</span>
+                <a href="#">CODE LINK</a>
+                <img src="./assets/img/Various.jpg" alt="Various">
+            </div>
+        </section>
         <!-- //section10 -->
-        <section class="pane"><div>11</div></section>
+        <section class="pane xs">
+            <div class="line"></div>
+            <div class="calculator">
+                <img src="./assets/img/calculator.jpg" alt="calculator">
+                <h2>Calculator</h2>
+                <span>touch the screen</span>
+                <div class="boundary"></div>
+                <p>Where the calculation</p>
+                <h3>results appear</h3>
+            </div>
+        </section>
         <!-- //section11 -->
         <section class="pane"><div>12</div></section>
         <!-- //section12 -->

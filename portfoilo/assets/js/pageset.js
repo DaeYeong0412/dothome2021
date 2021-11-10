@@ -9,13 +9,13 @@ window.onscroll = function () {
     page.scrollLeft = -y;
     
     // Looping Scroll.
-    var diff = window.scrollY - dummy_x;
-    if (diff > 0) {
-        window.scrollTo(0, diff);
-    }
-    else if (window.scrollY == 0) {
-        window.scrollTo(0, dummy_x);
-    }
+    // var diff = window.scrollY - dummy_x;
+    // if (diff > 0) {
+    //     window.scrollTo(0, diff);
+    // }
+    // else if (window.scrollY == 0) {
+    //     window.scrollTo(0, dummy_x);
+    // }
 }
 // Adjust the body height if the window resizes.
 window.onresize = resize;
@@ -79,14 +79,14 @@ const scroll = new Scrooth({
     deceleration: 0.975,
 });
 
-const w = document.querySelector(".cursor").offsetWidth /2;
-const h = document.querySelector(".cursor").offsetHeight /2;
-const cursor = document.querySelector(".cursor");
+// const w = document.querySelector(".cursor").offsetWidth /2;
+// const h = document.querySelector(".cursor").offsetHeight /2;
+// const cursor = document.querySelector(".cursor");
 
-document.addEventListener("mousemove", e => {
-    gsap.to(".cursor", {duration: 0.3, left: e.pageX -w, top: e.pageY -h});
+// document.addEventListener("mousemove", e => {
+//     gsap.to(".cursor", {duration: 0.3, left: e.pageX -w, top: e.pageY -h});
 
-});
+// });
 
 const tabBtn = document.querySelectorAll(".site_choice ul li");
 const tabCont = document.querySelectorAll(".site_info");
