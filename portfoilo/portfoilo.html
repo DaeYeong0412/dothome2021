@@ -71,6 +71,7 @@
             right: 12%;
             padding-left: 20px;
             border-left: 10px solid #000;
+            line-height: 1.4;
         }
         .kor_box {
             position: absolute;
@@ -80,6 +81,7 @@
             left: 10%;
             padding-left: 20px;
             border-left: 20px solid #000;
+            line-height: 1.4;
         }
         .eng_box span {
             color: #6AB1CF;
@@ -435,37 +437,43 @@
         }
         .calculator img {
             position: absolute;
-            top: 15%; left: 50%;
+            width: 8vw;
+            top: 20%; left: 54%;
+            transform: translate(-50%, -50%);
+        }
+        .touch_box {
+            position: absolute;
+            left: 55%;
+            top: 45%;
             transform: translate(-50%, -50%);
         }
         .calculator h2 {
             transform: rotate(-90deg);
-            font-size: 55px;
+            font-size: 54px;
             font-weight: normal;
             display: inline-block;
-            padding-bottom: 25px;
-            margin-left: 20px;
+            padding-bottom: 20px;
             border-bottom: 1px solid #000;
         }
         .calculator span {
             display: inline-block;
             transform: rotate(90deg);
             font-size: 30px;
-            margin-left: -145px;
+            margin-left: -155px;
         }
         .calculator .boundary {
             position: absolute;
-            width: 97%;
+            width: 96%;
             height: 1px;
             bottom: 25%;
-            left: 50%;
+            left: 54%;
             transform: translateX(-50%);
             background: #aaa;
         }
         .calculator p {
             position: absolute;
             bottom: 15%;
-            left: 50%;
+            left: 54%;
             transform: translateX(-50%);
             font-size: 20px;
             line-height: 0.1;
@@ -473,11 +481,112 @@
         .calculator h3 {
             position: absolute;
             bottom: 5%;
-            left: 50%;
+            left: 54%;
             transform: translateX(-50%);
             font-size: 45px;
             line-height: 0.1;
             font-weight: normal;
+        }
+        /* codepen */
+        .animation_contents {
+            width: 100%;
+            height: 100%;
+        }
+        .animation_top {
+            display: flex;
+            width: 80%;
+            padding: 4% 8% 0 12%;
+            height: 46%;
+            justify-content: space-between;
+        }
+        .animation_top .top_codepen {
+            flex: 0 0 60%;
+        }
+        .animation_top .address {
+            font-family: 'Patrican';
+            flex: 0 0 5%;
+            height: 100%;
+        }
+        .animation_top .address h2{
+            font-weight: normal;
+            font-size: 25px;
+            line-height: 0.5;
+        }
+        .animation_top .address p{
+            font-size: 20px;
+            margin-left: 10px;
+            line-height: 0.5;
+        }
+        .animation_top .address span{
+            font-family: 'ChosunNm';
+            font-size: 25px;
+        }
+        .animation_top .codepen_kor {
+            flex: 0 0 20%;
+            height: 100%;
+            font-family: 'ChosunNm';
+            line-height: 2;
+            writing-mode: tb-rl;
+            font-size: 15px;
+        }
+        .animation_top .codepen_kor span {
+            width: 2px;
+            height: 15px;
+            display: inline-block;
+            margin: 5px 0;
+            background: #aaa;
+            border-radius: 50%;
+        }
+        .animation_bottom {
+            display: flex;
+            width: 90%;
+            padding: 0 7% 0 3%;
+            height: 50%;
+            justify-content: space-between;
+        }
+        .history {
+            flex: 0 0 10%;
+        }
+        .history h2 {
+            font-family: 'Abel-Regular';
+            font-size: 140px;
+            margin: 150px 0 0 0;
+            line-height: 1;
+        }
+        .history span {
+            font-family: 'Patrican';
+            font-size: 20px;
+            margin-left: 10px;
+        }
+        .history span::after {
+            content: '';
+            width: 30px; height: 30px;
+            display: inline-block;
+            border-radius: 50%;
+            margin-left: 50px;
+            background: #000;
+        }
+        .codepen_eg {
+            font-family: 'Patrican';
+            line-height: 1.2;
+            font-size: 20px;
+            flex: 0 0 20%;
+        }
+        .codepen_eg strong {
+            font-size: 21px;
+            font-weight: normal;
+        }
+        .codepen_eg .eg_span.one {
+            margin-left: 60px;
+        }
+        .codepen_eg .eg_span.two {
+            margin-left: 140px;
+        }
+        .codepen_eg .eg_span.three {
+            margin-left: 155px;
+        }
+        .bottom_codepen {
+            flex: 0 0 40%;
         }
     </style>
 
@@ -706,23 +815,96 @@
             <div class="line"></div>
             <div class="calculator">
                 <img src="./assets/img/calculator.jpg" alt="calculator">
-                <h2>Calculator</h2>
-                <span>touch the screen</span>
+                <div class="touch_box">
+                    <h2>Calculator</h2>
+                    <span>touch the screen</span>
+                </div>
                 <div class="boundary"></div>
                 <p>Where the calculation</p>
                 <h3>results appear</h3>
             </div>
         </section>
         <!-- //section11 -->
-        <section class="pane"><div>12</div></section>
+        <section class="pane">
+            <div class="line"></div>
+            <div class="line_text">애니메이션<img src="./assets/img/cros.svg" alt="cros">효과</div>
+            <div class="animation_contents">
+                <div class="animation_top">
+                    <div class="top_codepen">
+                        <p class="codepen" data-theme-id="light" data-default-tab="result" data-slug-hash="jOLGRJG" data-user="daeyeong0412">
+                            <span>See the Pen <a href="https://codepen.io/daeyeong0412/pen/jOLGRJG">
+                            I DESIGN WITH CODE ❤</a> by DaeYeong0412 (<a href="https://codepen.io/daeyeong0412">@daeyeong0412</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                    </div>
+                    <div class="address">
+                        <h2>Ansan,</h2>
+                        <p>Gyeonggi-do.</p>
+                        <span>안산, 경기도</span>
+                    </div>
+                    <div class="codepen_kor">
+                        매일<span></span>아침부터<span></span>저녁까지<br>
+                        학원이 닫을 시간과<br>
+                        주말<span></span>또한 반납을하고<br>
+                        학원 또는 카페를 가서 코딩에<span></span>대한<br>
+                        열정을 보여줬으며 앞으로도<br>
+                        빠르게 바뀌는 이 프론트 앤드의<br>
+                        특성에 맞게 열정이라는<br>
+                        불꽃에<span></span>꾸준히 땔깜을 넣으며 성장하겠습니다<br>
+                        부족한 지식으로 만든 포트폴리오이지만<br>
+                        꾸준히 발전을해<br>
+                        두번째<span></span>세번째의 포트폴리오를<br>
+                        만들때마다 진화하는 모습을<span></span>기대해주세요<br><br>
+                    </div>
+                </div>
+                <div class="animation_bottom">
+                    <div class="history">
+                        <h2>1994</h2>
+                        <span>The Beginning Of The Story</span>
+                    </div>
+                    <div class="codepen_eg">
+                        <strong>F</strong>rom morning to evening, the academy returned the<br>
+                        <span class="eg_span one">time to close and the weekend, and went to the</span><br>
+                        academy or cafe to show passion for coding, and in the<br>
+                        future, <strong>W</strong>e will continue to grow by adding firewood<br>
+                        to the flame of passion according to the rapidly<br>
+                        <span class="eg_span two">changing characteristics of the front and.</span><br>
+                        <strong>A</strong>lthough it is a portfolio made with insufficient<br>
+                        knowledge, please look forward to steadily developing<br>
+                        <span class="eg_span three">and evolving every time you create a</span><br>
+                        second or third portfolio.
+                    </div>
+                    <div class="bottom_codepen">
+                        <p class="codepen" data-theme-id="dark" data-default-tab="result" data-slug-hash="xxLzBoe" data-user="daeyeong0412">
+                            <span>See the Pen <a href="https://codepen.io/daeyeong0412/pen/xxLzBoe">
+                            Constellation</a> by DaeYeong0412 (<a href="https://codepen.io/daeyeong0412">@daeyeong0412</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                          </p>
+                          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- //section12 -->
-        <section class="pane"><div>13</div></section>
+        <section class="pane">
+            <div class="line"></div>
+            <div class="line_text">애니메이션<img src="./assets/img/cros.svg" alt="cros">효과</div>
+        </section>
         <!-- //section13 -->
         <section class="pane"><div>14</div></section>
         <!-- //section14 -->
         <section class="pane"><div>15</div></section>
         <!-- //section15 -->
-        <section class="pane"><div>1<div>sdafsdafsadf</div></div></section>
+        <section class="pane">
+            <div class="line"></div>
+            <div class="line_text">포트폴리오<img src="./assets/img/cros.svg" alt="cros">메인</div>
+            <div class="main_name a">宋</div>
+            <div class="main_name b">大</div>
+            <div class="main_name c">永</div>
+            <div class="eng_box">Hello.<br>I'm Song Dae-young, a new front-end developer.<br>Thank you for visiting my <span>portfolio</span> site.</div>
+            <div class="kor_box">안녕하세요.<br>신입 프론트엔드 개발자 송대영입니다.<br>저의 <span>포트폴리오</span> 사이트에 방문해 주셔서 감사합니다.</div>
+    </section>
         <!-- //section1 system -->
     </main>
 
