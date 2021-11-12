@@ -45,3 +45,12 @@ body{
 .pane.xs {
     flex:0 0 25vw;
 }
+.pane.api {
+    flex:0 0 60vw;
+}
+.pane.chat {
+    flex:0 0 50vw;
+}
+.pane.last {
+    flex:0 0 60vw;
+}
