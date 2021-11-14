@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko"  >
+    <head>
+        <title>horizontal scrollbar </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .scroll_bar {
+                position: fixed;
+                bottom: 2%;
+                left: -0.01%;
+                width: 100%;
+                height: 1px;
+                background: #000;
+                z-index: 1000;
+            }
+        </style>
+    </head>
+    <body>
+        <main id="contents">
+            <div class="scroll_bar"></div>
+            <div id="scrollWrap">
+                <div class="container"><h1>one</h1></div>
+                <div class="container"><h1>two</h1></div>
+                <div class="container"><h1>three</h1></div>
+                <div class="container"><h1>four</h1></div>
+                <div class="container"><h1>one</h1></div>
+            </div>
+        </main>
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+
+    <script>
+        // 가로 무한 스크롤
+        console.clear();
+        
+        let page = document.getElementById('scrollWrap');
+        let lastPane = page.getElementsByClassName('container');
+        lastPane = lastPane[lastPane.length-1];
+        let dummyX = null;
+        
+        window.onscroll = () => {
+            // Horizontal Scroll.
+            let y = document.body.getBoundingClientRect().top;
+            page.scrollLeft = -y;
+            
+            // Looping Scroll.
+            let diff = window.scrollY - dummyX;
+            if (diff > 0) {
+                window.scrollTo(0, diff);
+            } else if (window.scrollY == 0) {
+                window.scrollTo(0, dummyX);
+            }
+        }
+        
+        // Reset window-based vars
+        resize = () => {
+            let w = page.scrollWidth-window.innerWidth+window.innerHeight;
+            document.body.style.height = w + 'px';
+            dummyX = lastPane.getBoundingClientRect().left+window.scrollY;
+            //keeps infinite scroll after resize
+            window.scrollTo(0, 1);
+        }
+        
+        // Adjust the body height if the window resizes.
+        window.onresize = resize;
+        
+        // Initial resize.
+        resize();
+        </script>
+</html>

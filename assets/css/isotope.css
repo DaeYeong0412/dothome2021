@@ -71,8 +71,15 @@
   height: 350px;
   margin-bottom: 1%;
   float: left;
-
-  border-bottom: 3px solid #a5d5fa;
+  border-bottom: 3px solid #144d68;
+  background-color: #fff;
+}
+.color-shape.figma {
+  width: 220px;
+  height: 350px;
+  margin-bottom: 1%;
+  float: left;
+  border-bottom: 3px solid #9568b3;
   background-color: #fff;
 }
 .color-shape:first-child:hover {

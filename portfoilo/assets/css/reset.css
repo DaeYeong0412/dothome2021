@@ -1,14 +1,29 @@
 body{
-    -ms-overflow-style: none;
+    /* -ms-overflow-style: none; */
     overflow-x:hidden;
     color:#000;
     /* cursor: none; */
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     display: none;
+} */
+/*---------------
+Supahscroll
+---------------*/
+.supah-scroll {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    will-change: transform;
+    overflow: hidden;
 }
 .cursor {
-    /* position: absolute;
+    /* position: fixed;
     left: 0; top: 0;
     width: 20px; height: 20px;
     border-radius: 50%;
