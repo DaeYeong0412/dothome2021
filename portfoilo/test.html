@@ -1,139 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-      <div class="slide-container">
-        <section id="slide-1" class="slide slide-odd">
-          <img src="https://images.unsplash.com/photo-1530143584546-02191bc84eb5" class="bg-img" />
-          <h2 class="slide-title">slide 1</h2>
-        </section>
-      
-        <section id="slide-2" class="slide slide-even">
-          <img src="https://images.unsplash.com/photo-1503669678209-c68d00b3765d" class="bg-img" />
-          <h2 class="slide-title">slide 2</h2>
-        </section>
-      
-        <section id="slide-3" class="slide slide-odd">
-          <img src="https://images.unsplash.com/photo-1496147539180-13929f8aa03a" class="bg-img" />
-          <h2 class="slide-title">slide 3</h2>
-        </section>
-        
-        <section id="slide-4" class="slide slide-even">
-          <img src="https://images.unsplash.com/photo-1497515098781-e965764ab601" class="bg-img" />
-          <h2>slide 4</h2>
-        </section>
-        
-        <div class="slide-progress"><span class="progress-thumb" /></div>
-      </div>
-      <script>
-          gsap.registerPlugin(ScrollTrigger);
 
-// parallax effect on the header img
-gsap.to('.intro .bg-img', {
-  y: '80%',
-  ease: Power0.easeNone,
-  scrollTrigger: {
-    trigger: '.intro',
-    start: 'top 1px',
-    end: 'bottom 100px',
-    scrub: true,
-    // markers: true,
-  },
-});
+<main>
+  <div class="container">
+     <div class="wrapper">
+       <div class="thumbnail">1</div>
+       <div class="thumbnail">2</div>
+       <div class="thumbnail">3</div>
+       <div class="thumbnail">4</div>
+       <div class="thumbnail">5</div>
+       <div class="thumbnail">6</div>
+       <div class="thumbnail">7</div>
+       <div class="thumbnail">8</div> 
+       <div class="thumbnail">9</div>
+       <div class="thumbnail">10</div>
+       <div class="thumbnail">11</div>
+       <div class="thumbnail">12</div>
+       <div class="thumbnail">13</div>
+       <div class="thumbnail">14</div>
+       <div class="thumbnail">15</div>
+     </div>
+  </div>
+</main>
+<footer>
+  <div class="scroll"></div>
+  <div class="scrollbar"></div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
 
-// gradually darken and blur the header img
-gsap.to('.intro .bg-img', {
-  filter: 'brightness(0.25) blur(16px)',
-  ease: Power0.easeNone,
-  scrollTrigger: {
-    trigger: '.intro',
-    start: 'center top',
-    scrub: true,
-    // markers: true,
-  },
-});
+<script>
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// the header title
-gsap.to('.intro .title', {
-  y: '45vh',
-  ease: Power0.easeNone,
-  scrollTrigger: {
-    trigger: '.intro',
-    start: '25% top',
-    scrub: true,
-  }
-});
+//const scrubValue = true;
+const scrubValue = 0.5;
 
-const progressTL = gsap.to('.progress-thumb', { scaleX: 1, ease: Power0.easeNone, paused: true });
+let container = document.querySelector('.container')
 
-const slides = gsap.utils.toArray('.slide');
-
-const slidesTL = gsap.timeline();
-
-function slideTL(slide, isFirst = false) {
-  const tl = gsap.timeline();
-  if (!isFirst) {
-    tl.from(slide, {
-        xPercent: 100,
-      });
-    tl.from(slide.querySelector('h2'), {
-      duration: 0.25,
-      opacity: 0,
-      x: 100,
-    }, 0.2);
-  }
-  
-  tl.fromTo(slide.querySelector('.bg-img'), {
-    xPercent: isFirst ? 0 : 8,
-  }, {
-    xPercent: -8,  
-  }, 0);
-  
-  return tl;
-}
-
-slides.forEach((slide, i) => {
-  if (i === 0) {
-    slidesTL.add(slideTL(slide, true));
-  } else {
-    slidesTL.add(slideTL(slide), '-=0.1');
-  }
-});
+const scrollBar = gsap.to('.scrollbar', { x: () => { return window.innerWidth - (150) }, ease: "none" })
 
 ScrollTrigger.create({
-  animation: slidesTL,
-  trigger: ".slide-container",
-  start: "top top",
-  end: `+=${slides.length * 100}%`, 
-  scrub: 1,
-  pin: true,
-  anticipatePin: 1,
-  onUpdate: (self) => {
-    progressTL.progress(self.progress);
-  },
-});
+    trigger: ".container",
+    start: "top top",
+    end: () => (container.scrollWidth - window.innerWidth),
+    pin: true,
+    anticipatePin: 1,
+    scrub: scrubValue,
+    animation: scrollBar,
+    invalidateOnRefresh: true,
+})
 
-gsap.from('footer h2', {
-  opacity: 0,
-  y: 100,
-  duration: 0.6,
-  scrollTrigger: {
-    trigger: 'footer',
-    toggleActions: 'play none none reset',
-    start: 'center bottom',
-    // scrub: 0.5,
-    // markers: true,
-  },
-});
 
-      </script>
+
+let thumbNails = gsap.utils.toArray(".thumbnail");
+
+thumbNails.forEach((thumb, i) => {
+ 
+  if (thumb.classList.contains('fakePin')) {
+                
+    function prevAll(element) {
+      var result = [];
+
+      while (element = element.previousElementSibling)
+          result.push(element);
+      return result;
+    }    
+    
+    // console.log(prevAll(thumb))
+    
+    var totalWidthToMove;
+    
+    function getTotalWidthToMove() {
+        
+      totalWidthToMove = 0;
+      
+      prevAll(thumb).forEach((thumbBefore, i) => {
+
+        let style = thumbBefore.currentStyle || window.getComputedStyle(thumbBefore);      
+        let marginRight = parseInt(style.marginRight);
+
+        totalWidthToMove += thumbBefore.offsetWidth + marginRight;
+
+      });    
+
+      return totalWidthToMove;
+      
+    }
+    //getTotalWidthToMove();    
+    //console.log(totalWidthToMove)
+    
+    gsap.to(thumb, {
+      x: () => { return - getTotalWidthToMove() },
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".wrapper",
+        start: 'top top',
+        scrub: scrubValue,
+        invalidateOnRefresh: true,
+        end: () => "+=" + getTotalWidthToMove(),
+      }
+    });
+    
+  }
+  else {
+    
+    gsap.to(thumb, {
+      x: () => { return - (container.scrollWidth) },
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".wrapper",
+        start: 'top top',
+        scrub: scrubValue,
+        invalidateOnRefresh: true,
+        end: () => "+=" + (container.scrollWidth),
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
