@@ -1,0 +1,88 @@
+body {
+    margin: 0 auto;
+    cursor: none;
+}
+
+.cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 999;
+    background-color: #353535;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+footer {
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+}
+
+.scroll {
+    position: relative;
+    width: 100vw;
+    height: 0.5px;
+    background: #999;
+    top: calc(7vh + 20px);
+}
+
+.scrollbar {
+    position: relative;
+    border-radius: 25px;
+    background-color: #333;
+    width: 200px;
+    height: 5px;
+    top: calc(7vh + 17.5px);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    width: 1235vw;
+}
+
+.thumbnail {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position:relative;
+    align-items:center;
+    justify-content:center;
+}
+
+.thumbnail.b {
+    width: 110vw;
+}
+
+.thumbnail.s {
+    width: 90vw;
+}
+
+.thumbnail.xs {
+    width: 25vw;
+}
+
+.thumbnail.api {
+    width: 60vw;
+}
+
+.thumbnail.chat {
+    width: 50vw;
+}
+
+.thumbnail.last {
+    width: 60vw;
+}
