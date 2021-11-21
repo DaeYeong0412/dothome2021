@@ -1,47 +1,110 @@
-var page = document.getElementById('page');
-var last_pane = page.getElementsByClassName('pane');
-last_pane = last_pane[last_pane.length-1];
-var dummy_x = null;
-
-window.onscroll = function () {
-    // Horizontal Scroll.
-    var y = document.body.getBoundingClientRect().top;
-    page.scrollLeft = -y;
-    
-    // Looping Scroll.
-    var diff = window.scrollY - dummy_x;
-    if (diff > 0) {
-        window.scrollTo(0, diff);
+const contents = document.getElementById("contents");
+/*------------------------------
+SupahScroll
+------------------------------*/
+class SupahScroll {
+    constructor(options) {
+        this.opt = options || {};
+        this.el = this.opt.el ? this.opt.el : '.supah-scroll';
+        this.speed = this.opt.speed ? this.opt.speed : 0.1;
+        this.init();
     }
-    else if (window.scrollY == 0) {
-        window.scrollTo(0, dummy_x);
+
+    init() {
+        this.scrollX = 0;
+        this.supahScroll = document.querySelectorAll(this.el)[0];
+        this.supahScroll.classList.add('supah-scroll');
+        this.events();
+        this.update();
+        this.animate();
+    }
+
+    update() {
+        if (this.supahScroll === null) return;
+        document.body.style.height = `${this.supahScroll.getBoundingClientRect().width/2}px`;
+    }
+
+    pause() {
+        document.body.style.overflow = 'hidden';
+        cancelAnimationFrame(this.raf);
+    }
+
+    play() {
+        document.body.style.overflow = 'inherit';
+        this.raf = requestAnimationFrame(this.animate.bind(this));
+    }
+
+    destroy() {
+        this.supahScroll.classList.remove('supah-scroll');
+        this.supahScroll.style.transform = 'none';
+        document.body.style.overflow = 'inherit';
+        window.removeEventListener('resize', this.update);
+        cancelAnimationFrame(this.raf);
+        delete this.supahScroll;
+    }
+
+    animate() {
+        this.scrollX += (window.scrollY - this.scrollX) * this.speed;
+        this.supahScroll.style.transform = `translate3d(${-this.scrollX}px,0,0)`;
+        this.raf = requestAnimationFrame(this.animate.bind(this));
+    }
+
+    scrollTo(x) {
+        window.scrollTo(x, 0);
+    }
+
+    staticScrollTo(x) {
+        cancelAnimationFrame(this.raf);
+        this.scrollX = x;
+
+        window.scrollTo(x, 0);
+        this.supahScroll.style.transform = `translate3d(${-x}px,0,0)`;
+        this.play();
+    }
+
+    events() {
+        window.addEventListener('load', this.update.bind(this));
+        window.addEventListener('resize', this.update.bind(this));
     }
 }
-// Adjust the body height if the window resizes.
-window.onresize = resize;
-// Initial resize.
-resize();
 
-// Reset window-based vars
-function resize() {
-    var w = page.scrollWidth-window.innerWidth+window.innerHeight;
-    document.body.style.height = w + 'px';
-    dummy_x = last_pane.getBoundingClientRect().left+window.scrollY;
-}
-
-const w = document.querySelector(".cursor").offsetWidth /2;
-const h = document.querySelector(".cursor").offsetHeight /2;
-const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", e => {
-    gsap.to(".cursor", {duration: 0.3, left: e.pageX -w, top: e.pageY -h});
+/*------------------------------
+Initialize
+------------------------------*/
+const supahscroll = new SupahScroll({
+    el: 'main',
+    speed: 0.05
 });
 
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+const scrubValue = 0.5;
+
+const scrollBar = gsap.to('.scrollbar', {
+    x: () => {
+        return window.innerWidth - (200)
+    },
+    ease: "none"
+})
+
+ScrollTrigger.create({
+    trigger: contents,
+    start: "top top",
+    end: () => (contents.scrollWidth - window.innerWidth),
+    pin: true,
+    anticipatePin: 1,
+    scrub: scrubValue,
+    animation: scrollBar,
+    invalidateOnRefresh: true,
+})
+
+// tabmenu
 const tabBtn = document.querySelectorAll(".site_choice ul li");
 const tabCont = document.querySelectorAll(".site_info");
 
-tabBtn.forEach((element, index)=> {
-    element.addEventListener("click", function(){
+tabBtn.forEach((element, index) => {
+    element.addEventListener("mouseover", function () {
         tabBtn.forEach(el => {
             el.classList.remove("active");
         });
@@ -52,4 +115,63 @@ tabBtn.forEach((element, index)=> {
         })
         tabCont[index].style.display = "block";
     });
+});
+
+// cursor
+const w = document.querySelector(".cursor").offsetWidth / 2;
+const h = document.querySelector(".cursor").offsetHeight / 2;
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", e => {
+    gsap.to('.cursor', {
+        duration: .2,
+        left: e.pageX - window.scrollX - w,
+        top: e.pageY - window.scrollY - h
+    });
+});
+
+// clock
+function printClock() {
+
+    var clock = document.getElementById("clock");
+    var currentDate = new Date();
+    var calendar = currentDate.getFullYear() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getDate()
+    var amPm = 'AM';
+    var currentHours = addZeros(currentDate.getHours(), 2);
+    var currentMinute = addZeros(currentDate.getMinutes(), 2);
+
+    if (currentHours >= 12) {
+        amPm = 'PM';
+        currentHours = addZeros(currentHours - 12, 2);
+    }
+
+    clock.innerHTML = currentHours + " : " + currentMinute + "<span> " + amPm + "&nbsp PORTFOLIO</span>";
+
+    setTimeout("printClock()", 1000);
+}
+
+function addZeros(num, digit) {
+    var zero = '';
+    num = num.toString();
+    if (num.length < digit) {
+        for (i = 0; i < digit - num.length; i++) {
+            zero += '0';
+        }
+    }
+    return zero + num;
+}
+
+// audio
+
+const $btnSound = $(".btn-sound");
+const $themeSong = $("#theme-song")[0];
+$btnSound.on("click", function () {
+    $(this).find("i").toggleClass("fa fa-volume-up fa fa-volume-off");
+    $(this).toggleClass("isPlaying");
+    //play
+    if ($(this).hasClass("isPlaying")) {
+        $themeSong.play();
+    } else {
+        $themeSong.pause();
+    }
 });

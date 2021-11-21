@@ -1,421 +1,450 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfoilo</title>
+    <title>Document</title>
 
-    <!-- CSS -->
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- font-google -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
+    <!-- stylesheet -->
     <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+
+<body onload="printClock()">
+    <header>
+        <div id="clock"></div>
+    </header>
     <div class="cursor"></div>
-    <main id="page">
-        <section class="pane">
+    <main id="contents">
+        <section class="section">
+            <div class="container">
+                <article class="audio">
+                    <span class="btn-sound">
+                        <i class="fa fa-volume-off" aria-hidden="true"></i>
+                    </span>
+                    <audio id="theme-song" src="./assets/audio/Michael_Ellis_-_Break_the_Rain.mp3" loop="loop"></audio>
+                </article>
                 <div class="line"></div>
                 <div class="line_text">포트폴리오<img src="./assets/img/cros.svg" alt="cros">메인</div>
                 <div class="main_name a">宋</div>
                 <div class="main_name b">大</div>
                 <div class="main_name c">永</div>
-                <div class="eng_box">Hello.<br>I'm Song Dae-young, a new front-end developer.<br>Thank you for visiting my <span>portfolio</span> site.</div>
+                <div class="eng_box">Hello.<br>I'm Song Dae-young, a new front-end developer.<br>Thank you for visiting
+                    my <span>portfolio</span> site.</div>
                 <div class="kor_box">안녕하세요.<br>신입 프론트엔드 개발자 송대영입니다.<br>저의 <span>포트폴리오</span> 사이트에 방문해 주셔서 감사합니다.</div>
-        </section>
-        <!-- //section1 -->
-        <section class="pane b">
-            <div class="line"></div>
-            <div class="line_text">소개페이지<img src="./assets/img/cros.svg" alt="cros">메인</div>
-            <div class="mainImg">
-                <img src="./assets/img/mainPorfile.jpg" alt="mainPorfile">
-                <span>2021.11.18 시현하다</span>
-            </div>
-            <div class="subImg">
-                <img src="./assets/img/subPorfile.jpg" alt="subPorfile">
-                <span>2021.07.12 도전하다</span>
-            </div>
-            <div class="about_text">
-                <h2>프론트앤드개발자를 꿈꾸며</h2>
-                <p>화공과로 특성화 고등학교를 진학해 대학또한 동양 미래대학교<br>의 생명화공과를 졸업해 약 6년간 화학에대해 공부만 해오던 전<br>형적인 공대생 이였습니다.</p>
-                <p>대학 졸업이후 짧은 기간이지만 약 1년간 화공관련 일을 했습니<br>다. QC쪽으로 취업을해 연구소에서 제품분석업무를 한뒤 기술<br>영업분야로 이직을해 여러 업체들을 돌아다니며 제품관리와 업<br>체대응 같은 업무를 했습니다.</p>
-                <p>다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력<br>을 했고 매번 하고싶었던 일이였지만 약 6년간 배워온 시간을<br>포기하고 새로운 길에 들어서는것에 큰 결심을 하고 퇴사를 하<br>고 인터넷 서칭과 영상등의 매체로 프로그래밍에 대한 지식을<br>독학으로 공부를하며 프론트 앤드 개발자에 대한 꿈을 키워 나<br>갔고 독학에 있어 점점 힘들어질무렵 학원을 알아본뒤 이와 같<br>이 약 6개월 간의 학원 생활을 이어나갔습니다.</p>
             </div>
         </section>
-        <!-- //section2 -->
-        <section class="pane">
-            <div class="line"></div>
-            <div class="line_text">핵심정리<img src="./assets/img/cros.svg" alt="cros">피그마</div>
-            <div class="title">
-                <h2>Reference</h2>
-                <h2>Book<span class="keyword">핵심정리</span><span class="keywordDay">2021.11.01</span></h2>
-            </div>
-            <div class="referenceImg">
-                <img src="./assets/img/reference.jpg" alt="reference">
-                <span>2021.11.01 정리공간</span>
-            </div>
-            <div class="reference_text">
-                <h2>수업내용 핵심정리</h2>
-                <p>프론트 앤드 개발자를 목표로 학원을 등록하고 가장 처음 배운<br>자바 스크립트이다 자바 스크립트의 가장 기본기인 데이터를 저<br>장하고 불러오는 방법과 실행하는법 제어하는법을 배운뒤 여러<br>매서드에 대한것을 배운것을 정리했다.<a href="#">피그마 보기</a></p>
-                <p>제이쿼리가 앞으로는 점점 사라질 기술이라는것은 알고있다. 하<br>지만 아직 국내에 기존에 만들어진 사이트들이 제이쿼리를 기반<br>으로 만들어진 사이트들이 많아 이러한 사이트들을 수정하거나<br>자바 스크립트로 변경할수 있는 기술을 가지는것이 다른이들과<br>의 경쟁력을 가질수 있지 않을까한다.<a href="#">코드정리 보기</a></p>
-                <p>짧은 시간이지만 열심히 노력을 해온 결과물들이 어떻게 해야<br>나의 기술이 될까 다른 이들에게 어필을 할수 있을까에 대한 고<br>민은 꾸준히 해왔으며 그에대한 해답이 될지는 모르겠지만 공부<br>를 해온 것들을 따로 피그마와 웹 사이트로 보기 좋게 정리를 했<br>다.  위의 링크들에 직접 보실분들이 얼마나 계실지는 모르지만<br>열심히 공부해 정리했다는 뿌듯함이 있다.<a href="#">스크립트 효과 보기</a></p>
-            </div>
-        </section>
-        <!-- //section3 -->
-        <section class="pane s">
-            <div class="line"></div>
-            <div class="line_text b">사이트정리<img src="./assets/img/cros.svg" alt="cros">깃허브</div>
-            <div class="site_choice">
-                <ul>
-                    <li class="active">Megabox</li>
-                    <li>Php</li>
-                    <li>Apple</li>
-                    <li>React</li>
-                    <li>Project</li>
-                    <li>Various</li>
-                </ul>
-            </div>
-            <div class="site_info active">
-                <ul>
-                    <li class="active">01</li>
-                    <li>02</li>
-                    <li>03</li>
-                    <li>04</li>
-                    <li>05</li>
-                    <li>06</li>
-                </ul>
-                <img src="./assets/img/MegaS.jpg" alt="MegaBox">
-                <div>
-                    <h2>메가박스 사이트 코딩</h2>
-                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+        <section class="section a">
+            <div class="container a">
+                <div class="line"></div>
+                <div class="line_text">소개페이지<img src="./assets/img/cros.svg" alt="cros">메인</div>
+                <div class="mainImg">
+                    <img src="./assets/img/mainPorfile.jpg" alt="mainPorfile">
+                    <span>2021.11.18 시현하다</span>
                 </div>
-            </div>
-            <div class="site_info">
-                <ul>
-                    <li>01</li>
-                    <li class="active">02</li>
-                    <li>03</li>
-                    <li>04</li>
-                    <li>05</li>
-                    <li>06</li>
-                </ul>
-                <img src="./assets/img/phpS.jpg" alt="php">
-                <div>
-                    <h2>PHP 사이트 코딩</h2>
-                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                <div class="subImg">
+                    <img src="./assets/img/subPorfile.jpg" alt="subPorfile">
+                    <span>2020.04.12 여행하다</span>
                 </div>
-            </div>
-            <div class="site_info">
-                <ul>
-                    <li>01</li>
-                    <li>02</li>
-                    <li class="active">03</li>
-                    <li>04</li>
-                    <li>05</li>
-                    <li>06</li>
-                </ul>
-                <img src="./assets/img/appleS.jpg" alt="apple">
-                <div>
-                    <h2>애플 사이트 코딩</h2>
-                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
-                </div>
-            </div>
-            <div class="site_info">
-                <ul>
-                    <li>01</li>
-                    <li>02</li>
-                    <li>03</li>
-                    <li class="active">04</li>
-                    <li>05</li>
-                    <li>06</li>
-                </ul>
-                <img src="./assets/img/ReactS.jpg" alt="React">
-                <div>
-                    <h2>리액트 사이트 코딩</h2>
-                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
-                </div>
-            </div>
-            <div class="site_info">
-                <ul>
-                    <li>01</li>
-                    <li>02</li>
-                    <li>03</li>
-                    <li>04</li>
-                    <li class="active">05</li>
-                    <li>06</li>
-                </ul>
-                <img src="./assets/img/GabojaS.jpg" alt="Gaboja">
-                <div>
-                    <h2>팀프로젝트 사이트 코딩</h2>
-                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
-                </div>
-            </div>
-            <div class="site_info">
-                <ul>
-                    <li>01</li>
-                    <li>02</li>
-                    <li>03</li>
-                    <li>04</li>
-                    <li>05</li>
-                    <li class="active">06</li>
-                </ul>
-                <img src="./assets/img/VariousS.jpg" alt="Various">
-                <div>
-                    <h2>다양한 사이트 코딩</h2>
-                    <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성, 운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                <div class="about_text">
+                    <h2>프론트앤드개발자를 꿈꾸며</h2>
+                    <p>화공과로 특성화 고등학교를 진학해 대학또한 동양 미래대학교<br>의 생명화공과를 졸업해 약 6년간 화학에대해 공부만 해오던 전<br>형적인 공대생 이였습니다.</p>
+                    <p>대학 졸업이후 짧은 기간이지만 약 1년간 화공관련 일을 했습니<br>다. QC쪽으로 취업을해 연구소에서 제품분석업무를 한뒤 기술<br>영업분야로 이직을해 여러 업체들을
+                        돌아다니며 제품관리와 업<br>체대응 같은 업무를 했습니다.</p>
+                    <p>다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력<br>을 했고 매번 하고싶었던 일이였지만 약 6년간 배워온 시간을<br>포기하고 새로운 길에 들어서는것에 큰
+                        결심을 하고 퇴사를 하<br>고 인터넷 서칭과 영상등의 매체로 프로그래밍에 대한 지식을<br>독학으로 공부를하며 프론트 앤드 개발자에 대한 꿈을 키워 나<br>갔고 독학에
+                        있어 점점 힘들어질무렵 학원을 알아본뒤 이와 같<br>이 약 6개월 간의 학원 생활을 이어나갔습니다.</p>
                 </div>
             </div>
         </section>
-        <!-- //section4 -->
-        <section class="pane s">
-            <div class="line gray"></div>
-            <div class="site_one">
-                <img src="./assets/img/Mega.jpg" alt="MegaBox">
-                <h2>Megabox Site Coding</h2>
-                <span>기업형 사이트 코딩</span>
-                <a href="#">CODE LINK</a>
-            </div>
-        </section>
-        <!-- //section5 -->
-        <section class="pane s">
-            <div class="line gray"></div>
-            <div class="site_two">
-                <h2>Php Site Coding</h2>
-                <span>게시판 사이트 코딩</span>
-                <a href="#">CODE LINK</a>
-                <img src="./assets/img/php.jpg" alt="php">
-            </div>
-        </section>
-        <!-- //section6 -->
-        <section class="pane s">
-            <div class="line gray"></div>
-            <div class="site_three">
-                <img src="./assets/img/apple.jpg" alt="apple">
-                <span>애플 사이트 코딩</span>
-                <a href="#">CODE LINK</a>
-                <h2>Apple Site Coding</h2>
-            </div>
-        </section>
-        <!-- //section7 -->
-        <section class="pane s">
-            <div class="line gray"></div>
-            <div class="site_four">
-                <h2>React Site Coding</h2>
-                <span>리액트 사이트 코딩</span>
-                <a href="#">CODE LINK</a>
-                <img src="./assets/img/React.jpg" alt="React">
-            </div>
-        </section>
-        <!-- //section8 -->
-        <section class="pane s">
-            <div class="line gray"></div>
-            <div class="site_one t">
-                <img src="./assets/img/Gaboja.jpg" alt="Gaboja">
-                <h2>Project Site Coding</h2>
-                <span>팀 프로젝트 사이트</span>
-                <a href="#">CODE LINK</a>
-            </div>
-        </section>
-        <!-- //section9 -->
-        <section class="pane s">
-            <div class="line gray"></div>
-            <div class="site_two t">
-                <h2>Various Site Coding</h2>
-                <span>다양한 사이트 카피 코딩</span>
-                <a href="#">CODE LINK</a>
-                <img src="./assets/img/Various.jpg" alt="Various">
-            </div>
-        </section>
-        <!-- //section10 -->
-        <section class="pane xs">
-            <div class="line"></div>
-            <div class="calculator">
-                <img src="./assets/img/calculator.jpg" alt="calculator">
-                <div class="touch_box">
-                    <h2>Calculator</h2>
-                    <span>touch the screen</span>
+        <section class="section b">
+            <div class="container b">
+                <div class="line"></div>
+                <div class="line_text">핵심정리<img src="./assets/img/cros.svg" alt="cros">피그마</div>
+                <div class="title">
+                    <h2>Reference</h2>
+                    <h2>Book<span class="keyword">핵심정리</span><span class="keywordDay">2021.11.01</span></h2>
                 </div>
-                <div class="boundary"></div>
-                <p>Where the calculation</p>
-                <h3>results appear</h3>
+                <div class="referenceImg">
+                    <img src="./assets/img/reference.jpg" alt="reference">
+                    <span>2021.11.01 정리공간</span>
+                </div>
+                <div class="reference_text">
+                    <h2>수업내용 핵심정리</h2>
+                    <p>프론트 앤드 개발자를 목표로 학원을 등록하고 가장 처음 배운<br>자바 스크립트이다 자바 스크립트의 가장 기본기인 데이터를 저<br>장하고 불러오는 방법과 실행하는법
+                        제어하는법을 배운뒤 여러<br>매서드에 대한것을 배운것을 정리했다.<a href="#">피그마 보기</a></p>
+                    <p>제이쿼리가 앞으로는 점점 사라질 기술이라는것은 알고있다. 하<br>지만 아직 국내에 기존에 만들어진 사이트들이 제이쿼리를 기반<br>으로 만들어진 사이트들이 많아 이러한
+                        사이트들을 수정하거나<br>자바 스크립트로 변경할수 있는 기술을 가지는것이 다른이들과<br>의 경쟁력을 가질수 있지 않을까한다.<a href="#">코드정리 보기</a>
+                    </p>
+                    <p>짧은 시간이지만 열심히 노력을 해온 결과물들이 어떻게 해야<br>나의 기술이 될까 다른 이들에게 어필을 할수 있을까에 대한 고<br>민은 꾸준히 해왔으며 그에대한 해답이
+                        될지는 모르겠지만 공부<br>를 해온 것들을 따로 피그마와 웹 사이트로 보기 좋게 정리를 했<br>다. 위의 링크들에 직접 보실분들이 얼마나 계실지는 모르지만<br>열심히
+                        공부해 정리했다는 뿌듯함이 있다.<a href="#">스크립트 효과 보기</a></p>
+                </div>
             </div>
         </section>
-        <!-- //section11 -->
-        <section class="pane">
-            <div class="line"></div>
-            <div class="line_text">애니메이션<img src="./assets/img/cros.svg" alt="cros">효과</div>
-            <div class="animation_contents">
-                <div class="animation_top">
-                    <div class="top_codepen">
-                        <p class="codepen" data-theme-id="light" data-default-tab="result" data-slug-hash="jOLGRJG" data-user="daeyeong0412">
-                            <span>See the Pen <a href="https://codepen.io/daeyeong0412/pen/jOLGRJG">
-                            I DESIGN WITH CODE ❤</a> by DaeYeong0412 (<a href="https://codepen.io/daeyeong0412">@daeyeong0412</a>)
-                            on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-                    </div>
-                    <div class="address">
-                        <h2>Ansan,</h2>
-                        <p>Gyeonggi-do.</p>
-                        <span>안산, 경기도</span>
-                    </div>
-                    <div class="codepen_kor">
-                        매일<span></span>아침부터<span></span>저녁까지<br>
-                        학원이 닫을 시간과<br>
-                        주말<span></span>또한 반납을하고<br>
-                        학원 또는 카페를 가서 코딩에<span></span>대한<br>
-                        열정을 보여줬으며 앞으로도<br>
-                        빠르게 바뀌는 이 프론트 앤드의<br>
-                        특성에 맞게 열정이라는<br>
-                        불꽃에<span></span>꾸준히 땔깜을 넣으며 성장하겠습니다<br>
-                        부족한 지식으로 만든 포트폴리오이지만<br>
-                        꾸준히 발전을해<br>
-                        두번째<span></span>세번째의 포트폴리오를<br>
-                        만들때마다 진화하는 모습을<span></span>기대해주세요<br><br>
+        <section class="section">
+            <div class="container">
+                <div class="line"></div>
+                <div class="line_text b">사이트정리<img src="./assets/img/cros.svg" alt="cros">깃허브</div>
+                <div class="site_choice">
+                    <ul>
+                        <li class="active">Megabox</li>
+                        <li>Php</li>
+                        <li>Apple</li>
+                        <li>React</li>
+                        <li>Project</li>
+                        <li>Various</li>
+                    </ul>
+                </div>
+                <div class="site_info active">
+                    <ul>
+                        <li class="active">01</li>
+                        <li>02</li>
+                        <li>03</li>
+                        <li>04</li>
+                        <li>05</li>
+                        <li>06</li>
+                    </ul>
+                    <img src="./assets/img/MegaS.jpg" alt="MegaBox">
+                    <div>
+                        <h2>메가박스 사이트 코딩</h2>
+                        <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성,
+                            운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
                     </div>
                 </div>
-                <div class="animation_bottom">
-                    <div class="history">
-                        <h2>1994</h2>
-                        <span>The Beginning Of The Story</span>
+                <div class="site_info">
+                    <ul>
+                        <li>01</li>
+                        <li class="active">02</li>
+                        <li>03</li>
+                        <li>04</li>
+                        <li>05</li>
+                        <li>06</li>
+                    </ul>
+                    <img src="./assets/img/phpS.jpg" alt="php">
+                    <div>
+                        <h2>PHP 사이트 코딩</h2>
+                        <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성,
+                            운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
                     </div>
-                    <div class="codepen_eg">
-                        <strong>F</strong>rom morning to evening, the academy returned the<br>
-                        <span class="eg_span one">time to close and the weekend, and went to the</span><br>
-                        academy or cafe to show passion for coding, and in the<br>
-                        future, <strong>W</strong>e will continue to grow by adding firewood<br>
-                        to the flame of passion according to the rapidly<br>
-                        <span class="eg_span two">changing characteristics of the front and.</span><br>
-                        <strong>A</strong>lthough it is a portfolio made with insufficient<br>
-                        knowledge, please look forward to steadily developing<br>
-                        <span class="eg_span three">and evolving every time you create a</span><br>
-                        second or third portfolio.
+                </div>
+                <div class="site_info">
+                    <ul>
+                        <li>01</li>
+                        <li>02</li>
+                        <li class="active">03</li>
+                        <li>04</li>
+                        <li>05</li>
+                        <li>06</li>
+                    </ul>
+                    <img src="./assets/img/appleS.jpg" alt="apple">
+                    <div>
+                        <h2>애플 사이트 코딩</h2>
+                        <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성,
+                            운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
                     </div>
-                    <div class="bottom_codepen">
-                        <p class="codepen" data-theme-id="dark" data-default-tab="result" data-slug-hash="xxLzBoe" data-user="daeyeong0412">
-                            <span>See the Pen <a href="https://codepen.io/daeyeong0412/pen/xxLzBoe">
-                            Constellation</a> by DaeYeong0412 (<a href="https://codepen.io/daeyeong0412">@daeyeong0412</a>)
-                            on <a href="https://codepen.io">CodePen</a>.</span>
-                          </p>
-                          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </div>
+                <div class="site_info">
+                    <ul>
+                        <li>01</li>
+                        <li>02</li>
+                        <li>03</li>
+                        <li class="active">04</li>
+                        <li>05</li>
+                        <li>06</li>
+                    </ul>
+                    <img src="./assets/img/ReactS.jpg" alt="React">
+                    <div>
+                        <h2>리액트 사이트 코딩</h2>
+                        <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성,
+                            운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                    </div>
+                </div>
+                <div class="site_info">
+                    <ul>
+                        <li>01</li>
+                        <li>02</li>
+                        <li>03</li>
+                        <li>04</li>
+                        <li class="active">05</li>
+                        <li>06</li>
+                    </ul>
+                    <img src="./assets/img/GabojaS.jpg" alt="Gaboja">
+                    <div>
+                        <h2>팀프로젝트 사이트 코딩</h2>
+                        <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성,
+                            운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
+                    </div>
+                </div>
+                <div class="site_info">
+                    <ul>
+                        <li>01</li>
+                        <li>02</li>
+                        <li>03</li>
+                        <li>04</li>
+                        <li>05</li>
+                        <li class="active">06</li>
+                    </ul>
+                    <img src="./assets/img/VariousS.jpg" alt="Various">
+                    <div>
+                        <h2>다양한 사이트 코딩</h2>
+                        <p>기업형 사이트 코딩의 첫 걸음으로 메가박스 사이트를 기준으로<br>웹접근성지침서 2.0을 바탕으로 사이트를 제작하였습니다.<br>웹 표준에 필요한 인식의 용이성,
+                            운용의 용이성, 이해의 용이성,<br>견고성을 바탕으로 코딩을 하였으며, 크로스브라우징 작업도 진<br>행하였습니다.<a href="#">사이트 보기</a></p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- //section12 -->
-        <section class="pane api">
-            <div class="line"></div>
-            <div class="group_member">
-                <span>API Portfolio study</span>
-                <h2>Weekend<br>group<br>study</h2>
-                <span>By . Song, Youn, Park, Jo</span>
-            </div>
-            <img class="group_img" src="./assets/img/group.jpg" alt="group">
-            <div class="group_boundary"></div>
-            <span class="api_span">API</span>
-            <div class="group_diago"></div>
-            <span class="port_span">Portfolio</span>
-            <div class="group_info">
-                <span>Simple login</span>
-                <span>Automatic search</span>
-                <span>Voice search</span>
-                <span>Map</span>
-                <span>Encyclopedia</span>
-                <span>Push notification</span>
-            </div>
-            <p class="inter_p">Application Programming Interface</p>
-        </section>
-        <style>
-
-        </style>
-        <!-- //section13 -->
-        <section class="pane chat">
-            <div class="line"></div>
-            <div class="line_text">댓글공간<img src="./assets/img/cros.svg" alt="cros">방명록</div>
-            <div class="comment">
-                <div class="comment_list">
-                    <div class="comment_box">
-                        <span>Hello :)</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                    <div class="comment_box">
-                        <span>Hello :)</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                    <div class="comment_box">
-                        <span>Hello HelloHelloHelloHelloHHelloHelloelloHelloHelloHelloHelloHelloHello</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                    <div class="comment_box">
-                        <span>안녕하세요!!</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                    <div class="comment_box">
-                        <span>안녕하세요!!</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                    <div class="comment_box">
-                        <span>안녕하세요!!</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                    <div class="comment_box">
-                        <span>재미있게 봤습니다</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                    <div class="comment_box">
-                        <span>가낟라ㅏ마바사핟다아아타자차</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                    <div class="comment_box">
-                        <span>테스트입니다.</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                    <div class="comment_box">
-                        <span>테스트입니다.</span>
-                        <p>2021.11.12 10:30</p>
-                    </div>
-                </div>
-                <div class="comment_boundary"></div>
-                <div class="comment_text">
-                    <h2>Visitor</h2>
-                    <span>Please write down the contents.</span>
-                    <button>Send</button>
+        <section class="section s">
+            <div class="container s">
+                <div class="line gray"></div>
+                <div class="site_one">
+                    <img src="./assets/img/Mega.jpg" alt="MegaBox">
+                    <h2>Megabox Site Coding</h2>
+                    <span>기업형 사이트 코딩</span>
+                    <a href="#">CODE LINK</a>
                 </div>
             </div>
         </section>
-        <!-- //section14 -->
-        <section class="pane last">
-            <div class="line"></div>
-            <div class="line_text">포트폴리오<img src="./assets/img/cros.svg" alt="cros">인사</div>
-            <div class="last_top">
-                <h2>Thank You</h2>
-                <span>새로운 도전을 하고싶어 시작한 코딩이 삶의 많은 부분을 변화시켰습니다.<br>배움에 있어서 늘 겸손한 자세로 피드백을 받아들이고,<br>포기하지 않고 끈기와 인내로 성장해 나가는 개발자가 될것입니다.<br><br>프론트 앤드 개발자 송대영</span>
+        <section class="section s">
+            <div class="container s">
+                <div class="line gray"></div>
+                <div class="site_two">
+                    <h2>Php Site Coding</h2>
+                    <span>게시판 사이트 코딩</span>
+                    <a href="#">CODE LINK</a>
+                    <img src="./assets/img/php.jpg" alt="php">
+                </div>
             </div>
+        </section>
+        <section class="section s">
+            <div class="container s">
+                <div class="line gray"></div>
+                <div class="site_three">
+                    <img src="./assets/img/apple.jpg" alt="apple">
+                    <span>애플 사이트 코딩</span>
+                    <a href="#">CODE LINK</a>
+                    <h2>Apple Site Coding</h2>
+                </div>
+            </div>
+        </section>
+        <section class="section s">
+            <div class="container s">
+                <div class="line gray"></div>
+                <div class="site_four">
+                    <h2>React Site Coding</h2>
+                    <span>리액트 사이트 코딩</span>
+                    <a href="#">CODE LINK</a>
+                    <img src="./assets/img/React.jpg" alt="React">
+                </div>
+            </div>
+        </section>
+        <section class="section s">
+            <div class="container s">
+                <div class="line gray"></div>
+                <div class="site_one t">
+                    <img src="./assets/img/Gaboja.jpg" alt="Gaboja">
+                    <h2>Project Site Coding</h2>
+                    <span>팀 프로젝트 사이트</span>
+                    <a href="#">CODE LINK</a>
+                </div>
+            </div>
+        </section>
+        <section class="section s">
+            <div class="container s">
+                <div class="line gray"></div>
+                <div class="site_two t">
+                    <h2>Various Site Coding</h2>
+                    <span>다양한 사이트 카피 코딩</span>
+                    <a href="#">CODE LINK</a>
+                    <img src="./assets/img/Various.jpg" alt="Various">
+                </div>
+            </div>
+        </section>
+        <section class="section xs">
+            <div class="container xs">
+                <div class="line"></div>
+                <div class="calculator">
+                    <img src="./assets/img/calculator.jpg" alt="calculator">
+                    <div class="touch_box">
+                        <h2>Calculator</h2>
+                        <span>touch the screen</span>
+                    </div>
+                    <div class="boundary"></div>
+                    <p>Where the calculation</p>
+                    <h3>results appear</h3>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="line"></div>
+                <div class="line_text">애니메이션<img src="./assets/img/cros.svg" alt="cros">효과</div>
+                <div class="top_codepen">
+                    <iframe src="../refer-effect/gameEffect/searchGame.html" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <div class="address">
+                    <h2>Ansan,</h2>
+                    <p>Gyeonggi-do.</p>
+                    <span>안산, 경기도</span>
+                </div>
+                <div class="codepen_kor">
+                    매일<span></span>아침부터<span></span>저녁까지<br>
+                    학원이 닫을 시간과<br>
+                    주말<span></span>또한 반납을하고<br>
+                    학원 또는 카페를 가서 코딩에<span></span>대한<br>
+                    열정을 보여줬으며 앞으로도<br>
+                    빠르게 바뀌는 이 프론트 앤드의<br>
+                    특성에 맞게 열정이라는<br>
+                    불꽃에<span></span>꾸준히 땔깜을 넣으며 성장하겠습니다<br>
+                    부족한 지식으로 만든 포트폴리오이지만<br>
+                    꾸준히 발전을해<br>
+                    두번째<span></span>세번째의 포트폴리오를<br>
+                    만들때마다 진화하는 모습을<span></span>기대해주세요<br><br>
+                </div>
+                <div class="history">
+                    <h2>1994</h2>
+                    <span>The Beginning Of The Story</span>
+                </div>
+                <div class="codepen_eg">
+                    <strong>F</strong>rom morning to evening, the academy returned the<br>
+                    <span class="eg_span one">time to close and the weekend, and went to the</span><br>
+                    academy or cafe to show passion for coding, and in the<br>
+                    future, <strong>W</strong>e will continue to grow by adding firewood<br>
+                    to the flame of passion according to the rapidly<br>
+                    <span class="eg_span two">changing characteristics of the front and.</span><br>
+                    <strong>A</strong>lthough it is a portfolio made with insufficient<br>
+                    knowledge, please look forward to steadily developing<br>
+                    <span class="eg_span three">and evolving every time you create a</span><br>
+                    second or third portfolio.
+                </div>
+                <div class="bottom_codepen">
+                    <iframe src="../refer-effect/gameEffect/cardGame.html" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
+        </section>
+        <section class="section api">
+            <div class="container api">
+                <div class="line"></div>
+                <div class="group_member">
+                    <span>API Portfolio study</span>
+                    <h2>Weekend<br>group<br>study</h2>
+                    <span>By . Song, Youn, Park, Jo</span>
+                </div>
+                <img class="group_img" src="./assets/img/group.jpg" alt="group">
+                <div class="group_boundary"></div>
+                <span class="api_span">API</span>
+                <div class="group_diago"></div>
+                <span class="port_span">Portfolio</span>
+                <div class="group_info">
+                    <span>Simple login</span>
+                    <span>Automatic search</span>
+                    <span>Voice search</span>
+                    <span>Map</span>
+                    <span>Encyclopedia</span>
+                    <span>Push notification</span>
+                </div>
+                <p class="inter_p">Application Programming Interface</p>
+            </div>
+        </section>
+        <section class="section chat">
+            <div class="container chat">
+                <div class="line"></div>
+                <div class="line_text">댓글공간<img src="./assets/img/cros.svg" alt="cros">방명록</div>
+                <div class="comment">
+                    <div class="comment_list">
+                        <div class="comment_box">
+                            <span>Hello :)</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>Hello :)</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>Hello HelloHelloHelloHelloHHelloHelloelloHelloHelloHelloHelloHelloHello</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>안녕하세요!!</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>안녕하세요!!</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>안녕하세요!!</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>재미있게 봤습니다</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>가낟라ㅏ마바사핟다아아타자차</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>테스트입니다.</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>테스트입니다.</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                        <div class="comment_box">
+                            <span>테스트입니다.</span>
+                            <p>2021.11.12 10:30</p>
+                        </div>
+                    </div>
+                    <div class="comment_boundary"></div>
+                    <div class="comment_text">
+                        <h2>Visitor</h2>
+                        <span>Please write down the contents.</span>
+                        <button>Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section last">
+            <div class="container last">
+                <div class="line"></div>
+                <div class="line_text">포트폴리오<img src="./assets/img/cros.svg" alt="cros">인사</div>
+                <div class="last_top">
+                    <h2>Thank You</h2>
+                    <span>새로운 도전을 하고싶어 시작한 코딩이 삶의 많은 부분을 변화시켰습니다.<br>배움에 있어서 늘 겸손한 자세로 피드백을 받아들이고,<br>포기하지 않고 끈기와 인내로
+                        성장해 나가는 개발자가 될것입니다.<br><br>프론트 앤드 개발자 송대영</span>
+                </div>
                 <span class="last_boundary_short"></span>
                 <span class="last_boundary_long"></span>
-            <div class="last_bottom">
-                <h2>My Information</h2>
-                <span>E-mail<p>thdeodud0412@gmail.com</p></span><br>
-                <span>Number<p>010-9912-9484</p></span><br>
-                <span>KaKao<p>thdeodud0412@naver.com</p></span><br>
-                <span>Github<p>github.com/DaeYeong0412</p></span><br>
+                <div class="last_bottom">
+                    <h2>My Information</h2>
+                    <span>E-mail<p>thdeodud0412@gmail.com</p></span><br>
+                    <span>Number<p>010-9912-9484</p></span><br>
+                    <span>KaKao<p>thdeodud0412@naver.com</p></span><br>
+                    <span>Github<p>github.com/DaeYeong0412</p></span><br>
+                </div>
+                <div class="line last"></div>
             </div>
         </section>
-        <!-- //section15 -->
-        <section class="pane">
-            <div class="line"></div>
-            <div class="line_text">포트폴리오<img src="./assets/img/cros.svg" alt="cros">메인</div>
-            <div class="main_name a">宋</div>
-            <div class="main_name b">大</div>
-            <div class="main_name c">永</div>
-            <div class="eng_box">Hello.<br>I'm Song Dae-young, a new front-end developer.<br>Thank you for visiting my <span>portfolio</span> site.</div>
-            <div class="kor_box">안녕하세요.<br>신입 프론트엔드 개발자 송대영입니다.<br>저의 <span>포트폴리오</span> 사이트에 방문해 주셔서 감사합니다.</div>
-    </section>
-        <!-- //section1 system -->
     </main>
-
+    <footer>
+        <div class="scroll"></div>
+        <div class="scrollbar"></div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-    <script type="text/javascript" src="./assets/js/pageset.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
+    <script src="./assets/js/pageset.js"></script>
 </body>
+
 </html>
