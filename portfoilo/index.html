@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+
+    </style>
 </head>
 
 <body onload="printClock()">
@@ -277,9 +280,53 @@
                         <h2>Calculator</h2>
                         <span>touch the screen</span>
                     </div>
+                </div>
+                <div class="boundary_box">
                     <div class="boundary"></div>
                     <p>Where the calculation</p>
                     <h3>results appear</h3>
+                </div>
+                <div class="electronic">
+                    <div>
+                        <div>
+                            <input id="display" type="text" />
+                        </div>
+
+                        <div>
+                            <div class="buttonWrap">
+                                <button style="width:19vh" onclick="reset()">C</button>
+                                <button style="line-height: 3.1;" onclick="addOutput('*')">*</button>
+                                <button onclick="addOutput('/')">/</button>
+                            </div>
+                            <div class="buttonWrap">
+                                <button onclick="addOutput(9)">9</button>
+                                <button onclick="addOutput(8)">8</button>
+                                <button onclick="addOutput(7)">7</button>
+                                <button onclick="addOutput('%')">%</button>
+                            </div>
+                            <div class="buttonWrap">
+                                <button onclick="addOutput(6)">6</button>
+                                <button onclick="addOutput(5)">5</button>
+                                <button onclick="addOutput(4)">4</button>
+                                <button onclick="addOutput('+')">+</button>
+                            </div>
+                            <div class="buttonWrap">
+                                <button onclick="addOutput(3)">3</button>
+                                <button onclick="addOutput(2)">2</button>
+                                <button onclick="addOutput(1)">1</button>
+                                <button onclick="addOutput('-')">-</button>
+                            </div>
+                            <div class="buttonWrap">
+                                <button onclick="addOutput(0)">0</button>
+                                <button onclick="addOutput('.')">.</button>
+                                <button style="width:19vh" onclick="calculate()">=</button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="previous">Previous menu</span>
+                    <div>
+                        <input id="result" type="text" readonly />
+                    </div>
                 </div>
             </div>
         </section>
@@ -345,7 +392,7 @@
                 <span class="port_span">Portfolio</span>
                 <div class="group_info">
                     <span>Simple login</span>
-                    <span>Automatic search</span>
+                    <span>Weather information</span>
                     <span>Voice search</span>
                     <span>Map</span>
                     <span>Encyclopedia</span>
@@ -446,5 +493,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
     <script src="./assets/js/pageset.js"></script>
 </body>
-
 </html>

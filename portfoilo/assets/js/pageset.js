@@ -111,9 +111,9 @@ tabBtn.forEach((element, index) => {
         element.classList.add("active");
 
         tabCont.forEach(el => {
-            el.style.display = "none";
+            el.style.opacity = "0";
         })
-        tabCont[index].style.display = "block";
+        tabCont[index].style.opacity = "1";
     });
 });
 
@@ -174,4 +174,47 @@ $btnSound.on("click", function () {
     } else {
         $themeSong.pause();
     }
+});
+
+/* Electronic Calculator*/
+
+function addOutput(num) {
+    var display = document.getElementById("display");
+    display.value = display.value + num;
+}
+
+function calculate() {
+    var display = document.getElementById("display");
+    var result = eval(display.value);
+    var displayResult = document.getElementById("result");
+    displayResult.value = result;
+}
+
+function reset() {
+    var display = document.getElementById("display");
+    display.value = "";
+    var displayResult = document.getElementById("result");
+    displayResult.value = "";
+}
+
+
+const previous = document.querySelector(".previous");
+const electronic = document.querySelector(".electronic");
+const calculator = document.querySelector(".calculator");
+const touchBox = document.querySelector(".touch_box");
+const calculatorImg = document.querySelector(".calculator img");
+
+calculatorImg.addEventListener("click", function () {
+    calculator.style = "opacity:0; transform: scale(0);";
+    electronic.style = "opacity:1; transform: scale(1);";
+});
+
+touchBox.addEventListener("click", function () {
+    calculator.style = "opacity:0; transform: scale(0);";
+    electronic.style = "opacity:1; transform: scale(1);";
+});
+
+previous.addEventListener("click", function () {
+    electronic.style = "opacity:0; transform: scale(0);";
+    calculator.style = "opacity:1; transform: scale(1);";
 });

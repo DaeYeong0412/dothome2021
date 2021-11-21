@@ -86,6 +86,13 @@
 
 .mainImg img {
     height: 80vh;
+    position: relative;
+    filter: brightness(50%);
+    transition: filter 0.6s;
+}
+
+.mainImg img:hover {
+    filter: none;
 }
 
 .mainImg span {
@@ -106,6 +113,12 @@
 
 .subImg img {
     height: 70vh;
+    filter: brightness(50%);
+    transition: filter 0.6s;
+}
+
+.subImg img:hover {
+    filter: none;
 }
 
 .subImg span {
@@ -185,6 +198,12 @@
 
 .referenceImg img {
     height: 70vh;
+    filter: brightness(50%);
+    transition: filter 0.6s;
+}
+
+.referenceImg img:hover {
+    filter: brightness(90%);
 }
 
 .referenceImg span {
@@ -247,6 +266,7 @@
     list-style: none;
     color: #B4B4B4;
     line-height: 1.2;
+    transition: all 0.4s;
 }
 
 .site_choice li.active {
@@ -254,11 +274,7 @@
 }
 
 .site_info {
-    display: none;
-}
-
-.site_info.active {
-    display: block;
+    transition: all 0.4s;
 }
 
 .site_info ul {
@@ -292,6 +308,7 @@
     position: absolute;
     left: 140vh;
     bottom: 5vh;
+    transition: all 1s;
 }
 
 .site_info>div h2 {
@@ -311,6 +328,7 @@
     opacity: 0.7;
     color: #000;
     text-decoration: underline;
+    transition: all 0.3s;
 }
 
 /* sitebox_one */
@@ -515,6 +533,7 @@
     text-align: center;
     align-items: center;
     font-family: 'Patrican';
+    transition: all 0.4s;
 }
 
 .calculator img {
@@ -548,7 +567,11 @@
     text-indent: -17.5vh;
 }
 
-.calculator .boundary {
+.boundary_box {
+    font-family: 'Patrican';
+}
+
+.boundary_box .boundary {
     position: absolute;
     width: 39vh;
     height: 1px;
@@ -557,7 +580,7 @@
     background: #aaa;
 }
 
-.calculator p {
+.boundary_box p {
     position: absolute;
     bottom: 15vh;
     left: 11vh;
@@ -566,7 +589,7 @@
     white-space: nowrap;
 }
 
-.calculator h3 {
+.boundary_box h3 {
     position: absolute;
     bottom: 7vh;
     left: 8vh;
@@ -719,6 +742,12 @@
     top: 9.5vh;
     height: 27vh;
     width: 35vh;
+    filter: brightness(50%);
+    transition: filter 0.6s;
+}
+
+.group_img:hover {
+    filter: brightness(90%);
 }
 
 .group_boundary {
@@ -916,4 +945,8 @@
     font-family: 'ChosunNm';
     font-size: 1.5vh;
     display: inline-block;
+}
+
+.last_bottom span:nth-child(4) p {
+    margin-left: 3.8vh;
 }
