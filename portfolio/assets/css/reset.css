@@ -64,7 +64,7 @@ Supahscroll
 }
 
 #contents {
-    width: 2380vh;
+    width: 2460vh;
     display: flex;
 }
 
@@ -87,7 +87,7 @@ Supahscroll
 }
 
 .section.s {
-    width: 80%;
+    width: 75%;
     height: 100vh;
     position: relative;
 }
@@ -142,7 +142,7 @@ Supahscroll
 
 .container.s {
     position: absolute;
-    width: 80%;
+    width: 75%;
     height: 100vh;
     left: 0;
     right: 0;
@@ -217,7 +217,7 @@ Supahscroll
     display: block;
     color: #000;
     cursor: pointer;
-    font-size: 5vh;
+    font-size: 3.5vh;
 }
 
 /* clock */

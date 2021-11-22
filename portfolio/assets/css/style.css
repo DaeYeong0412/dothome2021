@@ -87,12 +87,7 @@
 .mainImg img {
     height: 80vh;
     position: relative;
-    filter: brightness(50%);
-    transition: filter 0.6s;
-}
-
-.mainImg img:hover {
-    filter: none;
+    transform: f;
 }
 
 .mainImg span {
@@ -113,12 +108,7 @@
 
 .subImg img {
     height: 70vh;
-    filter: brightness(50%);
-    transition: filter 0.6s;
-}
-
-.subImg img:hover {
-    filter: none;
+    /* transition: filter 1s; */
 }
 
 .subImg span {
@@ -136,6 +126,7 @@
     left: 175vh;
     top: 3vh;
     font-family: 'ChosunNm';
+    width: 55vh;
 }
 
 .about_text h2 {
@@ -193,25 +184,46 @@
 .referenceImg {
     position: absolute;
     left: 20vh;
-    bottom: 3vh;
+    bottom: 3.3vh;
+    height: 70vh;
+    width: 107.5vh;
+    overflow: hidden;
 }
 
 .referenceImg img {
-    height: 70vh;
-    filter: brightness(50%);
+    position: absolute;
+    height: 100vh;
+    left: -50vh;
     transition: filter 0.6s;
 }
 
-.referenceImg img:hover {
-    filter: brightness(90%);
+.referenceImg div {
+    transition: all 0.6s;
+    position: absolute;
+    top: 10vh;
+    pointer-events: none;
+    opacity: 0;
 }
 
-.referenceImg span {
+.referenceImg .dobule {
+    display: flex;
+}
+
+.referenceImg .dobule iframe{
+    width: 53.75vh;
+}
+
+.referenceImg div iframe {
+    width: 107.5vh;
+    height: 50vh;
+}
+
+.container.b .bspan {
     font-family: 'ChosunNm';
     position: absolute;
     transform: rotate(-90deg);
-    left: 102vh;
-    bottom: 8vh;
+    left: 121vh;
+    bottom: 10.8vh;
     white-space: nowrap;
     font-size: 2vh;
 }
@@ -220,7 +232,8 @@
     font-family: 'ChosunNm';
     position: absolute;
     left: 150vh;
-    top: 25vh;
+    top: 20vh;
+    width: 50vh;
 }
 
 .reference_text h2 {
@@ -230,7 +243,7 @@
 
 .reference_text p {
     font-size: 2vh;
-    margin-bottom: 4vh;
+    margin-bottom: 7vh;
     line-height: 1.5;
     color: #383838;
     text-align: justify;
@@ -242,6 +255,9 @@
     opacity: 0.7;
     color: #000;
     float: right;
+    margin-top: 4vh;
+}
+.reference_text p:last-child a {
     margin-top: 1vh;
 }
 
@@ -253,12 +269,12 @@
 .site_choice {
     position: absolute;
     left: 42vh;
-    top: 2vh;
+    top: 3.5vh;
     z-index: 500;
 }
 
 .site_choice ul {
-    font-size: 10vh;
+    font-size: 8vh;
     font-family: 'Patrican';
 }
 
@@ -275,13 +291,18 @@
 
 .site_info {
     transition: all 0.4s;
+    opacity: 0;
+}
+
+.site_info.active {
+    opacity: 1;
 }
 
 .site_info ul {
     position: absolute;
     left: 30vh;
     top: 2vh;
-    font-size: 5vh;
+    font-size: 4.5vh;
     font-family: 'Rajdhani-Regular';
 }
 
@@ -309,6 +330,8 @@
     left: 140vh;
     bottom: 5vh;
     transition: all 1s;
+    text-align: justify;
+    width: 50vh;
 }
 
 .site_info>div h2 {
@@ -335,32 +358,58 @@
 .site_one {
     position: absolute;
     top: 2vh;
-    left: 15vh;
+    left: 16.5vh;
 }
 
 .site_one img {
-    height: 70vh;
-    margin-bottom: -2vh;
+    position: absolute;
+    height: 80vh;
+    width: 150vh;
 }
 
 .site_one h2 {
     font-weight: normal;
     font-family: 'Patrican';
     font-size: 10vh;
-    display: block;
+    width: 130vh;
+    position: absolute;
     margin-bottom: 5vh;
     line-height: 0.4;
+    top: 69vh;
 }
 
 .site_one span {
-    display: inline-block;
+    position: absolute;
+    width: 80vh;
     font-family: 'ChosunNm';
-    margin-left: 90vh;
     font-size: 2vh;
+    white-space: normal;
+    top: 87vh;
+    left: 91vh;
 }
 
 .site_one.t span {
-    margin-left: 78vh;
+    left: 77.5vh;
+}
+
+.site_one.tq span {
+    left: 83vh;
+}
+
+.site_one.t a {
+    left: 95.8vh;
+}
+
+.site_one.v span {
+    left: 69.1vh;
+}
+
+.site_one.v a {
+    left: 85.8vh;
+}
+
+.site_one.tq a {
+    left: 107.5vh;
 }
 
 .site_one span::after {
@@ -368,50 +417,67 @@
     content: '';
     width: 3vh;
     border-bottom: 1px solid #000;
-    margin: 0 0.3vh 0 0.8vh;
+    margin-left: 0.8vh;
     opacity: 0.5;
 }
 
 .site_one a {
     text-decoration: none;
-    display: inline-block;
+    position: absolute;
     opacity: 0.5;
     color: #000;
     font-family: 'Abel-Regular';
     font-size: 1.8vh;
+    width: 30vh;
+    top: 87vh;
+    left: 111.3vh;
 }
 
 /* sitebox_two */
 .site_two {
     position: absolute;
     top: 5vh;
-    left: 15vh;
+    left: 16.5vh;
 }
 
 .site_two img {
-    height: 70vh;
-    display: block;
-    margin-top: 2vh;
+    position: absolute;
+    height: 80vh;
+    width: 150vh;
 }
 
 .site_two h2 {
     font-family: 'Patrican';
     font-weight: normal;
     font-size: 10vh;
-    display: block;
-    margin-bottom: 5vh;
-    line-height: 0.4;
+    width: 130vh;
+    position: absolute;
+    top: -2.5vh;
 }
 
 .site_two span {
-    display: inline-block;
+    position: absolute;
     font-family: 'ChosunNm';
-    margin-left: 67vh;
     font-size: 2vh;
+    width: 80vh;
+    top: 17vh;
+    left: 69vh;
 }
 
 .site_two.t span {
-    margin-left: 81vh;
+    left: 76vh;
+}
+
+.site_two.t a {
+    left: 96.5vh;
+}
+
+.site_two.tq span {
+    left: 80vh;
+}
+
+.site_two.tq a {
+    left: 100.3vh;
 }
 
 .site_two span::after {
@@ -419,113 +485,59 @@
     content: '';
     width: 3vh;
     border-bottom: 1px solid #000;
-    margin: 0 0.3vh 0 0.8vh;
+    margin-left: 0.8vh;
     opacity: 0.5;
 }
 
 .site_two a {
     text-decoration: none;
-    display: inline-block;
+    position: absolute;
     opacity: 0.5;
     color: #000;
     font-family: 'Abel-Regular';
     font-size: 1.8vh;
+    width: 30vh;
+    top: 17vh;
+    left: 89.5vh;
 }
 
-/* site_three */
-.site_three {
+/* sitebox_img */
+.site_one>div,
+.site_two>div {
+    height: 70vh;
+    width: 120vh;
+    overflow: hidden;
     position: absolute;
-    top: 2vh;
-    left: 15vh;
 }
 
-.site_three img {
-    display: block;
-    height: 73vh;
-    margin-bottom: 2.5vh;
+.site_one>div {
+    top: 0;
 }
 
-.site_three span {
-    display: inline-block;
-    font-family: 'ChosunNm';
-    font-size: 2vh;
+.site_two>div {
+    top: 21.8vh;
 }
 
-.site_three span::after {
-    display: inline-block;
-    content: '';
-    width: 3vh;
-    border-bottom: 1px solid #000;
-    margin: 0 0.3vh 0 0.8vh;
-    opacity: 0.5;
+.oneimg img {
+    left: -80vh;
 }
-
-.site_three a {
-    text-decoration: none;
-    display: inline-block;
-    opacity: 0.5;
-    color: #000;
-    font-family: 'Abel-Regular';
-    font-size: 1.8vh;
+.twoimg img {
+    left: -95vh;
 }
-
-.site_three h2 {
-    font-family: 'Patrican';
-    font-size: 10vh;
-    position: absolute;
-    font-weight: normal;
-    white-space: nowrap;
-    top: 28vh;
-    left: 85vh;
-    transform: rotate(90deg);
+.threeimg img {
+    left: -110vh;
 }
-
-/* site_four */
-.site_four {
-    position: absolute;
-    top: 19.5vh;
-    left: 28vh;
+.fourimg img {
+    left: -125vh;
 }
-
-.site_four h2 {
-    font-family: 'Patrican';
-    font-size: 10vh;
-    position: absolute;
-    font-weight: normal;
-    top: 24vh;
-    left: -48vh;
-    transform: rotate(-90deg);
+.fiveimg img {
+    left: -140vh;
 }
-
-.site_four img {
-    display: block;
-    height: 73vh;
+.siximg img {
+    left: -153vh;
 }
-
-.site_four span {
-    margin-left: 89vh;
-    margin-bottom: 2vh;
-    display: inline-block;
-    font-family: 'ChosunNm';
-    font-size: 2vh;
-}
-
-.site_four span::after {
-    display: inline-block;
-    content: '';
-    width: 3vh;
-    border-bottom: 1px solid #000;
-    margin: 0 0.3vh 0 0.8vh;
-    opacity: 0.5;
-}
-
-.site_four a {
-    text-decoration: none;
-    display: inline-block;
-    opacity: 0.5;
-    color: #000;
-    font-family: 'Abel-Regular';
-    font-size: 1.8vh;
+.sevenimg img {
+    left: -165vh;
 }
 
 /* calculator */
@@ -603,13 +615,14 @@
 .top_codepen {
     position: absolute;
     left: 15vh;
-    top: 3vh;
+    top: 5vh;
     pointer-events: none;
+    transform: scaleX(-1);
 }
 
 .top_codepen iframe {
     width: 100vh;
-    height: 50vh;
+    height: 55vh;
 }
 
 .address {
