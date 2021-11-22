@@ -111,7 +111,7 @@ Supahscroll
 }
 
 .section.last {
-    width: 55%;
+    width: 48%;
     height: 100vh;
     position: relative;
 }
@@ -174,7 +174,7 @@ Supahscroll
 
 .container.last {
     position: absolute;
-    width: 55%;
+    width: 48%;
     height: 100vh;
     left: 0;
     right: 0;
@@ -204,10 +204,6 @@ Supahscroll
 
 .line_text img {
     margin: 0 5px;
-}
-
-.line.last {
-    left: 100vh;
 }
 
 /* audio */

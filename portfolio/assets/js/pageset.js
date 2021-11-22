@@ -21,7 +21,9 @@ class SupahScroll {
 
     update() {
         if (this.supahScroll === null) return;
-        document.body.style.height = `${this.supahScroll.getBoundingClientRect().width/2}px`;
+        // document.body.style.height = `${this.supahScroll.getBoundingClientRect().width/2}px`;
+        document.body.style.height = `${document.body.getBoundingClientRect().height/2}px`;
+
     }
 
     pause() {
@@ -63,8 +65,8 @@ class SupahScroll {
     }
 
     events() {
-        window.addEventListener('load', this.update.bind(this));
         window.addEventListener('resize', this.update.bind(this));
+        window.addEventListener('load', this.update.bind(this));
     }
 }
 

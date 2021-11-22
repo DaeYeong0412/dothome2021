@@ -610,8 +610,6 @@
 .top_codepen iframe {
     width: 100vh;
     height: 50vh;
-    border: 1px solid #aaa;
-    border-radius: 1vh;
 }
 
 .address {
@@ -646,6 +644,7 @@
     line-height: 2;
     writing-mode: tb-rl;
     font-size: 1.6vh;
+    z-index: 51;
 }
 
 .codepen_kor span {
@@ -714,14 +713,15 @@
 
 .bottom_codepen {
     position: absolute;
-    bottom: 2.5vh;
+    bottom: 0;
     left: 125vh;
     pointer-events: none;
+    z-index: 50;
 }
 
 .bottom_codepen iframe {
-    width: 65vh;
-    height: 50vh;
+    width: 70vh;
+    height: 55vh;
 }
 
 /* api-box */
