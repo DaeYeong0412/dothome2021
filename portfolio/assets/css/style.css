@@ -604,11 +604,14 @@
     position: absolute;
     left: 15vh;
     top: 3vh;
+    pointer-events: none;
 }
 
 .top_codepen iframe {
     width: 100vh;
     height: 50vh;
+    border: 1px solid #aaa;
+    border-radius: 1vh;
 }
 
 .address {
@@ -712,11 +715,12 @@
 .bottom_codepen {
     position: absolute;
     bottom: 2.5vh;
-    left: 120vh;
+    left: 125vh;
+    pointer-events: none;
 }
 
 .bottom_codepen iframe {
-    width: 70vh;
+    width: 65vh;
     height: 50vh;
 }
 
