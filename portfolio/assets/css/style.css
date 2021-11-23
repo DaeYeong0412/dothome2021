@@ -108,7 +108,7 @@
 
 .subImg img {
     height: 70vh;
-    /* transition: filter 1s; */
+    transform: scaleX(-1);
 }
 
 .subImg span {
@@ -116,7 +116,7 @@
     position: absolute;
     transform: rotate(-90deg);
     white-space: nowrap;
-    left: 46vh;
+    left: 50vh;
     bottom: 8vh;
     font-size: 2vh;
 }
