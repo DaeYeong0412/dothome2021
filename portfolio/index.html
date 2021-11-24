@@ -26,14 +26,15 @@
         <div id="clock"></div>
     </header>
     <div class="cursor"></div>
+    <div class="cursor-follower"></div>
     <main id="contents">
         <section class="section">
             <div class="container">
                 <article class="audio">
                     <span class="btn-sound">
                         <i class="fa fa-volume-off" aria-hidden="true"></i>
+                        <i class="fa fa-volume-up" aria-hidden="true"></i>
                     </span>
-                    <audio id="theme-song" src="./assets/audio/Michael_Ellis_-_Break_the_Rain.mp3" loop="loop"></audio>
                 </article>
                 <div class="line"></div>
                 <div class="line_text">포트폴리오<img src="./assets/img/cros.svg" alt="cros">메인</div>
@@ -89,13 +90,13 @@
                 <div class="referenceImg">
                     <img src="./assets/img/reference.svg" alt="reference">
                     <div>
-                        <img src="./assets/img/Gaboja.png" alt="">
+                        <img src="./assets/img/Gaboja.svg" alt="">
                     </div>
                     <div>
-                        <img src="./assets/img/Gaboja.png" alt="">
+                        <img src="./assets/img/Gaboja.svg" alt="">
                     </div>
                     <div>
-                        <img src="./assets/img/Gaboja.png" alt="">
+                        <img src="./assets/img/Gaboja.svg" alt="">
                     </div>
                 </div>
                 <span class="bspan">2021.11.23 정리공간</span>
@@ -544,61 +545,9 @@
         <div class="scroll"></div>
         <div class="scrollbar"></div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
     <script src="./assets/js/pageset.js"></script>
-    <script>
-            const mainImg = document.querySelector(".mainImg img");
-            const subImg = document.querySelector(".subImg img");
-            const figmaTab = document.querySelectorAll(".reference_text p");
-            const figmaCont = document.querySelectorAll(".referenceImg div");
-            const figmaImg = document.querySelector(".referenceImg img");
-            const oneimg = document.querySelector(".oneimg img");
-            const twoimg = document.querySelector(".twoimg img");
-            const threeimg = document.querySelector(".threeimg img");
-            const fourimg = document.querySelector(".fourimg img");
-            const fiveimg = document.querySelector(".fiveimg img");
-            const siximg = document.querySelector(".siximg img");
-            const sevenimg = document.querySelector(".sevenimg img");
-            
-
-            const scrollProgress = function(){
-            let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset
-
-            document.querySelectorAll(".section").forEach((el) => {
-                let offset = (scrollTop - el.offsetTop) * 0.045;
-                mainImg.style.filter = "saturate("+offset+"%)";
-                subImg.style.filter = "saturate("+offset+"%)";
-                figmaImg.style.transform = "translateX("+offset*2+"px)";
-                oneimg.style.transform = "translateX("+offset*1.8+"px)";
-                twoimg.style.transform = "translateX("+offset*1.8+"px)";
-                threeimg.style.transform = "translateX("+offset*1.8+"px)";
-                fourimg.style.transform = "translateX("+offset*1.8+"px)";
-                fiveimg.style.transform = "translateX("+offset*1.8+"px)";
-                siximg.style.transform = "translateX("+offset*1.8+"px)";
-                sevenimg.style.transform = "translateX("+offset*1.8+"px)";
-            });
-        };
-        window.addEventListener("scroll", scrollProgress);
-
-
-        figmaTab.forEach((element, index) => {
-            element.addEventListener("mouseover", function () {
-                figmaImg.style.filter = "brightness(10%)";
-                figmaCont.forEach(el => {
-                    el.style = "opacity:0;";
-                })
-                figmaCont[index].style = "opacity:1;";
-            });
-            element.addEventListener("mouseout", function (){
-                figmaImg.style.filter = "brightness(100%)";
-                figmaCont.forEach(el => {
-                    el.style = "opacity:0;";
-                })
-            })
-        });
-    </script>
 </body>
 </html>

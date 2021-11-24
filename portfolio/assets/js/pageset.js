@@ -14,6 +14,17 @@ class SupahScroll {
         this.scrollX = 0;
         this.supahScroll = document.querySelectorAll(this.el)[0];
         this.supahScroll.classList.add('supah-scroll');
+        // img
+        this.img0 = document.querySelector(".referenceImg img");
+        this.img1 = document.querySelector(".mainImg img");
+        this.img2 = document.querySelector(".subImg img");
+        this.img3 = document.querySelector(".oneimg img");
+        this.img4 = document.querySelector(".twoimg img");
+        this.img5 = document.querySelector(".threeimg img");
+        this.img6 = document.querySelector(".fourimg img");
+        this.img7 = document.querySelector(".fiveimg img");
+        this.img8 = document.querySelector(".siximg img");
+        this.img9 = document.querySelector(".sevenimg img");
         this.events();
         this.update();
         this.animate();
@@ -48,6 +59,17 @@ class SupahScroll {
     animate() {
         this.scrollX += (window.scrollY - this.scrollX) * this.speed;
         this.supahScroll.style.transform = `translate3d(${-this.scrollX}px,0,0)`;
+        // img
+        this.img0.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
+        this.img1.style.filter = `grayscale(${100-this.scrollX * 0.05}%)`;
+        this.img2.style.filter = `grayscale(${100-this.scrollX * 0.04}%)`;
+        this.img3.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
+        this.img4.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
+        this.img5.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
+        this.img6.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
+        this.img7.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
+        this.img8.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
+        this.img9.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
         this.raf = requestAnimationFrame(this.animate.bind(this));
     }
 
@@ -58,7 +80,6 @@ class SupahScroll {
     staticScrollTo(x) {
         cancelAnimationFrame(this.raf);
         this.scrollX = x;
-
         window.scrollTo(x, 0);
         this.supahScroll.style.transform = `translate3d(${-x}px,0,0)`;
         this.play();
@@ -122,14 +143,15 @@ tabBtn.forEach((element, index) => {
 // cursor
 const w = document.querySelector(".cursor").offsetWidth / 2;
 const h = document.querySelector(".cursor").offsetHeight / 2;
+const w2 = document.querySelector(".cursor-follower").offsetWidth /2;
+const h2 = document.querySelector(".cursor-follower").offsetHeight /2;
 const cursor = document.querySelector(".cursor");
+const cursor2 = document.querySelector(".cursor-follower");
+
 
 document.addEventListener("mousemove", e => {
-    gsap.to('.cursor', {
-        duration: .2,
-        left: e.pageX - window.scrollX - w,
-        top: e.pageY - window.scrollY - h
-    });
+    gsap.to(cursor, { duration: .2, left: e.pageX - window.scrollX - w, top: e.pageY - window.scrollY - h }),
+    gsap.to(cursor2, { duration: .5, left: e.pageX - window.scrollX - w2, top: e.pageY - window.scrollY - h2 });
 });
 
 // clock
@@ -137,12 +159,11 @@ function printClock() {
 
     var clock = document.getElementById("clock");
     var currentDate = new Date();
-    var calendar = currentDate.getFullYear() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getDate()
     var amPm = 'AM';
     var currentHours = addZeros(currentDate.getHours(), 2);
     var currentMinute = addZeros(currentDate.getMinutes(), 2);
 
-    if (currentHours >= 12) {
+    if (currentHours >= 13) {
         amPm = 'PM';
         currentHours = addZeros(currentHours - 12, 2);
     }
@@ -165,17 +186,30 @@ function addZeros(num, digit) {
 
 // audio
 
-const $btnSound = $(".btn-sound");
-const $themeSong = $("#theme-song")[0];
-$btnSound.on("click", function () {
-    $(this).find("i").toggleClass("fa fa-volume-up fa fa-volume-off");
-    $(this).toggleClass("isPlaying");
-    //play
-    if ($(this).hasClass("isPlaying")) {
-        $themeSong.play();
-    } else {
-        $themeSong.pause();
-    }
+const myAudio = new Audio();
+myAudio.src="./assets/audio/music.mp3";
+
+const btnPlay = document.querySelector(".fa.fa-volume-off");
+const btnPause = document.querySelector(".fa.fa-volume-up");
+
+btnPlay.onclick = function () { 
+    myAudio.play(); 
+};
+btnPause.onclick = function () { 
+    myAudio.pause(); 
+};
+
+const musicOn = document.querySelector(".fa.fa-volume-off");
+const musicOff = document.querySelector(".fa.fa-volume-up");
+
+musicOn.addEventListener("click", function () {
+    musicOn.style = "opacity:0; z-index: 100;";
+    musicOff.style = "opacity:1; z-index: 101;";
+});
+
+musicOff.addEventListener("click", function () {
+    musicOn.style = "opacity:1; z-index: 101;";
+    musicOff.style = "opacity:0; z-index: 100;";
 });
 
 /* Electronic Calculator*/

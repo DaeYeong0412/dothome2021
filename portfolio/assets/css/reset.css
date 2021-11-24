@@ -7,16 +7,31 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     z-index: 999;
-    background-color: #353535;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    background-color: rgba(0, 0, 0, 0.6);
     user-select: none;
     pointer-events: none;
+    transition: transform 0.3s opacity 0.2s;
+}
+
+.cursor.active {
+    opacity: 0.5;
+    transform: scale(0);
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: rgba(155, 155, 155, 0.4);
+    border-radius: 50%;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.4s ease-in-out, background 0.4s ease-in-out;
+    z-index: 998;
 }
 
 footer {
@@ -218,6 +233,17 @@ Supahscroll
     color: #000;
     cursor: pointer;
     font-size: 3.5vh;
+}
+
+.fa.fa-volume-off {
+    position: absolute;
+    z-index: 101;
+}
+
+.fa.fa-volume-up {
+    position: absolute;
+    opacity: 0;
+    z-index: 100;
 }
 
 /* clock */

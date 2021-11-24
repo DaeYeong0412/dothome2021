@@ -87,7 +87,6 @@
 .mainImg img {
     height: 80vh;
     position: relative;
-    transform: f;
 }
 
 .mainImg span {
@@ -192,8 +191,8 @@
 
 .referenceImg img {
     position: absolute;
-    height: 100vh;
-    left: -50vh;
+    height: 95vh;
+    left: 0vh;
     transition: filter 0.6s;
 }
 
@@ -363,8 +362,8 @@
 
 .site_one img {
     position: absolute;
-    height: 80vh;
-    width: 160vh;
+    height: 90vh;
+    width: 200vh;
 }
 
 .site_one h2 {
@@ -442,8 +441,8 @@
 
 .site_two img {
     position: absolute;
-    height: 80vh;
-    width: 160vh;
+    height: 90vh;
+    width: 200vh;
 }
 
 .site_two h2 {
@@ -501,6 +500,28 @@
     left: 89.5vh;
 }
 
+.oneimg img {
+    left: 16vh;
+}
+.twoimg img {
+    left: 26vh;
+}
+.threeimg img {
+    left: 36vh;
+}
+.fourimg img {
+    left: 47vh;
+}
+.fiveimg img {
+    left: 57vh;
+}
+.siximg img {
+    left: 68vh;
+}
+.sevenimg img {
+    left: 78vh;
+}
+
 /* sitebox_img */
 .site_one>div,
 .site_two>div {
@@ -516,28 +537,6 @@
 
 .site_two>div {
     top: 21.8vh;
-}
-
-.oneimg img {
-    left: -80vh;
-}
-.twoimg img {
-    left: -95vh;
-}
-.threeimg img {
-    left: -110vh;
-}
-.fourimg img {
-    left: -125vh;
-}
-.fiveimg img {
-    left: -140vh;
-}
-.siximg img {
-    left: -153vh;
-}
-.sevenimg img {
-    left: -165vh;
 }
 
 /* calculator */
@@ -615,9 +614,8 @@
 .top_codepen {
     position: absolute;
     left: 15vh;
-    top: 5vh;
+    top: 2vh;
     pointer-events: none;
-    transform: scaleX(-1);
 }
 
 .top_codepen iframe {
@@ -672,7 +670,7 @@
 .history {
     position: absolute;
     bottom: 7vh;
-    left: 6vh;
+    left: 15vh;
 }
 
 .history h2 {
@@ -701,7 +699,7 @@
 .codepen_eg {
     position: absolute;
     bottom: 12vh;
-    left: 60vh;
+    left: 75vh;
     font-family: 'Patrican';
     line-height: 1.2;
     font-size: 2vh;
@@ -727,7 +725,7 @@
 .bottom_codepen {
     position: absolute;
     bottom: 0;
-    left: 125vh;
+    left: 130vh;
     pointer-events: none;
     z-index: 50;
 }
