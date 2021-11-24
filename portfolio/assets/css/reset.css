@@ -79,7 +79,7 @@ Supahscroll
 }
 
 #contents {
-    width: 2460vh;
+    width: 2570vh;
     display: flex;
 }
 
@@ -109,6 +109,12 @@ Supahscroll
 
 .section.xs {
     width: 20%;
+    height: 100vh;
+    position: relative;
+}
+
+.section.g {
+    width: 35%;
     height: 100vh;
     position: relative;
 }
@@ -166,6 +172,14 @@ Supahscroll
 .container.xs {
     position: absolute;
     width: 20%;
+    height: 100vh;
+    left: 0;
+    right: 0;
+}
+
+.container.g {
+    position: absolute;
+    width: 35%;
     height: 100vh;
     left: 0;
     right: 0;
@@ -270,7 +284,7 @@ Supahscroll
     left: 2vh;
     top: 8vh;
     opacity: 0;
-    transform: scale(0);
+    z-index: 200;
 }
 
 .electronic>div {
@@ -325,4 +339,34 @@ Supahscroll
     position: absolute;
     bottom: -7vh;
     cursor: pointer;
+}
+
+.game {
+    position: absolute;
+    left: 4vh;
+    top: 7vh;
+    opacity: 0;
+    transition: opacity 0.6s;
+    z-index: 300;
+}
+
+canvas {
+    height: 65vh;
+    border: 1px solid #333;
+}
+
+.info {
+    font-family: 'ChosunNm';
+    font-size: 2vh;
+    text-align: center;
+    color: #777;
+    white-space: nowrap;
+    margin-top: 4vh;
+}
+.info span {
+    font-family: 'Patrican';
+    font-size: 5vh;
+    line-height: 3;
+    color: #333;
+    white-space: nowrap;
 }

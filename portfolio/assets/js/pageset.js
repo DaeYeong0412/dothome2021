@@ -227,18 +227,18 @@ const touchBox = document.querySelector(".touch_box");
 const calculatorImg = document.querySelector(".calculator img");
 
 calculatorImg.addEventListener("click", function () {
-    calculator.style = "opacity:0; transform: scale(0);";
-    electronic.style = "opacity:1; transform: scale(1);";
+    calculator.style = "opacity:0; z-index: 200";
+    electronic.style = "opacity:1; z-index: 201;";
 });
 
 touchBox.addEventListener("click", function () {
-    calculator.style = "opacity:0; transform: scale(0);";
-    electronic.style = "opacity:1; transform: scale(1);";
+    calculator.style = "opacity:0; z-index: 200";
+    electronic.style = "opacity:1; z-index: 201;";
 });
 
 previous.addEventListener("click", function () {
-    electronic.style = "opacity:0; transform: scale(0);";
-    calculator.style = "opacity:1; transform: scale(1);";
+    electronic.style = "opacity:0; z-index: 200;";
+    calculator.style = "opacity:1; z-index: 201;";
 });
 
     const eng_box = document.querySelector (".eng_box");
@@ -281,50 +281,58 @@ previous.addEventListener("click", function () {
     window.addEventListener("scroll",function(){
         if(cont2.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
             let cont2 = gsap.timeline();
-            cont2.to(span_text1, {duration:.6, x:5, opacity: 1, ease: "power1.out"})
-            cont2.to(span_text2, {duration:.6, x:5, opacity: 1, ease: "power1.out"})
+            cont2.to(span_text1, {duration:.4, x:5, opacity: 1, ease: "power1.out"})
+            cont2.to(span_text2, {duration:.4, x:5, opacity: 1, ease: "power1.out"})
             cont2.to(text1, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
             cont2.to(text2, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
             cont2.to(text3, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
             cont2.to(text4, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
         }
-        if(cont3.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
-            let cont3 = gsap.timeline();
-            cont3.to(span_text3, {duration:.6, x:5, opacity: 1, ease: "power1.out"})
-            cont3.to(text5, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
-            cont3.to(text6, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
-            cont3.to(a_text1, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
-            cont3.to(text7, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
-            cont3.to(a_text2, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
-            cont3.to(text8, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
-            cont3.to(a_text3, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
-        }
-        if(cont5.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
-            let cont5 = gsap.timeline();
-            cont5.to(text9, {duration:1.4, x:-110, opacity: 1, ease: "power1.out"})
+        if(cont4.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
+            let cont4 = gsap.timeline();
+            cont4.to(span_text3, {duration:.4, x:5, opacity: 1, ease: "power1.out"})
+            cont4.to(text5, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+            cont4.to(text6, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+            cont4.to(a_text1, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
+            cont4.to(text7, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+            cont4.to(a_text2, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
+            cont4.to(text8, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+            cont4.to(a_text3, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
         }
         if(cont6.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
             let cont6 = gsap.timeline();
-            cont6.to(text10, {duration:1.4, x:110, opacity: 1, ease: "power1.out"})
+            cont6.to(text9, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
         }
         if(cont7.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
             let cont7 = gsap.timeline();
-            cont7.to(text11, {duration:1.4, x:-110, opacity: 1, ease: "power1.out"})
+            cont7.to(text10, {duration:1.4, x:30, opacity: 1, ease: "power1.out"})
         }
         if(cont8.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
             let cont8 = gsap.timeline();
-            cont8.to(text12, {duration:1.4, x:110, opacity: 1, ease: "power1.out"})
+            cont8.to(text11, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
         }
         if(cont9.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
             let cont9 = gsap.timeline();
-            cont9.to(text13, {duration:1.4, x:-110, opacity: 1, ease: "power1.out"})
+            cont9.to(text12, {duration:1.4, x:30, opacity: 1, ease: "power1.out"})
         }
         if(cont10.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
             let cont10 = gsap.timeline();
-            cont10.to(text14, {duration:1.4, x:110, opacity: 1, ease: "power1.out"})
+            cont10.to(text13, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
         }
         if(cont11.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
             let cont11 = gsap.timeline();
-            cont11.to(text15, {duration:1.4, x:-110, opacity: 1, ease: "power1.out"})
+            cont11.to(text14, {duration:1.4, x:30, opacity: 1, ease: "power1.out"})
+        }
+        if(cont12.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+            let cont12 = gsap.timeline();
+            cont12.to(text15, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
         }
     });
+
+// key event default
+window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
