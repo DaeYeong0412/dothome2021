@@ -254,3 +254,49 @@ previous.addEventListener("click", function () {
     electronic.style = "opacity:0; transform: scale(0);";
     calculator.style = "opacity:1; transform: scale(1);";
 });
+
+    const eng_box = document.querySelector (".eng_box");
+    const kor_box = document.querySelector (".kor_box");
+
+    const a_text1 = document.querySelector (".a_text1");
+    const a_text2 = document.querySelector (".a_text2");
+    const a_text3 = document.querySelector (".a_text3");
+
+    const text1 = document.querySelector (".text1");
+    const text2 = document.querySelector (".text2");
+    const text3 = document.querySelector (".text3");
+    const text4 = document.querySelector (".text4");
+    const text5 = document.querySelector (".text5");
+    const text6 = document.querySelector (".text6");
+    const text7 = document.querySelector (".text7");
+    const text8 = document.querySelector (".text8");
+
+
+    if(cont1.getBoundingClientRect().left - window.innerWidth*4/4 <= 0){
+        let cont1 = gsap.timeline();
+        cont1.to(kor_box, {duration:1.4, y:20, opacity: 1, ease: "power1.out"})
+        .to(eng_box, {duration:1.4, y:20, opacity: 1, ease: "power1.out"})
+    }
+
+    /*------------------------------
+      scroll animation
+    ------------------------------*/ 
+    window.addEventListener("scroll",function(){
+        if(cont2.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
+            let cont2 = gsap.timeline();
+            cont2.to(text1, {duration:1, y:5, opacity: 1, ease: "power1.out"})
+            cont2.to(text2, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+            cont2.to(text3, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+            cont2.to(text4, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+        }
+        if(cont3.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
+            let cont3 = gsap.timeline();
+            cont3.to(text5, {duration:1, y:5, opacity: 1, ease: "power1.out"})
+            cont3.to(text6, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+            cont3.to(a_text1, {duration:.4, y:0, opacity: 1, ease: "power1.out"})
+            cont3.to(text7, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+            cont3.to(a_text2, {duration:.4, y:0, opacity: 1, ease: "power1.out"})
+            cont3.to(text8, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+            cont3.to(a_text3, {duration:.4, y:0, opacity: 1, ease: "power1.out"})
+        }
+    });
