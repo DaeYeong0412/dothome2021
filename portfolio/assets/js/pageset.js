@@ -18,13 +18,6 @@ class SupahScroll {
         this.img0 = document.querySelector(".referenceImg img");
         this.img1 = document.querySelector(".mainImg img");
         this.img2 = document.querySelector(".subImg img");
-        this.img3 = document.querySelector(".oneimg img");
-        this.img4 = document.querySelector(".twoimg img");
-        this.img5 = document.querySelector(".threeimg img");
-        this.img6 = document.querySelector(".fourimg img");
-        this.img7 = document.querySelector(".fiveimg img");
-        this.img8 = document.querySelector(".siximg img");
-        this.img9 = document.querySelector(".sevenimg img");
         this.events();
         this.update();
         this.animate();
@@ -63,13 +56,6 @@ class SupahScroll {
         this.img0.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
         this.img1.style.filter = `grayscale(${100-this.scrollX * 0.05}%)`;
         this.img2.style.filter = `grayscale(${100-this.scrollX * 0.04}%)`;
-        this.img3.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
-        this.img4.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
-        this.img5.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
-        this.img6.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
-        this.img7.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
-        this.img8.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
-        this.img9.style.transform = `translate3d(${-this.scrollX * 0.07}px,0,0)`;
         this.raf = requestAnimationFrame(this.animate.bind(this));
     }
 
@@ -262,6 +248,10 @@ previous.addEventListener("click", function () {
     const a_text2 = document.querySelector (".a_text2");
     const a_text3 = document.querySelector (".a_text3");
 
+    const span_text1 = document.querySelector (".span_text1");
+    const span_text2 = document.querySelector (".span_text2");
+    const span_text3 = document.querySelector (".bspan");
+
     const text1 = document.querySelector (".text1");
     const text2 = document.querySelector (".text2");
     const text3 = document.querySelector (".text3");
@@ -270,12 +260,19 @@ previous.addEventListener("click", function () {
     const text6 = document.querySelector (".text6");
     const text7 = document.querySelector (".text7");
     const text8 = document.querySelector (".text8");
+    const text9 = document.querySelector (".text9");
+    const text10 = document.querySelector (".text10");
+    const text11 = document.querySelector (".text11");
+    const text12 = document.querySelector (".text12");
+    const text13 = document.querySelector (".text13");
+    const text14 = document.querySelector (".text14");
+    const text15 = document.querySelector (".text15");
 
 
     if(cont1.getBoundingClientRect().left - window.innerWidth*4/4 <= 0){
         let cont1 = gsap.timeline();
-        cont1.to(kor_box, {duration:1.4, y:20, opacity: 1, ease: "power1.out"})
-        .to(eng_box, {duration:1.4, y:20, opacity: 1, ease: "power1.out"})
+        cont1.to(kor_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
+        .to(eng_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
     }
 
     /*------------------------------
@@ -284,19 +281,50 @@ previous.addEventListener("click", function () {
     window.addEventListener("scroll",function(){
         if(cont2.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
             let cont2 = gsap.timeline();
-            cont2.to(text1, {duration:1, y:5, opacity: 1, ease: "power1.out"})
-            cont2.to(text2, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
-            cont2.to(text3, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
-            cont2.to(text4, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+            cont2.to(span_text1, {duration:.6, x:5, opacity: 1, ease: "power1.out"})
+            cont2.to(span_text2, {duration:.6, x:5, opacity: 1, ease: "power1.out"})
+            cont2.to(text1, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+            cont2.to(text2, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+            cont2.to(text3, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+            cont2.to(text4, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
         }
         if(cont3.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
             let cont3 = gsap.timeline();
-            cont3.to(text5, {duration:1, y:5, opacity: 1, ease: "power1.out"})
-            cont3.to(text6, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
-            cont3.to(a_text1, {duration:.4, y:0, opacity: 1, ease: "power1.out"})
-            cont3.to(text7, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
-            cont3.to(a_text2, {duration:.4, y:0, opacity: 1, ease: "power1.out"})
-            cont3.to(text8, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
-            cont3.to(a_text3, {duration:.4, y:0, opacity: 1, ease: "power1.out"})
+            cont3.to(span_text3, {duration:.6, x:5, opacity: 1, ease: "power1.out"})
+            cont3.to(text5, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+            cont3.to(text6, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+            cont3.to(a_text1, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
+            cont3.to(text7, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+            cont3.to(a_text2, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
+            cont3.to(text8, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+            cont3.to(a_text3, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
+        }
+        if(cont5.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+            let cont5 = gsap.timeline();
+            cont5.to(text9, {duration:1.4, x:-110, opacity: 1, ease: "power1.out"})
+        }
+        if(cont6.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+            let cont6 = gsap.timeline();
+            cont6.to(text10, {duration:1.4, x:110, opacity: 1, ease: "power1.out"})
+        }
+        if(cont7.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+            let cont7 = gsap.timeline();
+            cont7.to(text11, {duration:1.4, x:-110, opacity: 1, ease: "power1.out"})
+        }
+        if(cont8.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+            let cont8 = gsap.timeline();
+            cont8.to(text12, {duration:1.4, x:110, opacity: 1, ease: "power1.out"})
+        }
+        if(cont9.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+            let cont9 = gsap.timeline();
+            cont9.to(text13, {duration:1.4, x:-110, opacity: 1, ease: "power1.out"})
+        }
+        if(cont10.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+            let cont10 = gsap.timeline();
+            cont10.to(text14, {duration:1.4, x:110, opacity: 1, ease: "power1.out"})
+        }
+        if(cont11.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+            let cont11 = gsap.timeline();
+            cont11.to(text15, {duration:1.4, x:-110, opacity: 1, ease: "power1.out"})
         }
     });
