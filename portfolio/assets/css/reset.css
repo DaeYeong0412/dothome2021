@@ -355,7 +355,7 @@ canvas {
     border: 1px solid #333;
 }
 
-.info {
+.gametext {
     font-family: 'ChosunNm';
     font-size: 2vh;
     text-align: center;
@@ -363,7 +363,7 @@ canvas {
     white-space: nowrap;
     margin-top: 4vh;
 }
-.info span {
+.gametext span {
     font-family: 'Patrican';
     font-size: 5vh;
     line-height: 3;

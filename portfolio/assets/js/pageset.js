@@ -225,6 +225,9 @@ const electronic = document.querySelector(".electronic");
 const calculator = document.querySelector(".calculator");
 const touchBox = document.querySelector(".touch_box");
 const calculatorImg = document.querySelector(".calculator img");
+const gamestart = document.querySelector(".game_start");
+const gamebox = document.querySelector(".game");
+const gameend = document.querySelector(".gametext span");
 
 calculatorImg.addEventListener("click", function () {
     calculator.style = "opacity:0; z-index: 200";
@@ -241,93 +244,104 @@ previous.addEventListener("click", function () {
     calculator.style = "opacity:1; z-index: 201;";
 });
 
-    const eng_box = document.querySelector (".eng_box");
-    const kor_box = document.querySelector (".kor_box");
+gamestart.addEventListener("click", function () {
+    gamestart.style = "opacity:0; z-index: 300";
+    gamebox.style = "opacity:1; z-index: 301;";
+});
 
-    const a_text1 = document.querySelector (".a_text1");
-    const a_text2 = document.querySelector (".a_text2");
-    const a_text3 = document.querySelector (".a_text3");
+gameend.addEventListener("click", function () {
+    gamebox.style = "opacity:0; z-index: 300;";
+    gamestart.style = "opacity:1; z-index: 301;";
+});
 
-    const span_text1 = document.querySelector (".span_text1");
-    const span_text2 = document.querySelector (".span_text2");
-    const span_text3 = document.querySelector (".bspan");
+/*------------------------------
+    scroll animation
+------------------------------*/ 
 
-    const text1 = document.querySelector (".text1");
-    const text2 = document.querySelector (".text2");
-    const text3 = document.querySelector (".text3");
-    const text4 = document.querySelector (".text4");
-    const text5 = document.querySelector (".text5");
-    const text6 = document.querySelector (".text6");
-    const text7 = document.querySelector (".text7");
-    const text8 = document.querySelector (".text8");
-    const text9 = document.querySelector (".text9");
-    const text10 = document.querySelector (".text10");
-    const text11 = document.querySelector (".text11");
-    const text12 = document.querySelector (".text12");
-    const text13 = document.querySelector (".text13");
-    const text14 = document.querySelector (".text14");
-    const text15 = document.querySelector (".text15");
+const eng_box = document.querySelector (".eng_box");
+const kor_box = document.querySelector (".kor_box");
+
+const a_text1 = document.querySelector (".a_text1");
+const a_text2 = document.querySelector (".a_text2");
+const a_text3 = document.querySelector (".a_text3");
+
+const span_text1 = document.querySelector (".span_text1");
+const span_text2 = document.querySelector (".span_text2");
+const span_text3 = document.querySelector (".bspan");
+
+const text1 = document.querySelector (".text1");
+const text2 = document.querySelector (".text2");
+const text3 = document.querySelector (".text3");
+const text4 = document.querySelector (".text4");
+const text5 = document.querySelector (".text5");
+const text6 = document.querySelector (".text6");
+const text7 = document.querySelector (".text7");
+const text8 = document.querySelector (".text8");
+const text9 = document.querySelector (".text9");
+const text10 = document.querySelector (".text10");
+const text11 = document.querySelector (".text11");
+const text12 = document.querySelector (".text12");
+const text13 = document.querySelector (".text13");
+const text14 = document.querySelector (".text14");
+const text15 = document.querySelector (".text15");
 
 
-    if(cont1.getBoundingClientRect().left - window.innerWidth*4/4 <= 0){
-        let cont1 = gsap.timeline();
-        cont1.to(kor_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
-        .to(eng_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
+if(cont1.getBoundingClientRect().left - window.innerWidth*4/4 <= 0){
+    let cont1 = gsap.timeline();
+    cont1.to(kor_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
+    .to(eng_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
+}
+
+window.addEventListener("scroll",function(){
+    if(cont2.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
+        let cont2 = gsap.timeline();
+        cont2.to(span_text1, {duration:.4, x:5, opacity: 1, ease: "power1.out"})
+        cont2.to(span_text2, {duration:.4, x:5, opacity: 1, ease: "power1.out"})
+        cont2.to(text1, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+        cont2.to(text2, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+        cont2.to(text3, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+        cont2.to(text4, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
     }
-
-    /*------------------------------
-      scroll animation
-    ------------------------------*/ 
-    window.addEventListener("scroll",function(){
-        if(cont2.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
-            let cont2 = gsap.timeline();
-            cont2.to(span_text1, {duration:.4, x:5, opacity: 1, ease: "power1.out"})
-            cont2.to(span_text2, {duration:.4, x:5, opacity: 1, ease: "power1.out"})
-            cont2.to(text1, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
-            cont2.to(text2, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
-            cont2.to(text3, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
-            cont2.to(text4, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
-        }
-        if(cont4.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
-            let cont4 = gsap.timeline();
-            cont4.to(span_text3, {duration:.4, x:5, opacity: 1, ease: "power1.out"})
-            cont4.to(text5, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
-            cont4.to(text6, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
-            cont4.to(a_text1, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
-            cont4.to(text7, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
-            cont4.to(a_text2, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
-            cont4.to(text8, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
-            cont4.to(a_text3, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
-        }
-        if(cont6.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
-            let cont6 = gsap.timeline();
-            cont6.to(text9, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
-        }
-        if(cont7.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
-            let cont7 = gsap.timeline();
-            cont7.to(text10, {duration:1.4, x:30, opacity: 1, ease: "power1.out"})
-        }
-        if(cont8.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
-            let cont8 = gsap.timeline();
-            cont8.to(text11, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
-        }
-        if(cont9.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
-            let cont9 = gsap.timeline();
-            cont9.to(text12, {duration:1.4, x:30, opacity: 1, ease: "power1.out"})
-        }
-        if(cont10.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
-            let cont10 = gsap.timeline();
-            cont10.to(text13, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
-        }
-        if(cont11.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
-            let cont11 = gsap.timeline();
-            cont11.to(text14, {duration:1.4, x:30, opacity: 1, ease: "power1.out"})
-        }
-        if(cont12.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
-            let cont12 = gsap.timeline();
-            cont12.to(text15, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
-        }
-    });
+    if(cont4.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
+        let cont4 = gsap.timeline();
+        cont4.to(span_text3, {duration:.4, x:5, opacity: 1, ease: "power1.out"})
+        cont4.to(text5, {duration:.8, y:5, opacity: 1, ease: "power1.out"})
+        cont4.to(text6, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+        cont4.to(a_text1, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
+        cont4.to(text7, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+        cont4.to(a_text2, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
+        cont4.to(text8, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+        cont4.to(a_text3, {duration:.4, y:-4, opacity: 1, ease: "power1.out"})
+    }
+    if(cont6.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+        let cont6 = gsap.timeline();
+        cont6.to(text9, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
+    }
+    if(cont7.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+        let cont7 = gsap.timeline();
+        cont7.to(text10, {duration:1.4, x:30, opacity: 1, ease: "power1.out"})
+    }
+    if(cont8.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+        let cont8 = gsap.timeline();
+        cont8.to(text11, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
+    }
+    if(cont9.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+        let cont9 = gsap.timeline();
+        cont9.to(text12, {duration:1.4, x:30, opacity: 1, ease: "power1.out"})
+    }
+    if(cont10.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+        let cont10 = gsap.timeline();
+        cont10.to(text13, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
+    }
+    if(cont11.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+        let cont11 = gsap.timeline();
+        cont11.to(text14, {duration:1.4, x:30, opacity: 1, ease: "power1.out"})
+    }
+    if(cont12.getBoundingClientRect().left - this.window.innerHeight*4/4 <= 0){
+        let cont12 = gsap.timeline();
+        cont12.to(text15, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
+    }
+});
 
 // key event default
 window.addEventListener("keydown", function(e) {
