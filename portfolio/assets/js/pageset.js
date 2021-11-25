@@ -122,8 +122,28 @@ tabBtn.forEach((element, index) => {
         tabCont.forEach(el => {
             el.style.opacity = "0";
         })
-        tabCont[index].style.opacity = "1";
+        tabCont[index].style = "opacity:1;";
     });
+});
+
+const referenceBox = document.querySelectorAll(".referenceImg > div");
+const referenceText = document.querySelectorAll(".reference_text > p");
+const books = document.querySelector(".bookss");
+
+referenceText.forEach((element, index)=> {
+    element.addEventListener("mouseover", function () {
+        referenceBox.forEach(el => {
+            el.style.opacity = "0";
+        });
+        referenceBox[index].style.opacity = "1";
+        books.style.filter = "brightness(10%)";
+    });
+    element.addEventListener("mouseout", function () {
+        referenceBox.forEach(el => {
+            el.style.opacity = "0";
+        });
+        books.style.filter = "brightness(80%)";
+    })
 });
 
 // cursor
@@ -139,6 +159,88 @@ document.addEventListener("mousemove", e => {
     gsap.to(cursor, { duration: .2, left: e.pageX - window.scrollX - w, top: e.pageY - window.scrollY - h }),
     gsap.to(cursor2, { duration: .5, left: e.pageX - window.scrollX - w2, top: e.pageY - window.scrollY - h2 });
 });
+
+// 오버 효과
+document.querySelectorAll(".main_name").forEach(em => {
+    em.addEventListener("mouseenter", () => {
+        cursor.classList.add("active");
+        cursor2.classList.add("active");
+    });
+    em.addEventListener("mouseleave", () => {
+        cursor.classList.remove("active");
+        cursor2.classList.remove("active");
+    });
+})
+document.querySelectorAll("a").forEach(em => {
+    em.addEventListener("mouseenter", () => {
+        cursor.classList.add("show");
+        cursor2.classList.add("show");
+    });
+    em.addEventListener("mouseleave", () => {
+        cursor.classList.remove("show");
+        cursor2.classList.remove("show");
+    });
+})
+document.querySelectorAll("button").forEach(em => {
+    em.addEventListener("mouseenter", () => {
+        cursor.classList.add("butt");
+        cursor2.classList.add("butt");
+    });
+    em.addEventListener("mouseleave", () => {
+        cursor.classList.remove("butt");
+        cursor2.classList.remove("butt");
+    });
+})
+document.querySelectorAll(".audio .btn-sound").forEach(em => {
+    em.addEventListener("mouseenter", () => {
+        cursor.classList.add("auoo");
+        cursor2.classList.add("auoo");
+    });
+    em.addEventListener("mouseleave", () => {
+        cursor.classList.remove("auoo");
+        cursor2.classList.remove("auoo");
+    });
+})
+document.querySelectorAll(".game_start").forEach(em => {
+    em.addEventListener("mouseenter", () => {
+        cursor.classList.add("gamee");
+        cursor2.classList.add("gamee");
+    });
+    em.addEventListener("mouseleave", () => {
+        cursor.classList.remove("gamee");
+        cursor2.classList.remove("gamee");
+    });
+})
+document.querySelectorAll(".gametext span").forEach(em => {
+    em.addEventListener("mouseenter", () => {
+        cursor.classList.add("gameeout");
+        cursor2.classList.add("gameeout");
+    });
+    em.addEventListener("mouseleave", () => {
+        cursor.classList.remove("gameeout");
+        cursor2.classList.remove("gameeout");
+    });
+})
+document.querySelectorAll(".touch_box").forEach(em => {
+    em.addEventListener("mouseenter", () => {
+        cursor.classList.add("touch");
+        cursor2.classList.add("touch");
+    });
+    em.addEventListener("mouseleave", () => {
+        cursor.classList.remove("touch");
+        cursor2.classList.remove("touch");
+    });
+})
+document.querySelectorAll(".previous").forEach(em => {
+    em.addEventListener("mouseenter", () => {
+        cursor.classList.add("touchout");
+        cursor2.classList.add("touchout");
+    });
+    em.addEventListener("mouseleave", () => {
+        cursor.classList.remove("touchout");
+        cursor2.classList.remove("touchout");
+    });
+})
 
 // clock
 function printClock() {
@@ -224,23 +326,17 @@ const previous = document.querySelector(".previous");
 const electronic = document.querySelector(".electronic");
 const calculator = document.querySelector(".calculator");
 const touchBox = document.querySelector(".touch_box");
-const calculatorImg = document.querySelector(".calculator img");
 const gamestart = document.querySelector(".game_start");
 const gamebox = document.querySelector(".game");
 const gameend = document.querySelector(".gametext span");
 
-calculatorImg.addEventListener("click", function () {
-    calculator.style = "opacity:0; z-index: 200";
-    electronic.style = "opacity:1; z-index: 201;";
-});
-
 touchBox.addEventListener("click", function () {
     calculator.style = "opacity:0; z-index: 200";
-    electronic.style = "opacity:1; z-index: 201;";
+    electronic.style = "opacity:1; z-index: 201; transform: scale(1);";
 });
 
 previous.addEventListener("click", function () {
-    electronic.style = "opacity:0; z-index: 200;";
+    electronic.style = "opacity:0; z-index: 200; transform: scale(0);";
     calculator.style = "opacity:1; z-index: 201;";
 });
 
@@ -284,6 +380,12 @@ const text12 = document.querySelector (".text12");
 const text13 = document.querySelector (".text13");
 const text14 = document.querySelector (".text14");
 const text15 = document.querySelector (".text15");
+const text16 = document.querySelector (".react_text1");
+const text17 = document.querySelector (".react_text2");
+const text18 = document.querySelector (".react_text3");
+const text19 = document.querySelector (".vue_text1");
+const text20 = document.querySelector (".vue_text2");
+const text21 = document.querySelector (".vue_text3");
 
 
 if(cont1.getBoundingClientRect().left - window.innerWidth*4/4 <= 0){
@@ -341,6 +443,18 @@ window.addEventListener("scroll",function(){
         let cont12 = gsap.timeline();
         cont12.to(text15, {duration:1.4, x:-30, opacity: 1, ease: "power1.out"})
     }
+    if(cont20.getBoundingClientRect().left - this.window.innerHeight*4/3 <= 0){
+        let cont20 = gsap.timeline();
+        cont20.to(text16, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+        cont20.to(text17, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+        cont20.to(text18, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+    }
+    if(cont21.getBoundingClientRect().left - this.window.innerHeight*4/3 <= 0){
+        let cont21 = gsap.timeline();
+        cont21.to(text19, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+        cont21.to(text20, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+        cont21.to(text21, {duration:.6, y:5, opacity: 1, ease: "power1.out"})
+    }
 });
 
 // key event default
@@ -350,3 +464,4 @@ window.addEventListener("keydown", function(e) {
         e.preventDefault();
     }
 }, false);
+

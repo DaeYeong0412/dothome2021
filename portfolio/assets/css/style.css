@@ -145,8 +145,13 @@
     opacity: 0;
 }
 
-.span_text1 {opacity: 0;}
-.span_text2 {opacity: 0;}
+.span_text1 {
+    opacity: 0;
+}
+
+.span_text2 {
+    opacity: 0;
+}
 
 /* game_box */
 .game_start {
@@ -159,9 +164,11 @@
     transition: opacity 0.6s;
     z-index: 301;
 }
+
 .game_start span {
     font-size: 5vh;
 }
+
 .game_start img {
     height: 40vh;
     filter: grayscale(95%);
@@ -232,21 +239,24 @@
 .referenceImg img {
     position: absolute;
     height: 95vh;
-    left: 0vh;
+    left: 0;
+}
+
+.bookss {
     transition: filter 0.6s;
 }
 
 .referenceImg div {
-    transition: all 0.6s;
+    transition: opacity 0.6s;
     position: absolute;
-    top: 10vh;
+    top: 5vh;
+    left: 8.5vh;
     pointer-events: none;
     opacity: 0;
 }
 
 .referenceImg div img {
-    width: 107.5vh;
-    height: 50vh;
+    height: 60vh;
 }
 
 .container.b .bspan {
@@ -292,6 +302,7 @@
     margin-top: 4vh;
     opacity: 0;
 }
+
 .reference_text p:last-child a {
     margin-top: 1vh;
 }
@@ -376,15 +387,6 @@
 .site_info>div p {
     font-size: 1.8vh;
     line-height: 1.4;
-}
-
-.site_info>div p a {
-    margin-top: 3vh;
-    float: right;
-    font-size: 1.6vh;
-    opacity: 0.7;
-    color: #000;
-    text-decoration: underline;
 }
 
 /* sitebox_one */
@@ -521,6 +523,72 @@
 
 .site_two>div {
     top: 21.8vh;
+}
+
+.react_info {
+    position: absolute;
+    font-family: 'ChosunNm';
+    width: 50vh;
+    left: 13vh;
+    top: 6vh;
+    text-align: justify;
+}
+
+.react_info h2 {
+    font-size: 3vh;
+    line-height: 2;
+}
+
+.react_info span {
+    font-size: 2vh;
+    line-height: 1.6;
+}
+
+.react_text1 {
+    margin-bottom: 10vh;
+    opacity: 0;
+}
+
+.react_text2 {
+    margin-bottom: 10vh;
+    opacity: 0;
+}
+
+.react_text3 {
+    opacity: 0;
+}
+
+.vue_info {
+    position: absolute;
+    font-family: 'ChosunNm';
+    width: 50vh;
+    left: 13vh;
+    top: 5vh;
+    text-align: justify;
+}
+
+.vue_info h2 {
+    font-size: 3vh;
+    line-height: 2;
+}
+
+.vue_info span {
+    font-size: 2vh;
+    line-height: 1.6;
+}
+
+.vue_text1 {
+    margin-bottom: 10vh;
+    opacity: 0;
+}
+
+.vue_text2 {
+    margin-bottom: 10vh;
+    opacity: 0;
+}
+
+.vue_text3 {
+    opacity: 0;
 }
 
 /* calculator */
@@ -721,6 +789,20 @@
     height: 55vh;
 }
 
+.totalsite {
+    font-family: 'ChosunNm';
+    font-size: 2vh;
+    position: absolute;
+    text-decoration: none;
+    color: #000;
+    top: 5vh;
+    left: 170vh;
+}
+
+.totalsite:hover {
+    font-weight: bold;
+}
+
 /* api-box */
 .group_member {
     font-family: 'Patrican';
@@ -778,6 +860,20 @@
     transform: rotate(21deg);
 }
 
+.apigrouplink {
+    font-family: 'Patrican';
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.8vh;
+    line-height: 1.4;
+    top: 48vh;
+    left: 105vh;
+    white-space: nowrap;
+}
+
 .port_span {
     font-family: 'Patrican';
     font-size: 2vh;
@@ -796,9 +892,13 @@
     white-space: nowrap;
 }
 
-.group_info span {
+.group_info a {
+    font-family: 'Patrican';
+    font-size: 5vh;
     display: block;
     line-height: 1.2;
+    color: #000;
+    text-decoration: none;
 }
 
 .inter_p {
@@ -829,7 +929,13 @@
 }
 
 .comment_list p {
-    font-size: 1.3vh;
+    font-size: 1.4vh;
+    display: inline-block;
+    margin-top: 2vh;
+}
+
+.coconame {
+    margin-right: 1vh;
 }
 
 .comment_box {
@@ -838,6 +944,10 @@
 
 .comment_box:last-child {
     margin-bottom: 0;
+}
+
+.comment_box:first-child {
+    margin-top: 2vh;
 }
 
 .comment_boundary {
@@ -852,32 +962,39 @@
 
 .comment_text {
     position: absolute;
-    bottom: 2vh;
+    bottom: 4vh;
     display: flex;
-    font-family: 'Patrican';
+    font-family: 'ChosunNm';
     align-items: center;
     justify-content: space-between;
     font-size: 2.5vh;
 }
 
-.comment_text h2 {
-    text-align: center;
-    font-weight: normal;
-    margin-left: 3vh;
-    margin-right: 3vh;
-}
-
-.comment_text span {
-    color: #AAAAAA;
-    width: 65vh;
-}
-
 .comment_text button {
     background: none;
     border: none;
-    font-family: 'Patrican';
+    font-family: 'ChosunNm';
     font-size: 2.5vh;
     color: #AAAAAA;
+}
+
+.comment_text .youName input {
+    font-family: 'ChosunNm';
+    background: none;
+    border: none;
+    font-size: 3vh;
+    width: 15vh;
+    height: 6vh;
+    margin-left: 2vh;
+    text-align: center;
+}
+
+.comment_text .youText input {
+    font-family: 'ChosunNm';
+    font-size: 2vh;
+    width: 65vh;
+    height: 6vh;
+    border: none;
 }
 
 /* last_box */

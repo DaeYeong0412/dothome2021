@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <style>
+        html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #333333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8vh;
+  font-family: 'Patrican';
+}
+
+.Screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
+}
+
+.Item {
+  color: #fff;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-animation: letterSpacing 4s ease-out;
+          animation: letterSpacing 4s ease-out;
+}
+.Item:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.Item:nth-child(2) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+.Item:nth-child(3) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+
+@-webkit-keyframes letterSpacing {
+  0% {
+    opacity: 0;
+    letter-spacing: 1px;
+  }
+  80% {
+    opacity: 1;
+    letter-spacing: 1em;
+  }
+  100% {
+    opacity: 0;
+    letter-spacing: 1em;
+  }
+}
+
+@keyframes letterSpacing {
+  0% {
+    opacity: 0;
+    letter-spacing: 1px;
+  }
+  80% {
+    opacity: 1;
+    letter-spacing: 1em;
+  }
+  100% {
+    opacity: 0;
+    letter-spacing: 1em;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="Screen">
+        <p class="Item">Hello.</p>
+        <p class="Item">My Name is</p>
+        <p class="Item">DaeYeong song</p>
+    </div>
+</body>
+</html>

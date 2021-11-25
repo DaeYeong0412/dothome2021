@@ -3,6 +3,10 @@ body {
     cursor: none;
 }
 
+a,button,input {
+    cursor: none;
+}
+
 .cursor {
     position: fixed;
     left: 0;
@@ -22,6 +26,41 @@ body {
     transform: scale(0);
 }
 
+.cursor.show {
+    opacity: 0.5;
+    transform: scale(0);
+}
+
+.cursor.butt {
+    opacity: 0.5;
+    transform: scale(0);
+}
+
+.cursor.auoo {
+    opacity: 0.5;
+    transform: scale(0);
+}
+
+.cursor.gamee {
+    opacity: 0.5;
+    transform: scale(0);
+}
+
+.cursor.gameeout {
+    opacity: 0.5;
+    transform: scale(0);
+}
+
+.cursor.touch {
+    opacity: 0.5;
+    transform: scale(0);
+}
+
+.cursor.touchout {
+    opacity: 0.5;
+    transform: scale(0);
+}
+
 .cursor-follower {
     position: fixed;
     width: 40px;
@@ -32,6 +71,50 @@ body {
     pointer-events: none;
     transition: transform 0.4s ease-in-out, background 0.4s ease-in-out;
     z-index: 998;
+}
+
+.cursor-follower.active {
+    background: rgba(255, 166, 0, 0.6);
+    transform: scale(7);
+}
+
+.cursor-follower.show {
+    transform: scale(3);
+    background: rgba(255, 51, 0, 0.6);
+}
+
+.cursor-follower.butt {
+    transform: scale(2);
+    background: rgba(51, 60, 75, 0.6);
+}
+
+.cursor-follower.auoo {
+    transform: scale(1.5);
+    background: rgba(51, 75, 52, 0.6);
+}
+
+.cursor-follower.gamee {
+    transform: scale(3);
+    background: rgba(91, 64, 95, 0.6);
+    border-radius: 1vh;
+}
+
+.cursor-follower.gameeout {
+    transform: scale(3);
+    background: rgba(91, 64, 95, 0.6);
+    border-radius: 1vh;
+}
+
+.cursor-follower.touch {
+    transform: scale(3);
+    background: rgba(140, 141, 89, 0.6);
+    border-radius: 1vh;
+}
+
+.cursor-follower.touchout {
+    transform: scale(3);
+    background: rgba(140, 141, 89, 0.6);
+    border-radius: 1vh;
 }
 
 footer {
@@ -79,7 +162,7 @@ Supahscroll
 }
 
 #contents {
-    width: 2570vh;
+    width: 2700vh;
     display: flex;
 }
 
@@ -231,6 +314,11 @@ Supahscroll
     font-size: 2vh;
 }
 
+.line_text.c {
+    top: 8vh;
+    left: -3vh;
+}
+
 .line_text img {
     margin: 0 5px;
 }
@@ -245,7 +333,6 @@ Supahscroll
 .audio .btn-sound {
     display: block;
     color: #000;
-    cursor: pointer;
     font-size: 3.5vh;
 }
 
@@ -277,9 +364,10 @@ Supahscroll
 .electronic {
     display: flex;
     flex-direction: column;
+    transform: scale(0);
     justify-content: center;
     align-items: center;
-    transition: all 0.4s;
+    transition: opacity 0.6s;
     position: absolute;
     left: 2vh;
     top: 8vh;
@@ -338,7 +426,6 @@ Supahscroll
     font-size: 2.5vh;
     position: absolute;
     bottom: -7vh;
-    cursor: pointer;
 }
 
 .game {

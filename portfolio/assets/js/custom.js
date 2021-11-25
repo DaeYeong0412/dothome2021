@@ -83,7 +83,6 @@ viewT.forEach((element, index)=> {
         document.querySelector(".modal.one.a").classList.add("hide");
     });
 
-// Modal
     document.querySelector(".imgbutton.two").addEventListener("click",()=>{ 
         document.querySelector(".modal.two.a").classList.add("show");
         document.querySelector(".modal.two.a.hide").classList.remove("hide");
@@ -93,7 +92,6 @@ viewT.forEach((element, index)=> {
         document.querySelector(".modal.two.a").classList.add("hide");
     });
 
-// Modal
     document.querySelector(".imgbutton.three").addEventListener("click",()=>{ 
         document.querySelector(".modal.one.b").classList.add("show");
         document.querySelector(".modal.one.b.hide").classList.remove("hide");
@@ -103,27 +101,6 @@ viewT.forEach((element, index)=> {
         document.querySelector(".modal.one.b").classList.add("hide");
     });
 
-// Modal
-    document.querySelector(".imgbutton.four").addEventListener("click",()=>{ 
-        document.querySelector(".modal.two.b").classList.add("show");
-        document.querySelector(".modal.two.b.hide").classList.remove("hide");
-    });
-    
-    document.querySelector(".modal.two.b .modal-cont button").addEventListener("click",()=>{
-        document.querySelector(".modal.two.b").classList.add("hide");
-    });
-
-// Modal
-    document.querySelector(".imgbutton.five").addEventListener("click",()=>{ 
-        document.querySelector(".modal.one.c").classList.add("show");
-        document.querySelector(".modal.one.c.hide").classList.remove("hide");
-    });
-    
-    document.querySelector(".modal.one.c .modal-cont button").addEventListener("click",()=>{
-        document.querySelector(".modal.one.c").classList.add("hide");
-    });
-
-// Modal
     document.querySelector(".imgbutton.six").addEventListener("click",()=>{ 
         document.querySelector(".modal.two.c").classList.add("show");
         document.querySelector(".modal.two.c.hide").classList.remove("hide");
@@ -133,7 +110,6 @@ viewT.forEach((element, index)=> {
         document.querySelector(".modal.two.c").classList.add("hide");
     });
 
-// Modal
     document.querySelector(".imgbutton.seven").addEventListener("click",()=>{ 
         document.querySelector(".modal.one.d").classList.add("show");
         document.querySelector(".modal.one.d.hide").classList.remove("hide");

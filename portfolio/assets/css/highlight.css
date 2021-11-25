@@ -98,11 +98,11 @@
     position: absolute;
     z-index: 2000;
     top: 3vh;
-    left: 107vh;
+    left: 109vh;
     border: 1px solid #000;
     text-align: center;
     line-height: 3;
-    padding: 0.5vh 1vh;
+    padding: 0.2vh 1vh;
     border-radius: 50%;
     background: none;
     color: #000;
@@ -168,7 +168,6 @@
     background: none;
     border: none;
     text-align: center;
-    cursor: pointer;
     line-height: 1;
     margin-right: 0.5vh;
     font-size: 2.5vh;
