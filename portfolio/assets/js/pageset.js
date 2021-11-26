@@ -387,13 +387,6 @@ const text19 = document.querySelector (".vue_text1");
 const text20 = document.querySelector (".vue_text2");
 const text21 = document.querySelector (".vue_text3");
 
-
-if(cont1.getBoundingClientRect().left - window.innerWidth*4/4 <= 0){
-    let cont1 = gsap.timeline();
-    cont1.to(kor_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
-    .to(eng_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
-}
-
 window.addEventListener("scroll",function(){
     if(cont2.getBoundingClientRect().left - window.innerHeight*4/4 <= 0){
         let cont2 = gsap.timeline();
@@ -464,4 +457,17 @@ window.addEventListener("keydown", function(e) {
         e.preventDefault();
     }
 }, false);
+
+const lodings = document.querySelector(".Screen")
+const bodyzoon = document.querySelector("body")
+
+setTimeout(function(){
+    lodings.style = "top:-150vh;";
+    bodyzoon.style = "position: relative;";
+    if(cont1.getBoundingClientRect().left - window.innerWidth*4/4 <= 0){
+    let cont1 = gsap.timeline();
+    cont1.to(kor_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
+    .to(eng_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
+}
+}, 9000);
 

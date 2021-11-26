@@ -1,10 +1,95 @@
 body {
-    position: relative;
+    position: fixed;
     cursor: none;
 }
 
-a,button,input {
+a,
+button,
+input {
     cursor: none;
+}
+
+/* loading */
+.Screen {
+    position: fixed;
+    width: 210vh;
+    height: 100vh;
+    background-color: #333333;
+    left: 0;
+    top: 0vh;
+    font-size: 7vh;
+    font-family: 'Patrican';
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: top 1s ease;
+    z-index: 10000;
+}
+
+.Item {
+    color: #fff;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -10vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    text-transform: uppercase;
+    opacity: 0;
+    -webkit-animation: letterSpacing 3s ease-out;
+    animation: letterSpacing 3s ease-out;
+}
+
+.Item:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.Item:nth-child(2) {
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+
+.Item:nth-child(3) {
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+}
+
+@-webkit-keyframes letterSpacing {
+    0% {
+        opacity: 0;
+        letter-spacing: 1px;
+    }
+
+    80% {
+        opacity: 1;
+        letter-spacing: 1em;
+    }
+
+    100% {
+        opacity: 0;
+        letter-spacing: 1em;
+    }
+}
+
+@keyframes letterSpacing {
+    0% {
+        opacity: 0;
+        letter-spacing: 1px;
+    }
+
+    80% {
+        opacity: 1;
+        letter-spacing: 1em;
+    }
+
+    100% {
+        opacity: 0;
+        letter-spacing: 1em;
+    }
 }
 
 .cursor {
@@ -450,6 +535,7 @@ canvas {
     white-space: nowrap;
     margin-top: 4vh;
 }
+
 .gametext span {
     font-family: 'Patrican';
     font-size: 5vh;
