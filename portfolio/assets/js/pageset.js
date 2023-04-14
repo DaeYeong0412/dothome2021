@@ -469,5 +469,5 @@ setTimeout(function(){
     cont1.to(kor_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
     .to(eng_box, {duration:1.2, y:20, opacity: 1, ease: "power1.out"})
 }
-}, 9000);
+}, 3000);
 

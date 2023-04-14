@@ -103,8 +103,8 @@
 
 .subImg {
     position: absolute;
-    left: 105vh;
-    bottom: 3vh;
+    left: 5vh;
+    top: 4vh;
 }
 
 .subImg img {
@@ -124,8 +124,8 @@
 
 .about_text {
     position: absolute;
-    left: 175vh;
-    top: 3vh;
+    left: 85vh;
+    bottom: 3vh;
     font-family: 'ChosunNm';
     width: 55vh;
 }
